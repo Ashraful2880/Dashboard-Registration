@@ -21,3 +21,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Dashboard Sub Menu Common Style Here */
+.accordion-button:not(.collapsed) {
+  color: #d6d8da;
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+.accordion-button::after {
+  background-image: url("../src/Assests/Icon/Arrow-Down.png");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../src/Assests/Icon/Arrow-Down.png");
+}
