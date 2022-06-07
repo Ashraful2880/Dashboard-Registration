@@ -36,7 +36,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseOne">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseOne">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -96,7 +96,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -156,7 +156,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -216,7 +216,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFour">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFour">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -276,7 +276,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFive">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFive">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -336,7 +336,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSix">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSix">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -396,7 +396,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSeven">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSeven">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -456,10 +456,10 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseEight">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseEight">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">Sub Menu</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Breadcrumb</Link>
@@ -516,7 +516,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseNine">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseNine">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -577,7 +577,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left pl-14 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTen">
+                            <div className="flex flex-col gap-y-4 text-left lg:lg:pl-10 pl-3 pl-0 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTen">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -628,7 +628,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </aside>
-            {/* Dashboard Header & Header Menu Area */}
+            {/* Dashboard Header Area */}
             <div className={`${visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"} border`}>
                 <div className={`border-b-2 h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-white ${visible === "block" && "lg:left-[15%] left-0"}`}>
                     <div className={`flex justify-between items-center ${visible === "block" ? "lg:w-[85%] w-full" : "w-full"}`}>
