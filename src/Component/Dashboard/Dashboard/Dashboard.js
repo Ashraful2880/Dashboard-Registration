@@ -3,10 +3,11 @@ import { Link, Route, Routes } from 'react-router-dom';
 import DashboardHome from './../DashboardHome/DashboardHome';
 import logo from "../../../Assests/Image/Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faAdjust, faAnchorLock, faAnkh, faArchive, faArrowsToEye, faBars, faHome, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Users from './../Users/Users';
 import bell from "../../../Assests/Icon/bell.png";
 import mail from "../../../Assests/Icon/open-mail.png";
+import { faAirbnb, faAlipay, faAvianex } from '@fortawesome/free-brands-svg-icons';
 
 const Dashboard = () => {
     const [visible, setVisible] = useState("block");
@@ -22,12 +23,25 @@ const Dashboard = () => {
                 </div>
                 {/* Dashboard Menu Here */}
                 <div className="bg-[#3C4B64] h-[85vh] mb-[5vh] overflow-y-scroll " >
-                    <div className="text-md text-gray-300 hover:text-white lg:pt-4 pt-20">
-                        {/* Sigle Menu With Sub Menu */}
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                    <div className="text-md lg:pt-4 pt-20">
+                        {/* Sigle Menu */}
+
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-white text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
+                                <div>
+                                    <FontAwesomeIcon icon={faHome} className="w-5 h-5" />
+                                </div>
+                                <div className="flex justify-between items-center w-full">
+                                    <div className="ml-4">
+                                        Dashboard
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white  text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAddressCard} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -84,10 +98,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white  text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAdjust} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -144,10 +158,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faArrowsToEye} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -204,10 +218,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAnchorLock} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -264,10 +278,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAirbnb} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -324,10 +338,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAlipay} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -384,10 +398,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAnkh} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -444,10 +458,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faArchive} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -456,7 +470,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseEight">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseEight">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Sub Menu</Link>
@@ -504,10 +518,10 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faAvianex} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -565,7 +579,7 @@ const Dashboard = () => {
                             </div>
                         </Link>
 
-                        <Link to="/dashboard" className="accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                                 <div>
                                     <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
@@ -577,7 +591,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:lg:pl-10 pl-3 pl-0 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTen">
+                            <div className="flex flex-col gap-y-4 text-left lg:lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTen">
                                 <Link
                                     className="text-gray-300 hover:text-white"
                                     to="/dashboard">Accordion</Link>
@@ -658,7 +672,7 @@ const Dashboard = () => {
                     </div>
                 </div>
                 {/* Dashboard Right Content Area */}
-                <div className="h-[100vh]">
+                <div className="h-[100vh] mt-20">
                     <Routes>
                         <Route path="/" element={<DashboardHome />} />
                         <Route path="/users" element={<Users />} />
