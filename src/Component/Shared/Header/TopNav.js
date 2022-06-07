@@ -6,18 +6,26 @@ import { Link } from 'react-router-dom';
 
 const TopNav = () => {
     return (
-        <div className="bg-gray-900 py-5">
+        <div className="bg-gray-900 py-3">
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* Left Social Menu Area */}
                     <div className="flex gap-x-5 items-center text-white">
                         <div className="flex gap-x-2">
                             <FontAwesomeIcon icon={faPhone} className="w-5 h-5 animate-bounce" />
-                            <p>Call us at: +880123456789</p>
+                            <a href="tel:+880123456789">
+                                <p>Call us at: +880123456789</p>
+                            </a>
                         </div>
-                        <FontAwesomeIcon icon={faFacebook} className="w-5 h-5" />
-                        <FontAwesomeIcon icon={faTwitter} className="w-5 h-5" />
-                        <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
+                        <a href="https://www.facebook.com" target="blank">
+                            <FontAwesomeIcon icon={faFacebook} className="w-5 h-5 hover:text-orange-600 hover:scale-125 duration-300" />
+                        </a>
+                        <a href="https://www.twitter.com" target="blank">
+                            <FontAwesomeIcon icon={faTwitter} className="w-5 h-5 hover:text-orange-600 hover:scale-125 duration-300" />
+                        </a>
+                        <a href="https://www.instragram.com" target="blank">
+                            <FontAwesomeIcon icon={faInstagram} className="w-5 h-5 hover:text-orange-600 hover:scale-125 duration-300" />
+                        </a>
                     </div>
                     {/* Right Menu Area */}
                     <div className="text-white flex items-center gap-x-5">
