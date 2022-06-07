@@ -26,7 +26,7 @@ const Dashboard = () => {
                     <div className="text-md lg:pt-4 pt-20">
                         {/* Sigle Menu */}
 
-                        <Link to="/dashboard" className=" text-gray-300 hover:text-white text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
                                 <div>
                                     <FontAwesomeIcon icon={faHome} className="w-5 h-5" />
@@ -38,7 +38,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white  text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                 <div>
                                     <FontAwesomeIcon icon={faAddressCard} className="w-5 h-5" />
@@ -98,7 +98,7 @@ const Dashboard = () => {
                                     to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white  text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <div>
                                     <FontAwesomeIcon icon={faAdjust} className="w-5 h-5" />
