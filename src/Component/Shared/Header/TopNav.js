@@ -39,9 +39,10 @@ const TopNav = ({ setHide, hide }) => {
                                 Login
                             </Link>
                         }
-                        <Link to="/register" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
-                            Registration
-                        </Link>
+                        {!user?.email &&
+                            <Link to="/register" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
+                                Registration
+                            </Link>}
                         <Link to="/login" className="bg-orange-600 px-5 py-2 border border-orange-500 hover:bg-transparent duration-200 rounded-md">
                             Download Apps
                         </Link>

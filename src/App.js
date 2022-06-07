@@ -16,7 +16,7 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
-      {location.pathname !== '/dashboard' && <Header />}
+      {location.pathname.includes("/dashboard") ? "" : <Header />}
       <Routes>
         <Route path='/*' element={<NotFound />} />
         <Route path='/' element={<Home />} />
@@ -29,7 +29,7 @@ function App() {
         <Route path='/resetPassword' element={<ResetPassword />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
       </Routes>
-      {location.pathname !== '/dashboard' && <Footer />}
+      {location.pathname.includes("/dashboard") ? "" : <Footer />}
     </div>
   );
 }
