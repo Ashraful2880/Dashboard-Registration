@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TopNav from './TopNav';
 import StickyNav from './StickyNav';
 
 const Header = () => {
+    const [hide, setHide] = useState("hidden");
     return (
         <div>
-            <TopNav />
-            <StickyNav />
+            <TopNav setHide={setHide} hide={hide} />
+            <StickyNav hide={hide} />
         </div>
     );
 };

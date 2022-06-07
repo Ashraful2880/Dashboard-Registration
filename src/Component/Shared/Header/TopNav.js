@@ -1,16 +1,17 @@
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TopNav = () => {
+const TopNav = ({ setHide, hide }) => {
+
     return (
         <div className="bg-gray-900 py-3">
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* Left Social Menu Area */}
-                    <div className="flex gap-x-5 items-center text-white">
+                    <div className="lg:flex gap-x-5 items-center text-white hidden">
                         <div className="flex gap-x-2">
                             <FontAwesomeIcon icon={faPhone} className="w-5 h-5 animate-bounce" />
                             <a href="tel:+880123456789">
@@ -28,7 +29,7 @@ const TopNav = () => {
                         </a>
                     </div>
                     {/* Right Menu Area */}
-                    <div className="text-white flex items-center gap-x-5">
+                    <div className="text-white flex justify-center items-center gap-x-5 lg:ml-0 ml-5">
                         <Link to="/login" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
                             Login
                         </Link>
@@ -38,6 +39,9 @@ const TopNav = () => {
                         <Link to="/login" className="bg-orange-600 px-5 py-2 border border-orange-500 hover:bg-transparent duration-200 rounded-md">
                             Download Apps
                         </Link>
+                        <button onClick={() => setHide(hide === "hidden" ? "block" : "hidden")} className="lg:hidden block text-xl">
+                            <FontAwesomeIcon icon={faBars} />
+                        </button>
                     </div>
                 </div>
             </div>
