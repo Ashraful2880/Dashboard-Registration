@@ -3,9 +3,10 @@ import { faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from './../../../Hooks/UseAuth';
 
 const TopNav = ({ setHide, hide }) => {
-
+    const { user, handleSignOut } = useAuth();
     return (
         <div className="bg-gray-900 py-3">
             <div className="container mx-auto">
@@ -30,10 +31,15 @@ const TopNav = ({ setHide, hide }) => {
                     </div>
                     {/* Right Menu Area */}
                     <div className="text-white flex justify-between items-center gap-x-5  lg:ml-0 ml-5">
-                        <Link to="/login" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md hidden lg:block">
-                            Login
-                        </Link>
-                        <Link to="/register" className="lg:px-5 px-2 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
+                        {user?.email ?
+                            <button onClick={handleSignOut} className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md hidden lg:block">
+                                Logout
+                            </button> :
+                            <Link to="/login" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md hidden lg:block">
+                                Login
+                            </Link>
+                        }
+                        <Link to="/register" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
                             Registration
                         </Link>
                         <Link to="/login" className="bg-orange-600 px-5 py-2 border border-orange-500 hover:bg-transparent duration-200 rounded-md">
