@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import About from './Component/About/About';
 import Contact from './Component/Contact/Contact';
@@ -13,9 +13,10 @@ import Header from './Component/Shared/Header/Header';
 import Signup from './Component/Signup/Signup';
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      <Header />
+      {location.pathname !== '/dashboard' && <Header />}
       <Routes>
         <Route path='/*' element={<NotFound />} />
         <Route path='/' element={<Home />} />
@@ -28,7 +29,7 @@ function App() {
         <Route path='/resetPassword' element={<ResetPassword />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
       </Routes>
-      <Footer />
+      {location.pathname !== '/dashboard' && <Footer />}
     </div>
   );
 }

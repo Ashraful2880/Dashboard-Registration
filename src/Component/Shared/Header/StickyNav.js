@@ -5,7 +5,7 @@ import logo from "../../../Assests/Image/Logo.png";
 const StickyNav = ({ hide }) => {
     return (
         <div className="border-b-2">
-            <div className={`container mx-auto py-4 ${hide}`}>
+            <div className={`container mx-auto py-4 lg:block ${hide}`}>
                 <div className="lg:flex blobk justify-between items-center">
                     <div className="lg:flex block gap-x-2 items-center">
                         <img src={logo} alt="Main Logo" className="h-7 w-7 mx-auto" />
