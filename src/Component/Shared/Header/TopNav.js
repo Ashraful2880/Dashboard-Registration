@@ -29,8 +29,8 @@ const TopNav = ({ setHide, hide }) => {
                         </a>
                     </div>
                     {/* Right Menu Area */}
-                    <div className="text-white flex justify-center items-center lg:gap-x-5  gap-x-2 lg:ml-0 ml-3">
-                        <Link to="/login" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
+                    <div className="text-white flex justify-between items-center gap-x-5  lg:ml-0 ml-5">
+                        <Link to="/login" className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md hidden lg:block">
                             Login
                         </Link>
                         <Link to="/register" className="lg:px-5 px-2 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md">
