@@ -23,9 +23,22 @@ const StickyNav = ({ hide }) => {
                             </li>
                             <li className="hover:text-orange-600 duration-300">
                                 <Link to="/about">About</Link>
+                                <div className="subMenu">
+                                    <ul className="lg:flex block items-center gap-x-5 text-lg font-semibold">
+                                        <li className="hover:text-orange-600 duration-300">
+                                            <Link to="about/team">Team</Link>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li className="hover:text-orange-600 duration-300">
                                 <Link to="/service">Service</Link>
+                            </li>
+                            <li className="hover:text-orange-600 duration-300">
+                                <Link to="/delivery">Delivery</Link>
+                            </li>
+                            <li className="hover:text-orange-600 duration-300">
+                                <Link to="/blogs">Blogs</Link>
                             </li>
                             <li className="hover:text-orange-600 duration-300">
                                 <Link to="/contact">Contact</Link>
