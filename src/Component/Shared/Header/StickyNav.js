@@ -56,18 +56,18 @@ const StickyNav = ({ hide }) => {
 
                                 {/* Sub Menu Start*/}
 
-                                <div className="sub-menu hidden lg:w-[200px] w-[30%] absolute lg:top-14 top-6 lg:left-0 left-[40%] bg-gray-900 shadow-sm shadow-orange-600 text-white rounded-b-md border-t-2 border-t-orange-600">
+                                <div className="sub-menu hidden lg:w-[200px] w-[30%] absolute lg:top-14 top-6 lg:left-0 left-[40%] bg-gray-900 shadow-sm shadow-orange-600 text-white rounded-b-md border-t-2 border-t-orange-600 overflow-hidden">
                                     <div className="flex flex-col items-start gap-x-5 text-lg font-semibold">
-                                        <Link to="service/Standard" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600">
+                                        <Link to="service/Standard" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600 hover:translate-x-5 rounded-md">
                                             <span className="px-4">Standard</span>
                                         </Link>
-                                        <Link to="service/Express" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600">
+                                        <Link to="service/Express" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600 hover:translate-x-5 rounded-md">
                                             <span className="px-4">Express</span>
                                         </Link>
-                                        <Link to="service/door" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600">
+                                        <Link to="service/door" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600 hover:translate-x-5 rounded-md">
                                             <span className="px-4">Door To Door</span>
                                         </Link>
-                                        <Link to="service/wirehouse" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600">
+                                        <Link to="service/wirehouse" className="w-full text-left py-1 my-1 hover:bg-orange-600 duration-300 border-b border-b-gray-500 hover:border-b-orange-600 hover:translate-x-5 rounded-md">
                                             <span className="px-4">Wirehouse</span>
                                         </Link>
                                     </div>
