@@ -13,10 +13,10 @@ const StickyNav = ({ hide }) => {
             <div className={`container mx-auto lg:block ${hide}`}>
                 <div className="lg:flex block justify-between items-center mobileMenuAnimation">
                     <Link to="/" className="lg:flex block gap-x-2 items-center">
-                        <img src={logo} alt="Main Logo" className="h-7 w-7 mx-auto" />
-                        <p className="text-lg font-bold">
-                            <span className="text-orange-600">L</span>ogo
-                            <span className="text-orange-600">T</span>ext
+                        <img src={logo} alt="Main Logo" className="h-11 w-11 mx-auto" />
+                        <p className="text-2xl font-bold">
+                            <span className="text-orange-600">S</span>peed
+                            <span className="text-orange-600"> E</span>xpress
                         </p>
                     </Link>
                     <div>
