@@ -1,0 +1,43 @@
+/* Mobile Menu Open Animation On Click */
+.mobileMenuAnimation {
+    animation: openMenu 0.5s ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes openMenu {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+/* Sub Menu Open Animation in Hover */
+.sub-menu {
+    animation: dropDown 0.4s ease-in-out forwards;
+    transform-origin: top center;
+}
+
+.main-menu:hover .sub-menu {
+    display: block;
+}
+
+@keyframes dropDown {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}

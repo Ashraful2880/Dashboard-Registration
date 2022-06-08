@@ -12,11 +12,11 @@ const TopNav = ({ setHide, hide }) => {
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* Left Social Menu Area */}
-                    <div className="lg:flex gap-x-5 items-center text-white hidden">
-                        <div className="flex gap-x-2">
-                            <FontAwesomeIcon icon={faPhone} className="w-5 h-5 animate-bounce" />
+                    <div className="lg:flex gap-x-5 items-center text-white hidden w-full">
+                        <div className="flex items-center gap-x-2">
+                            <FontAwesomeIcon icon={faPhone} className="w-5 h-5 animate-bounce text-orange-600" />
                             <a href="tel:+880123456789">
-                                <p>Call us at: +880123456789</p>
+                                <span>Call us at: +880123456789</span>
                             </a>
                         </div>
                         <a href="https://www.facebook.com" target="blank">
@@ -30,7 +30,7 @@ const TopNav = ({ setHide, hide }) => {
                         </a>
                     </div>
                     {/* Right Menu Area */}
-                    <div className="text-white flex justify-between items-center gap-x-5  lg:ml-0 ml-5">
+                    <div className="text-white flex lg:justify-end justify-between items-center gap-x-5  lg:mx-0 mx-5 w-full">
                         {user?.email ?
                             <button onClick={handleSignOut} className="px-5 py-2 border border-orange-500 hover:bg-orange-600 duration-200 rounded-md hidden lg:block">
                                 Logout
