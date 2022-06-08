@@ -1,3 +1,3 @@
 ## Dashboard & Register App
-### Live Link: 
+### Live Link: https://dashboard-and-registration.netlify.app/home
 
