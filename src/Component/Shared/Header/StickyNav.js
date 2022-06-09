@@ -9,7 +9,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 const StickyNav = ({ hide }) => {
     const { user } = useAuth();
     return (
-        <div className="border-b-2 relative">
+        <div className="border-b-2 relative z-50">
             <div className={`container mx-auto lg:block ${hide}`}>
                 <div className="lg:flex block justify-between items-center mobileMenuAnimation">
                     <Link to="/" className="lg:flex block gap-x-2 items-center">
