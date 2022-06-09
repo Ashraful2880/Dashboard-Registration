@@ -14,7 +14,7 @@ const Dashboard = () => {
     return (
         <main className="w-full">
             {/* Dashboard Menu Area */}
-            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#303C54] h-screen" style={{ display: `${visible}` }}>
+            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#303C54] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
                 {/* Main Logo */}
                 <div className="min-h-[5vh] lg:block hidden">
                     <Link to="/home">

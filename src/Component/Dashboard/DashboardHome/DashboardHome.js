@@ -8,8 +8,8 @@ const DashboardHome = () => {
     return (
         <div className="container mx-auto">
             {/* Dashboard Parcel Information Added */}
-            <h2 className="text-left text-gray-600 text-2xl font-bold mb-4">Dashboard</h2>
-            <div className="px-20 grid grid-cols-3 gap-6">
+            <h2 className="text-left text-gray-600 text-2xl font-bold mb-4 lg:ml-0 ml-5">Dashboard</h2>
+            <div className="lg:px-20 px-6 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                 {/* Card-1 */}
                 <div className="bg-gradient-to-r from-indigo-800 via-indigo-700  to-indigo-600 h-36 hover:bg-gradient-to-l rounded-md hover:scale-105 duration-500">
                     <div className="text-white h-full w-full flex flex-col items-center justify-evenly">
@@ -74,9 +74,9 @@ const DashboardHome = () => {
 
             {/* Traditional Parcel Information Here */}
 
-            <h2 className="text-left text-gray-600 text-2xl font-bold my-4">Traditional Parcel Information</h2>
+            <h2 className="text-left text-gray-600 text-2xl font-bold my-4 lg:ml-0 ml-5">Traditional Parcel Information</h2>
 
-            <div className="px-20 grid grid-cols-3 gap-6">
+            <div className="lg:px-20 px-6 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                 {/* Card-1 */}
                 <div className="bg-gradient-to-r from-indigo-800 via-indigo-700  to-indigo-600 h-36 hover:bg-gradient-to-l rounded-md hover:scale-105 duration-500">
                     <div className="text-white h-full w-full flex flex-col items-center justify-evenly">
