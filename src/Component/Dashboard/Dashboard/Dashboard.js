@@ -3,10 +3,10 @@ import { Link, Route, Routes } from 'react-router-dom';
 import DashboardHome from './../DashboardHome/DashboardHome';
 import logo from "../../../Assests/Image/Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust, faAnchorLock, faAnkh, faArchive, faArrowsToEye, faBars, faHome, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust, faAnchorLock, faAnkh, faArrowRightArrowLeft, faArrowsToEye, faBars, faBriefcase, faCar, faCarSide, faGear, faHome, faList, faMoneyBill, faMoneyBillTransfer, faMoneyCheckDollar, faTableList, faTruck, faUser, faWarehouse, faEnvelopeOpen, faEnvelopeOpenText, faDollarSign, faBox, faTruckFast, faTruckPickup, faHandHolding } from '@fortawesome/free-solid-svg-icons';
 import bell from "../../../Assests/Icon/bell.png";
 import mail from "../../../Assests/Icon/open-mail.png";
-import { faAirbnb, faAlipay, faAvianex } from '@fortawesome/free-brands-svg-icons';
+import { faAirbnb, faAlipay } from '@fortawesome/free-brands-svg-icons';
 import Profile from '../Profile/Profile';
 import NotFound from '../../NotFound/NotFound';
 
@@ -15,7 +15,7 @@ const Dashboard = () => {
     return (
         <main className="w-full">
             {/* Dashboard Menu Area */}
-            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#303C54] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
+            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#3C4B64] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
                 {/* Main Logo */}
                 <div className="min-h-[5vh] lg:block hidden">
                     <Link to="/home">
@@ -23,7 +23,7 @@ const Dashboard = () => {
                     </Link>
                 </div>
                 {/* Dashboard Menu Here */}
-                <div className="bg-[#3C4B64] h-[85vh] mb-[5vh] overflow-y-scroll " >
+                <div className="bg-[#303C54] h-[85vh] mb-[5vh] overflow-y-scroll " >
                     <div className="text-md lg:pt-4 pt-20">
                         {/* Sigle Menu */}
 
@@ -42,7 +42,7 @@ const Dashboard = () => {
                         <Link to="/dashboard/profile" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faHome} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faUser} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -59,57 +59,27 @@ const Dashboard = () => {
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Pickup Parcel
                                     </div>
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-6 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">Pickup Parcel List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
+                                    to="/dashboard">Generate Pickup Rider Run</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
+                                    to="/dashboard">Pickup Rider Run List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
+                                    to="/dashboard">Generate Branch Transfer (Trip)</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
+                                    to="/dashboard">Delivery Branch Transfer List (Trip)</Link>
                             </div>
                         </Link>
                         <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
@@ -119,7 +89,7 @@ const Dashboard = () => {
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Delivery Parcel
                                     </div>
                                 </div>
                             </div>
@@ -127,49 +97,28 @@ const Dashboard = () => {
                             <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">Delivery Parcel List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
+                                    to="/dashboard">Generate Delivery Rider Run</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
+                                    to="/dashboard">Delivery Rider Run List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
+                                    to="/dashboard">Received Transfer List (Trip)</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
+                                    to="/dashboard">Delivery Payment Generate</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
+                                    to="/dashboard">Delivery Payment List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
+                                    to="/dashboard">Return Branch Transfer (Trip)</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
+                                    to="/dashboard">Return Branch Transfer List (Trip)</Link>
                             </div>
                         </Link>
                         <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
@@ -179,7 +128,7 @@ const Dashboard = () => {
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Return Parcel
                                     </div>
                                 </div>
                             </div>
@@ -187,59 +136,26 @@ const Dashboard = () => {
                             <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFour">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">Return Parcel List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
+                                    to="/dashboard">Generate Retuen Rider Run</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
+                                    to="/dashboard">Return Rider Run List</Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
+                                    to="/dashboard">Received Return Transfer List (Trip)</Link>
                             </div>
                         </Link>
                         <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 <div>
-                                    <FontAwesomeIcon icon={faAirbnb} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faBox} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Base
+                                    <div className="ml-2">
+                                        Traditional Parcel Booking
                                     </div>
                                 </div>
                             </div>
@@ -247,59 +163,44 @@ const Dashboard = () => {
                             <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFive">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faTruckFast} className="h-5 w-5 inline mr-4" />
+                                    New Parcel Booking
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4" />
+                                    Booking Parcel List
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faTruckPickup} className="h-5 w-5 inline mr-4" />
+                                    Booking Parcel Assign Vehicle
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4" />
+                                    Booking Parcel Receive List
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faHandHolding} className="h-5 w-5 inline mr-4" />
+                                    Receive Booking Parcel
+                                </Link>
                             </div>
                         </Link>
                         <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 <div>
-                                    <FontAwesomeIcon icon={faAlipay} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faDollarSign} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Base
+                                    <div className="ml-2">
+                                        Traditional Parcel Payment
                                     </div>
                                 </div>
                             </div>
@@ -307,59 +208,32 @@ const Dashboard = () => {
                             <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSix">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faMoneyBill} className="h-5 w-5 inline mr-4" />
+                                    Parcel Payment List
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faMoneyBillTransfer} className="h-5 w-5 inline mr-4" />
+                                    Payment Forward to Accounts
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faMoneyCheckDollar} className="h-5 w-5 inline mr-4" />
+                                    Parcel Payment Report
+                                </Link>
                             </div>
                         </Link>
                         <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                 <div>
-                                    <FontAwesomeIcon icon={faAnkh} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faGear} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Traditional Parcel Setting
                                     </div>
                                 </div>
                             </div>
@@ -367,230 +241,62 @@ const Dashboard = () => {
                             <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSeven">
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faTruck} className="h-5 w-5 inline mr-4" />
+                                    Vehicle
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faWarehouse} className="h-5 w-5 inline mr-4" />
+                                    Warehouse
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faTableList} className="h-5 w-5 inline mr-4" />
+                                    Item Category
+                                </Link>
                                 <Link
                                     className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4" />
+                                    Item
+                                </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faArchive} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faArrowRightArrowLeft} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Order Tracking
                                     </div>
                                 </div>
                             </div>
-                            {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseEight">
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Sub Menu</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
-                            </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faAvianex} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faBriefcase} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Marchent List
                                     </div>
                                 </div>
-                            </div>
-                            {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseNine">
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
-
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faPaperPlane} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faCarSide} className="w-5 h-5" />
                                 </div>
-                                <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Base
-                                    </div>
+                                <div className="ml-4">
+                                    Rider list
                                 </div>
-                            </div>
-                            {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTen">
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
                             </div>
                         </Link>
                     </div>
