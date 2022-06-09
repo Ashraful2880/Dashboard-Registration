@@ -3,11 +3,12 @@ import { Link, Route, Routes } from 'react-router-dom';
 import DashboardHome from './../DashboardHome/DashboardHome';
 import logo from "../../../Assests/Image/Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressCard, faAdjust, faAnchorLock, faAnkh, faArchive, faArrowsToEye, faBars, faHome, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import Users from './../Users/Users';
+import { faAdjust, faAnchorLock, faAnkh, faArchive, faArrowsToEye, faBars, faHome, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import bell from "../../../Assests/Icon/bell.png";
 import mail from "../../../Assests/Icon/open-mail.png";
 import { faAirbnb, faAlipay, faAvianex } from '@fortawesome/free-brands-svg-icons';
+import Profile from '../Profile/Profile';
+import NotFound from '../../NotFound/NotFound';
 
 const Dashboard = () => {
     const [visible, setVisible] = useState("block");
@@ -38,66 +39,19 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <Link to="/dashboard/profile" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faAddressCard} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faHome} className="w-5 h-5" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Base
+                                        Profile
                                     </div>
                                 </div>
                             </div>
-                            {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseOne">
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Accordion</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Breadcrumb</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Cards</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Carousel</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Collaps</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">List Group</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">News & Tabs</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pagination</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Placeholders</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Popovers</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Progress</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Scrollspy</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Spinner</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tables</Link>
-                                <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Tooltips</Link>
-                            </div>
                         </Link>
+
                         <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
                             <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <div>
@@ -675,7 +629,8 @@ const Dashboard = () => {
                 <div className="h-[100vh] mt-20">
                     <Routes>
                         <Route path="/" element={<DashboardHome />} />
-                        <Route path="/users" element={<Users />} />
+                        <Route path="/*" element={<NotFound />} />
+                        <Route path="/profile" element={<Profile />} />
                     </Routes>
                 </div>
             </div>
