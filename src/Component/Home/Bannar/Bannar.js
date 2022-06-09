@@ -31,28 +31,28 @@ const Bannar = () => {
                         </Link>
                     </div>
                 </SwiperSlide>
-                {/* <SwiperSlide className="relative">
-                    <img src={slider2} alt="First Slider" className="h-[80vh] w-full" />
-                    <div className="text-white text-left absolute lg:top-[30%] md:top-[20%] top-[10%] left-[20%]">
+                <SwiperSlide className="relative">
+                    <img src={slider2} alt="First Slider" className="lg:h-[80vh] md:h-[75vh] h-[60vh] w-full" />
+                    <div className="text-white lg:text-left md:text-left text-center absolute lg:top-[30%] md:top-[25%] top-[20%] lg:left-[20%] md:left-[20%] left-[5%] w-full mx-auto">
                         <p className="text-2xl tracking-widest mb-6">Welcome to Speedy Express</p>
-                        <h1 className="text-6xl font-bold mb-4">We Provide World Best</h1>
-                        <h1 className="text-6xl font-bold mb-10">Courier Services</h1>
+                        <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold mb-4">We Provide World Best</h1>
+                        <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold mb-10">Courier Services</h1>
                         <Link to="/contact">
                             <button className="bg-orange-500 px-6 py-3 rounded-md border border-orange-500 hover:bg-transparent hover:text-orange-500 duration-300">Contact Us</button>
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className="relative">
-                    <img src={slider3} alt="First Slider" className="h-[80vh] w-full" />
-                    <div className="text-white text-left absolute top-[30%] left-[20%]">
+                    <img src={slider3} alt="First Slider" className="lg:h-[80vh] md:h-[75vh] h-[60vh] w-full" />
+                    <div className="text-white lg:text-left md:text-left text-center absolute lg:top-[30%] md:top-[25%] top-[20%] lg:left-[20%] md:left-[20%] left-[5%] w-full mx-auto">
                         <p className="text-2xl tracking-widest mb-6">Welcome to Speedy Express</p>
-                        <h1 className="text-6xl font-bold mb-4">We Provide World Best</h1>
-                        <h1 className="text-6xl font-bold mb-10">Courier Services</h1>
+                        <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold mb-4">We Provide World Best</h1>
+                        <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold mb-10">Courier Services</h1>
                         <Link to="/contact">
                             <button className="bg-orange-500 px-6 py-3 rounded-md border border-orange-500 hover:bg-transparent hover:text-orange-500 duration-300">Contact Us</button>
                         </Link>
                     </div>
-                </SwiperSlide> */}
+                </SwiperSlide>
             </Swiper>
         </>
     );
