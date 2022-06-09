@@ -86,10 +86,9 @@ const StickyNav = ({ hide }) => {
                             <li className="hover:text-orange-600 duration-300 relative main-menu lg:py-3 py-1">
                                 <Link to="/contact">Contact</Link>
                             </li>
-                            {user?.email &&
-                                <li className="hover:text-orange-600 duration-300 relative main-menu lg:py-3 py-1">
-                                    <Link to="/dashboard">Dashboard</Link>
-                                </li>}
+                            <li className="hover:text-orange-600 duration-300 relative main-menu lg:py-3 py-1">
+                                <Link to="/dashboard">Dashboard</Link>
+                            </li>
                         </ul>
                     </div>
                     <div className="flex items-center justify-center gap-x-3 lg:mb-0 mb-6">
