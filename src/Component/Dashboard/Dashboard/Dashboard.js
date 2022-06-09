@@ -33,7 +33,7 @@ const Dashboard = () => {
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
-                                        Dashboard
+                                        Home
                                     </div>
                                 </div>
                             </div>
