@@ -15,7 +15,7 @@ const StickyNav = ({ hide }) => {
                     <Link to="/" className="lg:flex block gap-x-2 items-center">
                         <img src={logo} alt="Main Logo" className="h-11 w-11 mx-auto" />
                         <p className="text-2xl font-bold">
-                            <span className="text-orange-600">S</span>peed
+                            <span className="text-orange-600">S</span>peedy
                             <span className="text-orange-600"> E</span>xpress
                         </p>
                     </Link>
