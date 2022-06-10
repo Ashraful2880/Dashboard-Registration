@@ -3,10 +3,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import DashboardHome from './../DashboardHome/DashboardHome';
 import logo from "../../../Assests/Image/Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust, faAnchorLock, faAnkh, faArrowRightArrowLeft, faArrowsToEye, faBars, faBriefcase, faCar, faCarSide, faGear, faHome, faList, faMoneyBill, faMoneyBillTransfer, faMoneyCheckDollar, faTableList, faTruck, faUser, faWarehouse, faEnvelopeOpen, faEnvelopeOpenText, faDollarSign, faBox, faTruckFast, faTruckPickup, faHandHolding } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightArrowLeft, faBars, faBriefcase, faCarSide, faGear, faHome, faList, faMoneyBill, faMoneyBillTransfer, faMoneyCheckDollar, faTableList, faTruck, faUser, faWarehouse, faDollarSign, faBox, faTruckFast, faTruckPickup, faHandHolding, faPersonRunning, faTruckMoving, faClipboardList, faArrowRotateLeft, faRetweet, faFilePen, faHandshake, faTruckLoading, faPen, faArrowUpWideShort, faArrowTurnDown } from '@fortawesome/free-solid-svg-icons';
 import bell from "../../../Assests/Icon/bell.png";
 import mail from "../../../Assests/Icon/open-mail.png";
-import { faAirbnb, faAlipay } from '@fortawesome/free-brands-svg-icons';
 import Profile from '../Profile/Profile';
 import NotFound from '../../NotFound/NotFound';
 
@@ -15,77 +14,86 @@ const Dashboard = () => {
     return (
         <main className="w-full">
             {/* Dashboard Menu Area */}
-            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#3C4B64] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
+            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#121927] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
                 {/* Main Logo */}
                 <div className="min-h-[5vh] lg:block hidden">
                     <Link to="/home">
-                        <img src={logo} alt="Main logo" className="h-12 w-12 mx-auto my-3" />
+                        <img src={logo} alt="Main logo" className=" h-14 w-20 mx-auto my-3" />
                     </Link>
                 </div>
                 {/* Dashboard Menu Here */}
-                <div className="bg-[#303C54] h-[85vh] mb-[5vh] overflow-y-scroll " >
+                <div className="bg-[#1a2438] h-[85vh] mb-[5vh] overflow-y-scroll " >
                     <div className="text-md lg:pt-4 pt-20">
                         {/* Sigle Menu */}
 
-                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-[black] duration-300" type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faHome} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faHome} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Home
-                                    </div>
+                                    <h5 className="ml-4 font-semibold">Home </h5>
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/dashboard/profile" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
+                        <Link to="/dashboard/profile" className=" text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-[black] duration-300" type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faUser} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faUser} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Profile
-                                    </div>
+                                    <h5 className="ml-4">Profile</h5>
                                 </div>
                             </div>
                         </Link>
 
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 accordion-button collapsed relative hover:bg-[black] duration-300" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <div>
-                                    <FontAwesomeIcon icon={faAdjust} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faTruckPickup} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Pickup Parcel
-                                    </div>
+                                    <h5 className="ml-4">Pickup Parcel</h5>
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-6 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseTwo">
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pickup Parcel List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Pickup Parcel List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Generate Pickup Rider Run</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faPersonRunning} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Generate Pickup Rider Run
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Pickup Rider Run List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faTruckFast} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Pickup Rider Run List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Generate Branch Transfer (Trip)</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faClipboardList} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Generate Branch Transfer (Trip)
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Delivery Branch Transfer List (Trip)</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faArrowRotateLeft} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Delivery Branch Transfer List (Trip)
+                                </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-black duration-300 px-5 py-4 accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <div>
-                                    <FontAwesomeIcon icon={faArrowsToEye} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faTruckMoving} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -94,37 +102,61 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseThree">
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Delivery Parcel List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faClipboardList} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Delivery Parcel List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Generate Delivery Rider Run</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faTruckLoading} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Generate Delivery Rider Run
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Delivery Rider Run List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faClipboardList} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Delivery Rider Run List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Received Transfer List (Trip)</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faHandshake} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Received Transfer List (Trip)
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Delivery Payment Generate</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faFilePen} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Delivery Payment Generate
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Delivery Payment List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faClipboardList} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Delivery Payment List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Return Branch Transfer (Trip)</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faRetweet} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Return Branch Transfer (Trip)
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Return Branch Transfer List (Trip)</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faArrowRotateLeft} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Return Branch Transfer List (Trip)
+                                </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-black duration-300 accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 <div>
-                                    <FontAwesomeIcon icon={faAnchorLock} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faArrowRotateLeft} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -133,25 +165,37 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFour">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFour">
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Return Parcel List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faClipboardList} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Return Parcel List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Generate Retuen Rider Run</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faPen} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Generate Return Rider Run
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Return Rider Run List</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faArrowUpWideShort} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Return Rider Run List
+                                </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
-                                    to="/dashboard">Received Return Transfer List (Trip)</Link>
+                                    className="text-gray-300 hover:text-green-500 duration-200"
+                                    to="/dashboard">
+                                    <FontAwesomeIcon icon={faArrowTurnDown} className="h-5 w-5 inline mr-4 text-green-500" />
+                                    Received Return Transfer List (Trip)
+                                </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-black duration-300  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 <div>
-                                    <FontAwesomeIcon icon={faBox} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faBox} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-2">
@@ -160,43 +204,43 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFive">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseFive">
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faTruckFast} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faTruckFast} className="h-5 w-5 inline mr-4 text-green-500" />
                                     New Parcel Booking
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Booking Parcel List
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faTruckPickup} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faTruckPickup} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Booking Parcel Assign Vehicle
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Booking Parcel Receive List
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faHandHolding} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faHandHolding} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Receive Booking Parcel
                                 </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-black duration-300 px-5 py-4 accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 <div>
-                                    <FontAwesomeIcon icon={faDollarSign} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faDollarSign} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-2">
@@ -205,31 +249,31 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSix">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSix">
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faMoneyBill} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faMoneyBill} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Parcel Payment List
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faMoneyBillTransfer} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faMoneyBillTransfer} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Payment Forward to Accounts
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faMoneyCheckDollar} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faMoneyCheckDollar} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Parcel Payment Report
                                 </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className="text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4  accordion-button collapsed relative transition" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        <Link to="/dashboard" className="text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center hover:bg-black px-5 py-4  accordion-button collapsed relative transition duration-300" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                 <div>
-                                    <FontAwesomeIcon icon={faGear} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faGear} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
                                     <div className="ml-4">
@@ -238,65 +282,59 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             {/* Dashboard Sub Menu */}
-                            <div className="flex flex-col gap-y-4 text-left lg:pl-10 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSeven">
+                            <div className="flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapseSeven">
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faTruck} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faTruck} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Vehicle
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faWarehouse} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faWarehouse} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Warehouse
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faTableList} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faTableList} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Item Category
                                 </Link>
                                 <Link
-                                    className="text-gray-300 hover:text-white"
+                                    className="text-gray-300 hover:text-green-500 duration-200"
                                     to="/dashboard">
-                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4" />
+                                    <FontAwesomeIcon icon={faList} className="h-5 w-5 inline mr-4 text-green-500" />
                                     Item
                                 </Link>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-black duration-300" type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faArrowRightArrowLeft} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faArrowRightArrowLeft} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Order Tracking
-                                    </div>
+                                    <h5 className="ml-4"> Order Tracking </h5>
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-black duration-300" type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faBriefcase} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faBriefcase} className="w-5 h-5 text-green-500" />
                                 </div>
                                 <div className="flex justify-between items-center w-full">
-                                    <div className="ml-4">
-                                        Marchent List
-                                    </div>
+                                    <h5 className="ml-4">Marchent List</h5>
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/dashboard" className=" text-gray-300 hover:text-white accordion accordion-item" id="accordionExample">
-                            <div className="flex items-center hover:bg-[#4a576c] px-5 py-4 " type="button">
+                        <Link to="/dashboard" className=" text-gray-300 hover:text-green-500 duration-200 accordion accordion-item" id="accordionExample">
+                            <div className="flex items-center px-5 py-4 hover:bg-black duration-300" type="button">
                                 <div>
-                                    <FontAwesomeIcon icon={faCarSide} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faCarSide} className="w-5 h-5 text-green-500" />
                                 </div>
-                                <div className="ml-4">
-                                    Rider list
-                                </div>
+                                <h5 className="ml-4"> Rider list</h5>
                             </div>
                         </Link>
                     </div>
@@ -320,10 +358,10 @@ const Dashboard = () => {
                         </div>
                         <div className="flex lg:gap-x-5 gap-x-2 text-gray-400 items-center">
                             <Link to="/dashboard">
-                                <img src={bell} alt="Bell Icon" className="w-5 h-5" />
+                                <img src={bell} alt="Bell Icon" className="w-5 h-5 text-green-500" />
                             </Link>
                             <Link to="/dashboard/users">
-                                <img src={mail} alt="Main Icon" className="w-5 h-5" />
+                                <img src={mail} alt="Main Icon" className="w-5 h-5 text-green-500" />
                             </Link>
                             <Link to="/dashboard/settings">
                                 <img src="https://avatars.githubusercontent.com/u/86690202?v=4" alt="User icon" className="w-10 h-10 border rounded-full" />
