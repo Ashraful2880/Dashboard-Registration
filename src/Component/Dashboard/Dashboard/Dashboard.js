@@ -48,7 +48,7 @@ const Dashboard = () => {
     return (
         <main className="w-full">
             {/* Dashboard Menu Area */}
-            <aside className="lg:w-[15%] w-1/2 fixed top-0 left-0 hidden lg:block bg-[#121927] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
+            <aside className="lg:w-[15%] w-full fixed top-0 left-0 hidden lg:block bg-[#121927] h-screen mobileMenuAnimation" style={{ display: `${visible}` }}>
                 {/* Main Logo */}
                 <div className="min-h-[5vh] lg:block hidden">
                     <Link to="/home">
@@ -381,14 +381,14 @@ const Dashboard = () => {
                         <div className="flex lg:gap-x-5 gap-x-2 text-gray-400 items-center">
                             <button
                                 onClick={() => setVisible(visible === "block" ? "none" : "block")}>
-                                <FontAwesomeIcon icon={faBars} />
+                                <FontAwesomeIcon icon={faBars} className="hover:text-red-500 duration-150 font-bold text-lg" />
                             </button>
                             <Link to="/home" className="lg:hidden block">
                                 <img src={logo} alt="Main logo" className="h-8 w-8" />
                             </Link>
-                            <Link to="/dashboard">Dashboard</Link>
-                            <Link to="/dashboard/profile">Profiles</Link>
-                            <button onClick={handleSignOut}>Logout</button>
+                            <Link to="/dashboard" className="font-semibold hover:text-green-500 duration-200">Dashboard</Link>
+                            <Link to="/dashboard/profile" className="lg:block hidden font-semibold hover:text-green-500 duration-200">Profiles</Link>
+                            <button onClick={handleSignOut} className="font-semibold hover:text-green-500 duration-200">Logout</button>
                         </div>
                         <div className="flex lg:gap-x-5 gap-x-2 text-gray-400 items-center">
                             <Link to="/dashboard">
