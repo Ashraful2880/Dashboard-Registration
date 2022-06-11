@@ -1,0 +1,86 @@
+[
+    {
+        "sl": "1",
+        "name": "Customer",
+        "address": "Jhenaidah, Bangladesh",
+        "email": "customer@gmail.com",
+        "contact": "01974238487"
+    },
+    {
+        "sl": "2",
+        "name": "Himal",
+        "address": "Cumilla, Dhaka",
+        "email": "himel@gmail.com",
+        "contact": "01918183822"
+    },
+    {
+        "sl": "3",
+        "name": "Dhruba",
+        "address": "Cumilla, Dhaka",
+        "email": "dhruba@gmail.com",
+        "contact": "019181838222"
+    },
+    {
+        "sl": "4",
+        "name": "Tasnim Binte Mujibar",
+        "address": "22 no, Tejgoan Industrial Area, Dhaka-1215",
+        "email": "tasnim@gmail.com",
+        "contact": "01810007626"
+    },
+    {
+        "sl": "5",
+        "name": "Atik",
+        "address": "Dhaka",
+        "email": "atik@gmail.com",
+        "contact": "01918183822"
+    },
+    {
+        "sl": "6",
+        "name": "Erfana Ahmed",
+        "address": "44/a/ 2 azimpur Road dhaka",
+        "email": "erfana@gmail.com",
+        "contact": "01914257284"
+    },
+    {
+        "sl": "7",
+        "name": "Jahidul Islam Nahid",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "email": "nahid@gmail.com",
+        "contact": "01709815688"
+    },
+    {
+        "sl": "8",
+        "name": "Mahfujul Islam",
+        "address": "Ashik tower, Chawkbazar, Old Dhaka",
+        "email": "mahfujulr@gmail.com",
+        "contact": "01685724780 , 01747229083"
+    },
+    {
+        "sl": "9",
+        "name": "Classy Choice by Nipa",
+        "address": "West Agargao. Dhaka.",
+        "email": "nipa@gmail.com",
+        "contact": "01733672496"
+    },
+    {
+        "sl": "10",
+        "name": "Ahmed Afjali",
+        "address": "H-12/10, Road-01,Kallayanpur,Dhaka",
+        "email": "afjali@gmail.com",
+        "contact": "01810007685"
+    },
+    {
+        "sl": "11",
+        "name": "Test",
+        "address": "Jhenaidah, Bangladesh",
+        "email": "test@gmail.com",
+        "contact": "01303004664"
+    },
+    {
+        "sl": "12",
+        "name": "Customer",
+        "address": "Jhenaidah, Bangladesh",
+        "email": "customer@gmail.com",
+        "contact": "01764238487"
+    }
+]
