@@ -6,22 +6,21 @@ const RiderList = () => {
     const [riders, setRiders] = useState([]);
 
     useEffect(() => {
-        fetch("./RiderListData.json")
+        fetch("/RiderListData.json")
             .then(res => res.json())
             .then(data => setRiders(data))
     }, [])
 
-    console.log(riders);
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto pb-10">
             <h3 className="text-2xl font-bold mb-6">Rider List</h3>
-            <table className="w-full mx-auto cursor-pointer overflow-x-scroll">
+            <table className="w-full h-screen mx-auto cursor-pointer overflow-x-scroll">
                 <thead>
                     <tr className="text-center text-white">
-                        <th className="bg-black border-x-8 border-white rounded-lg py-3 px-4">#</th>
-                        <th className="bg-black border-x-8 border-white rounded-lg py-3 px-4">Name</th>
-                        <th className="bg-black border-x-8 border-white rounded-lg py-3 px-4">Address</th>
-                        <th className="bg-black border-x-8 border-white rounded-lg py-3 px-4">Contact</th>
+                        <th className="bg-black lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">#</th>
+                        <th className="bg-black lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">Name</th>
+                        <th className="bg-black lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">Address</th>
+                        <th className="bg-black lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">Contact</th>
                     </tr>
                 </thead>
                 <tbody>

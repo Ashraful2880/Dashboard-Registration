@@ -6,7 +6,7 @@ const MarchantList = () => {
     const [marchants, setMarchants] = useState([]);
 
     useEffect(() => {
-        fetch(`https://raw.githubusercontent.com/Ashraful2880/FakeData-MarchantList/main/marchantList?token=GHSAT0AAAAAABTFSSV6PJOC5JIMA47F34GMYVEYG7Q`)
+        fetch("/marchantList.json")
             .then(res => res.json())
             .then(data => setMarchants(data))
     }, [])
