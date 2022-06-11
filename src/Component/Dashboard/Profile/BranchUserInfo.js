@@ -3,7 +3,7 @@ import React from 'react';
 const BranchUserInfo = () => {
     return (
         <div className="container mx-auto">
-            This is BranchUserInfo Page
+            <h3 className="text-xl font-bold">Branch User Information</h3>
         </div>
     );
 };

@@ -2,8 +2,8 @@ import React from 'react';
 
 const MarchantList = () => {
     return (
-        <div>
-            This is MarchentList Page
+        <div className="container mx-auto">
+            <h3 className="text-xl font-bold">Marchant List</h3>
         </div>
     );
 };

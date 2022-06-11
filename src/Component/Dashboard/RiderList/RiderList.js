@@ -2,8 +2,8 @@ import React from 'react';
 
 const RiderList = () => {
     return (
-        <div>
-            This is Rider List Page
+        <div className="container mx-auto">
+            <h3 className="text-xl font-bold">Rider List</h3>
         </div>
     );
 };
