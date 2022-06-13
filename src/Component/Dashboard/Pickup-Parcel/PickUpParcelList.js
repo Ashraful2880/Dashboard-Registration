@@ -42,7 +42,10 @@ const PickUpParcelList = () => {
                     </div>
                     <div className="lg:mt-0 mt-2">
                         <label htmlFor="text" className="font-semibold mr-2 lg:inline-block hidden">Search </label>
-                        <input type="text" placeholder="Search Here" className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300" />
+                        <input
+                            type="search"
+                            placeholder="Search Here"
+                            className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300" />
                     </div>
                 </div>
                 <div className="my-2 overflow-x-auto sm:-mx-6 lg:mx-0">

@@ -13,8 +13,7 @@ import Header from './Component/Shared/Header/Header';
 import Signup from './Component/Signup/Signup';
 import Delivery from './Component/Delivery/Delivery';
 import Blog from './Component/Blog/Blog';
-import Team from './Component/About/Team/Team';
-import Testimonial from './Component/About/Testimonial/Testimonial';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   const location = useLocation();
@@ -33,7 +32,7 @@ function App() {
         <Route path='/register' element={<Signup />} />
         <Route path='/login' element={<Login />} />
         <Route path='/resetPassword' element={<ResetPassword />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/dashboard/*" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
       </Routes>
       {location.pathname.includes("/dashboard") ? "" : <Footer />}
     </div>
