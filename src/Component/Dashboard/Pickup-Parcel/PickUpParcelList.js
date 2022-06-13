@@ -1,10 +1,15 @@
 import React from 'react';
 import "../Dashboard.css";
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faPenToSquare, faPrint } from '@fortawesome/free-solid-svg-icons';
+import ViewDetailsModal from './ViewDetailsModal';
 
 const PickUpParcelList = () => {
     const [showData, setShowData] = useState(10);
     const [parcelLists, setParcelLists] = useState([]);
+    const [display, setDisplay] = useState("none");
+    const [query, setQuery] = useState("");
 
     useEffect(() => {
         fetch("/pickUpParcelList.json")
@@ -12,9 +17,14 @@ const PickUpParcelList = () => {
             .then(data => setParcelLists(data))
     }, [])
 
+    const viewModal = (id) => {
+        setDisplay("block")
+        setQuery(id)
+    }
+
     return (
         <div className="px-10 mx-auto">
-            <h3 className="text-2xl font-bold mb-6 text-left ll">Pickup Parcel List</h3>
+            <h3 className="text-2xl font-bold mb-6 text-left">Pickup Parcel List</h3>
             <div className="border border-gray-200 py-5 rounded-md shadow-xl">
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
                     <div>
@@ -94,12 +104,20 @@ const PickUpParcelList = () => {
                                             <td className="px-2 py-3 border">
                                                 {parcel?.charge}
                                             </td>
-                                            <td className="px-2 py-3 border">
+                                            <td className="px-2 py-3 text-sm text-green-700 font-bold border">
                                                 {parcel?.status}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                <div className="flex items-center">
-                                                    <div className="text-sm font-medium text-gray-900">Action Icon Here</div>
+                                                <div className="flex justify-evenly items-center">
+                                                    <button>
+                                                        <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
+                                                    </button>
+                                                    <button onClick={() => viewModal(parcel?.sl)}>
+                                                        <FontAwesomeIcon icon={faEye} className="h-4 w-4 bg-gray-600 text-white px-2 py-1 rounded-sm" />
+                                                    </button>
+                                                    <button>
+                                                        <FontAwesomeIcon icon={faPenToSquare} className="h-4 w-4 bg-cyan-600 text-white px-2 py-1 rounded-sm" />
+                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -110,11 +128,14 @@ const PickUpParcelList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <p>Showing 1 to {parcelLists.slice(0, showData).length} of {parcelLists?.length} Entries</p>
+                    <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{parcelLists.slice(0, showData).length}</span> of <span className="font-semibold">{parcelLists?.length}</span> Entries</p>
                     <div>
                         pagination Here
                     </div>
                 </div>
+            </div>
+            <div>
+                <ViewDetailsModal display={display} setDisplay={setDisplay} query={query} />
             </div>
         </div>
     );
