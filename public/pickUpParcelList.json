@@ -1,0 +1,172 @@
+[
+    {
+        "sl": "1",
+        "invoice": "20211028-00101",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "2",
+        "invoice": "20210604-00100",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 160,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "3",
+        "invoice": "20210526-00099",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "4",
+        "invoice": "20210526-00098",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "5",
+        "invoice": "20210525-00097",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 140,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "6",
+        "invoice": "20210521-00096",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "7",
+        "invoice": "20210520-00095",
+        "marchantName": "Customer",
+        "contactNumber": "01918183822",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 155,
+        "status": "Pickup Run Start"
+    },
+    {
+        "sl": "8",
+        "invoice": "20210514-00094",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 150,
+        "status": "Pickup Rider Accept"
+    },
+    {
+        "sl": "9",
+        "invoice": "20210507-00093",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "10",
+        "invoice": "20210505-00092",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Pickup Request"
+    },
+    {
+        "sl": "11",
+        "invoice": "20210419-00091",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 120,
+        "status": "Parcel Reschedule"
+    },
+    {
+        "sl": "12",
+        "invoice": "20210118-00090",
+        "marchantName": "Jahidul Islam Nahid",
+        "contactNumber": "01709815688",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 60,
+        "status": "Pickup Run Start"
+    },
+    {
+        "sl": "13",
+        "invoice": "20210118-00089",
+        "marchantName": "Atik",
+        "contactNumber": "01918183822",
+        "address": "Dhaka",
+        "district": "Dhaka",
+        "charge": 60,
+        "status": "Pickup Run Start"
+    },
+    {
+        "sl": "14",
+        "invoice": "20210118-00088",
+        "marchantName": "Atik",
+        "contactNumber": "01918183822",
+        "address": "Dhaka",
+        "district": "Dhaka",
+        "charge": 60,
+        "status": "Pickup Rider Complete"
+    },
+    {
+        "sl": "15",
+        "invoice": "20210117-00087",
+        "marchantName": "Atik",
+        "contactNumber": "01918183822",
+        "address": "Dhaka",
+        "district": "Dhaka",
+        "charge": 70,
+        "status": "Pickup Rider Complete"
+    },
+    {
+        "sl": "16",
+        "invoice": "20210116-00086",
+        "marchantName": "Atik",
+        "contactNumber": "01918183822",
+        "address": "Dhaka",
+        "district": "Dhaka",
+        "charge": 70,
+        "status": "Pickup Rider Complete"
+    },
+    {
+        "sl": "17",
+        "invoice": "20210108-00001",
+        "marchantName": "Customer",
+        "contactNumber": "01918183822",
+        "address": "50, Mohakhali, Dhaka-1212",
+        "district": "Dhaka",
+        "charge": 60,
+        "status": "Pickup Rider Complete"
+    }
+]
