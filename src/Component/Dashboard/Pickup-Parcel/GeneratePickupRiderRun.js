@@ -1,6 +1,16 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const GeneratePickupRiderRun = () => {
+    const [runParcels, setRunParcels] = useState([]);
+    useEffect(() => {
+        fetch("/pickUpParcelList.json")
+            .then(res => res.json())
+            .then(data => setRunParcels(data))
+    }, [])
     return (
         <div className="px-10 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left text-gray-500">Generate Pickup Rider Run</h3>
@@ -56,6 +66,85 @@ const GeneratePickupRiderRun = () => {
                         </div>
                         <input className="bg-green-700 border border-green-700 hover:bg-transparent text-white hover:text-green-700 duration-500 py-1.5 px-5 rounded-md w-full" type="submit" value="Search" />
                     </form>
+                </div>
+            </div>
+            {/* Table Area Here */}
+            <div className="border border-gray-200 py-5 rounded-md shadow-xl my-10">
+                <div className="my-2 overflow-x-auto sm:-mx-6 lg:mx-0">
+                    <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div className="shadow overflow-hidden rounded-lg">
+                            <table className="min-w-full divide-y divide-x divide-gray-200">
+                                <thead className="bg-green-800 text-white text-center text-xs font-semibold uppercase">
+                                    <tr>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            <input type="checkbox" name="check" /> All
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Invoice
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Marchant Order
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Marchant Name
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Merchant Number
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Merchant Address
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Customeer Name
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Customer Number
+                                        </th>
+                                        <th className="px-6 py-3 uppercase tracking-wider border">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
+                                    {runParcels.map((runParcel) => (
+                                        <tr key={runParcel.sl} className="hover:bg-gray-100 duration-200">
+                                            <td className="px-2 py-3 border">
+                                                <input type="checkbox" name="check" />
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.invoice}
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.marchantName}
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.contactNumber}
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.address}
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.district}
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.charge}
+                                            </td>
+                                            <td className="px-2 py-3 text-sm text-green-700 font-bold border">
+                                                {runParcel?.status}
+                                            </td>
+                                            <td className="px-2 py-3 border">
+                                                <div className="flex justify-evenly items-center">
+                                                    <button>
+                                                        <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
