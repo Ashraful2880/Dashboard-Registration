@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faPrint, faPenToSquare, faSearch, faRefresh, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faPrint, faSearch, faRefresh, faCheck, faPen, faFileExcel } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const PickupRiderRunList = () => {
@@ -22,10 +22,10 @@ const PickupRiderRunList = () => {
                     <h4 className="text-md font-semibold">Pickup Rider Run List</h4>
                     <div>
                         <button className="bg-green-700 hover:bg-green-800 duration-300 py-1.5 px-4 rounded-md text-white text-md font-semibold mx-2">
-                            <FontAwesomeIcon icon={faRefresh} className="text-white mr-1" /> Merchant Bulk Parcel Import
+                            <FontAwesomeIcon icon={faFileExcel} className="text-white mr-1" /> Merchant Bulk Parcel Import
                         </button>
                         <Link to="/dashboard/generatePickupRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
-                            <FontAwesomeIcon icon={faPrint} className="text-white mr-1" /> Generate Pickup Rider Run
+                            <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Pickup Rider Run
                         </Link>
                     </div>
                 </div>
