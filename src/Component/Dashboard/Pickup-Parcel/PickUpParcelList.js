@@ -52,7 +52,7 @@ const PickUpParcelList = () => {
                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div className="shadow overflow-hidden rounded-lg">
                             <table className="min-w-full divide-y divide-x divide-gray-200">
-                                <thead className="bg-green-800 text-white text-center lg:text-sm text-xs font-semibold uppercase">
+                                <thead className="bg-green-800 text-white text-center text-xs font-semibold uppercase">
                                     <tr>
                                         <th className="px-6 py-3 tracking-wider border">
                                             SL
