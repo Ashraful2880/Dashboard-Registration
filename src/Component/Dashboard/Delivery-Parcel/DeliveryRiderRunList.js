@@ -155,30 +155,27 @@ const DeliveryRiderRunList = () => {
                                                 14-Jun-2022
                                             </td>
                                             <td className="px-2 py-3 border">
-
+                                                15-June-2022
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                1
+                                                100
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                0
+                                                60
                                             </td>
                                             <td className="px-2 py-3 text-sm text-green-700 font-bold border">
                                                 Run Start
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 <div className="flex justify-evenly items-center">
+                                                    <button>
+                                                        <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
+                                                    </button>
                                                     <button >
                                                         <FontAwesomeIcon icon={faEye} className="h-4 w-4 bg-gray-600 text-white px-2 py-1 rounded-sm" />
                                                     </button>
                                                     <button>
-                                                        <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
-                                                    </button>
-                                                    <button>
                                                         <FontAwesomeIcon icon={faCheck} className="h-4 w-4 bg-cyan-600 text-white px-2 py-1 rounded-sm" />
-                                                    </button>
-                                                    <button>
-                                                        <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
                                                     </button>
                                                 </div>
                                             </td>
