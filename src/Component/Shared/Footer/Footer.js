@@ -14,12 +14,12 @@ const Footer = () => {
                         <img src={man} alt="Footer Man" className="w-52 mx-auto" />
                     </div>
                     <div className="mx-auto lg:w-full w-1/2">
-                        <h2 className="text-orange-600 text-2xl font-semibold border-b border-gray-500 pb-4 text-left lg:mb-10 mb-4">About Us</h2>
+                        <h2 className="text-orange-600 text-2xl font-semibold border-b border-gray-500 pb-4 text-left lg:mb-5 mb-4">About Us</h2>
                         <p className="text-left text-gray-300">Courier system is faster, safe and secure delivery service in Bangladesh. Our service was started from 2019 and all of our client happy and satisfied about our service.</p>
                         <p className="text-left text-gray-300 mb-4">The most nice and good thing about our service is our Payment System.</p>
                     </div>
                     <div className="mx-auto text-left text-gray-300">
-                        <h4 className="text-orange-600 text-2xl font-semibold border-b border-gray-500 pb-4 text-left lg:mb-10 mb-4">Our Service</h4>
+                        <h4 className="text-orange-600 text-2xl font-semibold border-b border-gray-500 pb-4 text-left lg:mb-5 mb-4">Our Service</h4>
                         <div className="my-3">
                             <Link to="/home" className="pb-3 hover:text-orange-500 duration-200">
                                 <FontAwesomeIcon icon={faAngleRight} className="text-sm mr-2" />
@@ -52,7 +52,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="mx-auto">
-                        <h4 className="text-orange-600 text-2xl font-semibold border-b border-gray-500 pb-4 text-left lg:mb-10 mb-4">Contact Info</h4>
+                        <h4 className="text-orange-600 text-2xl font-semibold border-b border-gray-500 pb-4 text-left lg:mb-5 mb-4">Contact Info</h4>
                         <div className="text-gray-300">
                             <div className="flex my-3">
                                 <FontAwesomeIcon icon={faLocationDot} className="text-orange-500 mr-3 mt-2" />
