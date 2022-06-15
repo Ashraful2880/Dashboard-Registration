@@ -36,7 +36,7 @@ const PickupRiderRunList = () => {
 
                 <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-x-6 px-10 border-b pb-4 w-full">
                     <div>
-                        <h5 className="text-lg font-semibold text-left">Rider:</h5>
+                        <h5 className="text-md font-semibold text-left">Rider:</h5>
                         <select
                             onChange={(e) => setShowData(e.target.value)}
                             name="Entries"
@@ -50,7 +50,7 @@ const PickupRiderRunList = () => {
                         </select>
                     </div>
                     <div>
-                        <h5 className="text-lg font-semibold text-left">Run Status:</h5>
+                        <h5 className="text-md font-semibold text-left">Run Status:</h5>
                         <select
                             onChange={(e) => setShowData(e.target.value)}
                             name="Entries"
@@ -63,11 +63,11 @@ const PickupRiderRunList = () => {
                         </select>
                     </div>
                     <div>
-                        <h5 className="text-lg font-semibold text-left">From Date:</h5>
+                        <h5 className="text-md font-semibold text-left">From Date:</h5>
                         <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
                     </div>
                     <div>
-                        <h5 className="text-lg font-semibold text-left">To Date:</h5>
+                        <h5 className="text-md font-semibold text-left">To Date:</h5>
                         <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
                     </div>
                     <div className="flex items-end justify-end w-full lg:my-0 my-2">
@@ -107,7 +107,7 @@ const PickupRiderRunList = () => {
                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div className="shadow overflow-hidden rounded-lg">
                             <table className="min-w-full divide-y divide-x divide-gray-200">
-                                <thead className="bg-green-800 text-white text-center lg:text-sm text-xs font-semibold uppercase">
+                                <thead className="bg-green-800 text-white text-center text-xs font-semibold uppercase">
                                     <tr>
                                         <th className="px-6 py-3 tracking-wider border">
                                             SL
