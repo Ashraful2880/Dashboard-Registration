@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { faFileExcel, faPen, faSearch, faRefresh, faEye, faPrint, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faSearch, faRefresh, faEye, faPrint, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const DeliveryRiderRunList = () => {
