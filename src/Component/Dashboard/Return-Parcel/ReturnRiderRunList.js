@@ -21,8 +21,8 @@ const ReturnRiderRunList = () => {
                 <div className="lg:flex block justify-between items-center border-b py-3 px-10">
                     <h4 className="text-md font-bold">Return Rider Run List</h4>
                     <div className="lg:my-0 my-2">
-                        <Link to="/dashboard/generatePickupRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
-                            <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Pickup Rider Run
+                        <Link to="/dashboard/generateReturnRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
+                            <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Return Rider Run
                         </Link>
                     </div>
                 </div>
