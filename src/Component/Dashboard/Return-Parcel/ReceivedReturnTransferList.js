@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare, faEye, faPrint, faPen } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { faPenToSquare, faEye, faPrint } from '@fortawesome/free-solid-svg-icons';
 
 const ReceivedReturnTransferList = () => {
     const [showData, setShowData] = useState(10);
