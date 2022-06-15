@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen, faSearch, faRefresh, faEye, faPrint, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faSearch, faRefresh, faEye } from '@fortawesome/free-solid-svg-icons';
 
 const DeliveryPaymentList = () => {
     const [showData, setShowData] = useState(10);
-    const [deliveryPaymentLista, setDeliveryPaymentLists] = useState([]);
+    const [deliveryPaymentLists, setDeliveryPaymentLists] = useState([]);
 
     useEffect(() => {
         fetch("/pickUpParcelList.json")
@@ -29,7 +29,7 @@ const DeliveryPaymentList = () => {
 
                 {/* Riders Select Options Here */}
 
-                <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-x-6 px-10 border-b pb-4 w-full">
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-x-6 px-10 border-b pb-4 w-full">
                     <div>
                         <h5 className="text-md font-semibold text-left my-2">Delivery Payment Type:</h5>
                         <select
@@ -119,7 +119,7 @@ const DeliveryPaymentList = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {deliveryPaymentLista.slice(0, showData).map((parcel) => (
+                                    {deliveryPaymentLists.slice(0, showData).map((parcel) => (
                                         <tr key={parcel.sl} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
                                                 {parcel?.sl}
@@ -158,7 +158,7 @@ const DeliveryPaymentList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <p className="border border-gray-300 px-4 py-1 rounded-md">Showing <span className="font-semibold">1</span> to <span className="font-semibold">{deliveryPaymentLista.slice(0, showData).length}</span> of <span className="font-semibold">{deliveryPaymentLista?.length}</span> Entries</p>
+                    <p className="border border-gray-300 px-4 py-1 rounded-md">Showing <span className="font-semibold">1</span> to <span className="font-semibold">{deliveryPaymentLists.slice(0, showData).length}</span> of <span className="font-semibold">{deliveryPaymentLists?.length}</span> Entries</p>
                     <div>
                         pagination Here
                     </div>
