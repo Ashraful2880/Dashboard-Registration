@@ -113,9 +113,6 @@ const Vehicle = () => {
                     </div>
                 </div>
             </div>
-            {/* <div>
-                <ViewDetailsModal display={display} setDisplay={setDisplay} query={query} />
-            </div> */}
         </div>
     );
 };
