@@ -19,14 +19,16 @@ const PickupRiderRunList = () => {
             <div className="border border-gray-200 pb-5 rounded-md shadow-xl">
                 {/* Import And Generate Section Design Here */}
                 <div className="lg:flex block justify-between items-center border-b py-2 px-10">
-                    <h4 className="text-md font-semibold">Pickup Rider Run List</h4>
-                    <div>
-                        <button className="bg-green-700 hover:bg-green-800 duration-300 py-1.5 px-4 rounded-md text-white text-md font-semibold mx-2">
+                    <h4 className="text-md font-bold">Pickup Rider Run List</h4>
+                    <div className="lg:flex items-center block">
+                        <button className="bg-green-700 hover:bg-green-800 duration-300 py-1.5 px-4 rounded-md text-white text-md font-semibold mx-2 lg:my-0 my-2">
                             <FontAwesomeIcon icon={faFileExcel} className="text-white mr-1" /> Merchant Bulk Parcel Import
                         </button>
-                        <Link to="/dashboard/generatePickupRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
-                            <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Pickup Rider Run
-                        </Link>
+                        <div className="lg:my-0 my-2">
+                            <Link to="/dashboard/generatePickupRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
+                                <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Pickup Rider Run
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
