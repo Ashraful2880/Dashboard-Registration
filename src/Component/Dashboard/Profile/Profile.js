@@ -13,17 +13,17 @@ const Profile = () => {
             <div className="grid grid-cols-3 lg:gap-x-6 gap-x-2 mb-2 lg:w-[60%] mx-auto lg:px-24 px-0 text-[13px] lg:text-md">
                 <button
                     onClick={() => setActive("Branch-User")}
-                    className={`font-semibold uppercase bg-[#F2F2F2] p-2 rounded-3xl mt-2 cursor-pointer hover:bg-green-700 hover:text-white ${active === "Branch-User" && `bg-green-700 text-white`} w-full block shadow-xl border border-green-500 duration-500`}>
+                    className={`font-semibold uppercase bg-[#F2F2F2] p-2 rounded-3xl mt-2 cursor-pointer hover:bg-green-700 hover:text-white ${active === "Branch-User" && `bg-green-700 text-green-700`} w-full block shadow-xl border border-green-500 duration-500`}>
                     Branch User
                 </button>
                 <button
                     onClick={() => setActive("Marchant-List")}
-                    className={`font-semibold uppercase bg-[#F2F2F2] p-2 rounded-3xl mt-2 cursor-pointer hover:bg-green-700 hover:text-white ${active === "Marchant-List" && `bg-green-700 text-white`} w-full block shadow-xl  border border-green-500 duration-500`}>
+                    className={`font-semibold uppercase bg-[#F2F2F2] p-2 rounded-3xl mt-2 cursor-pointer hover:bg-green-700 hover:text-white ${active === "Marchant-List" && `bg-green-700 text-green-700`} w-full block shadow-xl  border border-green-500 duration-500`}>
                     Marchant List
                 </button>
                 <button
                     onClick={() => setActive("Riders List")}
-                    className={`font-semibold uppercase bg-[#F2F2F2] p-2 rounded-3xl mt-2 cursor-pointer hover:bg-green-700 hover:text-white ${active === "Riders List" && `bg-green-700 text-white`} w-full block shadow-xl border border-green-500 duration-500`}>
+                    className={`font-semibold uppercase bg-[#F2F2F2] p-2 rounded-3xl mt-2 cursor-pointer hover:bg-green-700 hover:text-white ${active === "Riders List" && `bg-green-700 text-green-700`} w-full block shadow-xl border border-green-500 duration-500`}>
                     Riders List
                 </button>
             </div>
