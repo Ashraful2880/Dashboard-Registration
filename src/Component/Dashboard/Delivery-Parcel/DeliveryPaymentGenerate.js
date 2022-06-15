@@ -9,6 +9,7 @@ const DeliveryPaymentGenerate = () => {
             .then(res => res.json())
             .then(data => setRunParcels(data))
     }, [])
+
     return (
         <div className="px-10 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left text-gray-500">Delivery Payment</h3>
