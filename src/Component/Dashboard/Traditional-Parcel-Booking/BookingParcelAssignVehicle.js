@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import search from "../../../Assests/Image/Search-Image.png";
 
 const BookingParcelAssignVehicle = () => {

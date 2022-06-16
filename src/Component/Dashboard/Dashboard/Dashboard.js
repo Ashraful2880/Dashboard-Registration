@@ -404,7 +404,7 @@ const Dashboard = () => {
                     </div>
                 </div>
                 {/* Dashboard Right Content Area */}
-                <div className="h-[100vh] mt-20">
+                <div className="min-h-screen mt-20">
                     <Routes>
                         <Route path="/" element={<DashboardHome />} />
                         <Route path="/*" element={<NotFound />} />
