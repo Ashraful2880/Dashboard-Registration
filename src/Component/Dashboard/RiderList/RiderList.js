@@ -25,7 +25,7 @@ const RiderList = () => {
                 </thead>
                 <tbody>
                     {riders.map((rider) => (
-                        <tr className="text-center border shadow-xl hover:shadow duration-300" key={rider.sl}>
+                        <tr className="text-center border hover:shadow-md duration-300" key={rider.sl}>
                             <td className="border border-gray-300 py-3 px-4">
                                 {rider?.sl}
                             </td>
