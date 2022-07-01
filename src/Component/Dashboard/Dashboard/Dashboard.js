@@ -376,7 +376,7 @@ const Dashboard = () => {
             </aside>
             {/* Dashboard Header Area */}
             <div className={`${visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"} border`}>
-                <div className={`border-b-2 h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-white ${visible === "block" && "lg:left-[15%] left-0"}`}>
+                <div className={`border-b-2 h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-white overflow-hidden z-50 ${visible === "block" && "lg:left-[15%] left-0"}`}>
                     <div className={`flex justify-between items-center ${visible === "block" ? "lg:w-[85%] w-full" : "w-full"}`}>
                         <div className="flex lg:gap-x-5 gap-x-2 text-gray-400 items-center">
                             <button

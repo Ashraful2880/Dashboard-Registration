@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import useAuth from '../../../Hooks/UseAuth';
+import BaseURL from './../../../Hooks/BaseUrl';
 
 const BranchUserInfo = () => {
     const [branchUsers, setBranchusers] = useState([]);
     const { user } = useAuth();
+    const { baseUrl } = BaseURL();
+
     useEffect(() => {
-        fetch(`https://www.alijahan.xyz/singleuser?email=${user?.email}`)
+        fetch(`${baseUrl}/singleuser?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setBranchusers(data))
-    }, [user?.email])
+    }, [baseUrl, user?.email])
 
     return (
         <div className="container mx-auto">
