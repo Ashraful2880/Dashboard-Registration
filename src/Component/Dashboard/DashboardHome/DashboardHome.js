@@ -9,7 +9,7 @@ const DashboardHome = () => {
         <div className="container mx-auto">
             {/* Dashboard Parcel Information Added */}
             <h2 className="text-left text-gray-600 text-2xl font-bold mb-4 lg:ml-0 ml-5">Dashboard</h2>
-            <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                 {/* Card-1 */}
                 <div className="bg-gradient-to-r from-indigo-800 via-indigo-700  to-indigo-600 h-36 hover:bg-gradient-to-l rounded-md hover:-translate-y-2 duration-500">
                     <div className="text-white h-full w-full flex flex-col items-center justify-evenly">

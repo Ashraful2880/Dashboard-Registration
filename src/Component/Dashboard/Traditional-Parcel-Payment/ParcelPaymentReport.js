@@ -13,7 +13,7 @@ const ParcelPaymentReport = () => {
     }, [])
 
     return (
-        <div className="px-10 mx-auto">
+        <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left">Parcel Payment Report</h3>
             <div className="border border-gray-200 pb-5 rounded-md shadow-xl">
                 <h4 className="text-md font-bold text-left px-10 my-2">Parcel Payment Report</h4>

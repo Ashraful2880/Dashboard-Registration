@@ -14,7 +14,7 @@ const DeliveryBranchTransferList = () => {
     }, [])
 
     return (
-        <div className='px-10 mx-auto'>
+        <div className='px-4 mx-auto'>
             <div className="border border-gray-200 py-5 rounded-md shadow-xl">
                 <div className="lg:flex block justify-between items-center px-10 border-b pb-4">
                     <h4 className="text-xl font-semibold">Delivery Branch Transfer List</h4>

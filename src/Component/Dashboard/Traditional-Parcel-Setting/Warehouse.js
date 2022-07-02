@@ -11,7 +11,7 @@ const Warehouse = () => {
     }, [])
 
     return (
-        <div className="px-10 mx-auto">
+        <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left">Warehouse</h3>
             <div className="border border-gray-200 py-5 rounded-md shadow-xl">
                 {/* Generate Return Branch Transfer Section Design Here */}

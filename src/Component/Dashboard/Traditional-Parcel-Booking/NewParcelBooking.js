@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewParcelBooking = () => {
     return (
-        <div className="px-10 mx-auto">
+        <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left">Booking Parcel</h3>
             <div className="bg-green-700 text-white py-3 px-5 rounded-t-lg">
                 <h3 className="text-md font-semibold">Booking New Parcel</h3>

@@ -10,7 +10,7 @@ const PaymentForwardToAcc = () => {
     }, [])
 
     return (
-        <div className="px-10 mx-auto">
+        <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left text-gray-500">Parcel Payment Generate</h3>
             <div className="lg:flex block justify-between w-full">
                 <form className="border border-gray-200 py-5 rounded-md shadow-md lg:w-1/2 w-full lg:px-10 px-6 lg:mx-6 mx-0">

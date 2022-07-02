@@ -14,7 +14,7 @@ const PickupRiderRunList = () => {
     }, [])
 
     return (
-        <div className="px-10 mx-auto">
+        <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left">Pickup Rider Run List</h3>
             <div className="border border-gray-200 pb-5 rounded-md shadow-xl">
                 {/* Import And Generate Section Design Here */}
