@@ -122,7 +122,9 @@ const ReceivedTransferList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <p className="border border-gray-300 px-4 py-1 rounded-md">Showing <span className="font-semibold">1</span> to <span className="font-semibold">{receivedBranchTransferLists.slice(0, showData).length}</span> of <span className="font-semibold">{receivedBranchTransferLists?.length}</span> Entries</p>
+                    <div className="border border-green-700 px-4 py-2 rounded-md">
+                        <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{receivedBranchTransferLists.slice(0, showData).length}</span> of <span className="font-semibold">{receivedBranchTransferLists?.length}</span> Entries</p>
+                    </div>
                     <div>
                         pagination Here
                     </div>

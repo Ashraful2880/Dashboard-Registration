@@ -113,7 +113,9 @@ const Item = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{items.slice(0, showData).length}</span> of <span className="font-semibold">{items?.length}</span> Entries</p>
+                    <div className="border border-green-700 px-4 py-2 rounded-md">
+                        <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{items.slice(0, showData).length}</span> of <span className="font-semibold">{items?.length}</span> Entries</p>
+                    </div>
                     <div>
                         pagination Here
                     </div>

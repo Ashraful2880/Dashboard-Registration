@@ -3,9 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import DashboardHome from './../DashboardHome/DashboardHome';
 import logo from "../../../Assests/Image/Logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightArrowLeft, faBars, faBriefcase, faCarSide, faGear, faHome, faList, faMoneyBill, faMoneyBillTransfer, faMoneyCheckDollar, faTableList, faTruck, faUser, faWarehouse, faDollarSign, faBox, faTruckFast, faTruckPickup, faHandHolding, faPersonRunning, faTruckMoving, faClipboardList, faArrowRotateLeft, faRetweet, faFilePen, faHandshake, faTruckLoading, faPen, faArrowUpWideShort, faArrowTurnDown } from '@fortawesome/free-solid-svg-icons';
-import bell from "../../../Assests/Icon/bell.png";
-import mail from "../../../Assests/Icon/open-mail.png";
+import { faArrowRightArrowLeft, faBars, faBriefcase, faCarSide, faGear, faHome, faList, faMoneyBill, faMoneyBillTransfer, faMoneyCheckDollar, faTableList, faTruck, faUser, faWarehouse, faDollarSign, faBox, faTruckFast, faTruckPickup, faHandHolding, faPersonRunning, faTruckMoving, faClipboardList, faArrowRotateLeft, faRetweet, faFilePen, faHandshake, faTruckLoading, faPen, faArrowUpWideShort, faArrowTurnDown, faBell, faEnvelopeCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import Profile from '../Profile/Profile';
 import NotFound from '../../NotFound/NotFound';
 import PickUpParcelList from './../Pickup-Parcel/PickUpParcelList';
@@ -375,13 +373,13 @@ const Dashboard = () => {
                 </div>
             </aside>
             {/* Dashboard Header Area */}
-            <div className={`${visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"} border`}>
-                <div className={`border-b-2 h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-white overflow-hidden z-50 ${visible === "block" && "lg:left-[15%] left-0"}`}>
+            <div className={`${visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"} border border-transparent`}>
+                <div className={`border-b-2 h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-[#1a2438] overflow-hidden z-50 ${visible === "block" && "lg:left-[15%] left-0"}`}>
                     <div className={`flex justify-between items-center ${visible === "block" ? "lg:w-[85%] w-full" : "w-full"}`}>
-                        <div className="flex lg:gap-x-5 gap-x-2 text-gray-400 items-center">
+                        <div className="flex lg:gap-x-5 gap-x-2 text-gray-100 items-center">
                             <button
                                 onClick={() => setVisible(visible === "block" ? "none" : "block")}>
-                                <FontAwesomeIcon icon={faBars} className="hover:text-red-500 duration-150 font-bold text-lg" />
+                                <FontAwesomeIcon icon={faBars} className="hover:text-green-500 duration-150 font-bold text-lg" />
                             </button>
                             <Link to="/home" className="lg:hidden block">
                                 <img src={logo} alt="Main logo" className="h-8 w-8" />
@@ -392,10 +390,10 @@ const Dashboard = () => {
                         </div>
                         <div className="flex lg:gap-x-5 gap-x-2 text-gray-400 items-center">
                             <Link to="/dashboard">
-                                <img src={bell} alt="Bell Icon" className="w-5 h-5 text-green-500" />
+                                <FontAwesomeIcon icon={faBell} className="text-xl text-gray-200 hover:text-green-500" />
                             </Link>
                             <Link to="/dashboard/users">
-                                <img src={mail} alt="Main Icon" className="w-5 h-5 text-green-500" />
+                                <FontAwesomeIcon icon={faEnvelopeCircleCheck} className="text-xl text-gray-200 hover:text-green-500" />
                             </Link>
                             <div className="cursor-pointer">
                                 <img src="https://avatars.githubusercontent.com/u/86690202?v=4" alt="User icon" className="w-10 h-10 border rounded-full" />

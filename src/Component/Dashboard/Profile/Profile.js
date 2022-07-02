@@ -21,7 +21,7 @@ const Profile = () => {
                     Riders List
                 </button>
             </div>
-            <div>
+            <div className="lg:mt-5 mt-0">
                 {active === "Branch-User" && <BranchUserInfo />}
                 {active === "Riders List" && <RiderList />}
             </div>

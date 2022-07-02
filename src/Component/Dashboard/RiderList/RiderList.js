@@ -17,10 +17,10 @@ const RiderList = () => {
             <table className="w-full h-screen mx-auto cursor-pointer overflow-x-scroll">
                 <thead>
                     <tr className="text-center text-white">
-                        <th className="bg-green-800 lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">#</th>
-                        <th className="bg-green-800 lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">Name</th>
-                        <th className="bg-green-800 lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">Address</th>
-                        <th className="bg-green-800 lg:border-x-8 border-x-2 border-white rounded-lg py-3 px-4">Contact</th>
+                        <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">#</th>
+                        <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">Name</th>
+                        <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">Address</th>
+                        <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">Contact</th>
                     </tr>
                 </thead>
                 <tbody>
