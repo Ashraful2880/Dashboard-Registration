@@ -14,7 +14,7 @@ const ViewDetailsModal = ({ display, setDisplay, query }) => {
     return (
         <div className="relative z-10 bg-red-600 w-1/2 h-1/2" aria-labelledby="modal-title" role="dialog" aria-modal="true" style={{ display: `${display}` }}>
             <div className="fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity"></div>
-            <div className="fixed z-10 inset-0 overflow-y-auto">
+            <div className="fixed z-10 inset-0 overflow-y-auto pt-14">
                 <div className="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
                     <div className="relative bg-white rounded-lg text-left overflow-hidden transform transition-all sm:my-8 lg:w-2/3 w-full lg:px-14 px-0">
                         <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">

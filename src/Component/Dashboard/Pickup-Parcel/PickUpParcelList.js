@@ -41,7 +41,6 @@ const PickUpParcelList = () => {
             .catch(error => console.log(error))
     }, [user.email])
 
-    console.log(parcelLists);
     const viewModal = (id) => {
         setDisplay("block")
         setQuery(id)
