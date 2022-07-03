@@ -4,19 +4,44 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faPenToSquare, faPrint } from '@fortawesome/free-solid-svg-icons';
 import ViewDetailsModal from './ViewDetailsModal';
+import BaseURL from '../../../Hooks/BaseUrl';
+import useAuth from '../../../Hooks/UseAuth';
 
 const PickUpParcelList = () => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    let area = [
+        {
+            label: "Dhaka (Jatrabari)"
+        },
+        {
+            label: "Dhaka (Khilgaon)"
+        },
+        {
+            label: "Dhaka (Fuji Trade Center\t)"
+        }
+    ]
+
+    const { user } = useAuth();
+    const { baseUrl } = BaseURL();
     const [showData, setShowData] = useState(10);
     const [parcelLists, setParcelLists] = useState([]);
     const [display, setDisplay] = useState("none");
     const [query, setQuery] = useState("");
 
     useEffect(() => {
-        fetch("/pickUpParcelList.json")
+        fetch(`${baseUrl}/huborders?email=${user.email}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(area)
+        })
             .then(res => res.json())
             .then(data => setParcelLists(data))
-    }, [])
+            .catch(error => console.log(error))
+    }, [user.email])
 
+    console.log(parcelLists);
     const viewModal = (id) => {
         setDisplay("block")
         setQuery(id)
@@ -70,7 +95,7 @@ const PickUpParcelList = () => {
                                             Marchant Address
                                         </th>
                                         <th className="px-6 py-3 tracking-wider border">
-                                            District
+                                            Marchant Email
                                         </th>
                                         <th className="px-6 py-3 tracking-wider border">
                                             Charge
@@ -84,31 +109,48 @@ const PickUpParcelList = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {parcelLists.slice(0, showData).map((parcel) => (
-                                        <tr key={parcel.sl} className="hover:bg-gray-100 duration-200">
+                                    {parcelLists.slice(0, showData).map((parcel, index) => (
+                                        <tr key={parcel._id} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
-                                                {parcel?.sl}
+                                                {index + 1}
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 {parcel?.invoice}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {parcel?.marchantName}
+                                                {parcel?.marchentInfo?.name}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {parcel?.contactNumber}
+                                                {parcel?.marchentInfo?.number}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {parcel?.address}
+                                                {parcel?.marchentInfo?.address}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {parcel?.district}
+                                                {parcel?.marchentInfo?.email}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {parcel?.charge}
+                                                {parcel?.orderSummaray?.payAbleAmout} Tk
                                             </td>
-                                            <td className="px-2 py-3 text-sm text-green-700 font-bold border">
-                                                {parcel?.status}
+                                            <td className="px-2 py-3 text-sm font-bold border">
+                                                {parcel?.orderSummaray?.status === "Accepted" &&
+                                                    <span className="text-blue-700">
+                                                        {parcel?.orderSummaray?.status}
+                                                    </span>}
+                                                {parcel?.orderSummaray?.status === "Delivered" &&
+                                                    <span className="text-green-600">
+                                                        {parcel?.orderSummaray?.status}
+                                                    </span>}
+                                                {parcel?.orderSummaray?.status === "Pending" &&
+                                                    <span className="text-orange-500">
+                                                        {parcel?.orderSummaray?.status}
+                                                    </span>}
+                                                {parcel?.orderSummaray?.status === "Returned" && <span className="text-red-500">
+                                                    {parcel?.orderSummaray?.status}
+                                                </span>}
+                                                {parcel?.orderSummaray?.status === "Hold" && <span className="text-gray-500">
+                                                    {parcel?.orderSummaray?.status}
+                                                </span>}
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 <div className="flex justify-evenly items-center">
