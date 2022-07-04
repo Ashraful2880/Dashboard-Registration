@@ -14,6 +14,7 @@ import Signup from './Component/Signup/Signup';
 import Delivery from './Component/Delivery/Delivery';
 import Blog from './Component/Blog/Blog';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import PickUpParcelListPDF from './Component/Dashboard/Pickup-Parcel/PickUpParcelListPDF';
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
         <Route path='/*' element={<NotFound />} />
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/test' element={<PickUpParcelListPDF />} />
         <Route path='/about/*' element={<About />} />
         <Route path='/service/*' element={<Service />} />
         <Route path='/delivery' element={<Delivery />} />

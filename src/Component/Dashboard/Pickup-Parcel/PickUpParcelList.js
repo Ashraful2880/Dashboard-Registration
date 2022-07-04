@@ -3,6 +3,7 @@ import "../Dashboard.css";
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faPenToSquare, faPrint } from '@fortawesome/free-solid-svg-icons';
+import ReactToPrint from 'react-to-print';
 import ViewDetailsModal from './ViewDetailsModal';
 import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
@@ -45,6 +46,7 @@ const PickUpParcelList = () => {
         setDisplay("block")
         setQuery(id)
     }
+    let ref = React.createRef();
 
     return (
         <div className="px-4 mx-auto">
@@ -110,7 +112,7 @@ const PickUpParcelList = () => {
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
                                     {parcelLists.slice(0, showData).map((parcel, index) => (
                                         <tr key={parcel._id} className="hover:bg-gray-100 duration-200">
-                                            <td className="px-2 py-3 border">
+                                            <td className="px-2 py-3 border" ref={(el) => (ref = el)}>
                                                 {index + 1}
                                             </td>
                                             <td className="px-2 py-3 border">
@@ -153,9 +155,19 @@ const PickUpParcelList = () => {
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 <div className="flex justify-evenly items-center">
-                                                    <button>
-                                                        <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
-                                                    </button>
+                                                    <ReactToPrint
+                                                        trigger={() => {
+                                                            return (
+                                                                <button>
+                                                                    <FontAwesomeIcon icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
+                                                                </button>
+                                                            )
+                                                        }}
+                                                        // content={() => <PickUpParcelListPDF />}
+                                                        content={() => ref}
+                                                        documentTitle="New Document"
+                                                        pageStyle="print"
+                                                    />
                                                     <button onClick={() => viewModal(parcel?.sl)}>
                                                         <FontAwesomeIcon icon={faEye} className="h-4 w-4 bg-gray-600 text-white px-2 py-1 rounded-sm" />
                                                     </button>
