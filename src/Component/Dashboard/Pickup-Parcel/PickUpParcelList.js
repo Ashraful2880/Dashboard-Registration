@@ -49,6 +49,7 @@ const PickUpParcelList = () => {
         setQuery(id)
     }
     let ref = useRef();
+
     return (
         <>
             <div className="px-4 mx-auto">
@@ -169,9 +170,7 @@ const PickUpParcelList = () => {
                                                             documentTitle="Document of Alijahan Courier"
                                                             pageStyle="print"
                                                         />
-
-
-                                                        <button onClick={() => viewModal(parcel?.sl)}>
+                                                        <button onClick={() => viewModal(parcel)}>
                                                             <FontAwesomeIcon icon={faEye} className="h-4 w-4 bg-gray-600 text-white px-2 py-1 rounded-sm" />
                                                         </button>
                                                         <button>

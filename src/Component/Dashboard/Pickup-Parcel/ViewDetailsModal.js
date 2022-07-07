@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const ViewDetailsModal = ({ display, setDisplay, query }) => {
-    const [details, setDetails] = useState([]);
-
-    useEffect(() => {
-        fetch("/pickUpParcelList.json")
-            .then(res => res.json())
-            .then(data => setDetails(data))
-    }, [])
-
-    const result = details?.find(item => item?.sl === query)
 
     return (
         <div className="relative z-10 bg-red-600 w-1/2 h-1/2" aria-labelledby="modal-title" role="dialog" aria-modal="true" style={{ display: `${display}` }}>
@@ -27,15 +18,15 @@ const ViewDetailsModal = ({ display, setDisplay, query }) => {
                                     <div className="bg-gray-50 text-right rounded-md border border-gray-200">
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Invoice</p>
-                                            <p>{result?.invoice}</p>
+                                            <p>{query?.invoice}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Date</p>
-                                            <p>13/06/2022</p>
+                                            <p>{query?.orderSummaray?.date}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Status</p>
-                                            <p>{result?.status}</p>
+                                            <p>{query?.orderSummaray?.status}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -46,15 +37,15 @@ const ViewDetailsModal = ({ display, setDisplay, query }) => {
                                     <div className="bg-gray-50 text-right rounded-md border border-gray-200">
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Weight Package</p>
-                                            <p>Upto 1 kg</p>
+                                            <p>{query?.orderDetails?.weight}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Delivery Charge</p>
-                                            <p>60</p>
+                                            <p>{query?.orderSummaray?.calcDCharge} TK</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Total Charge</p>
-                                            <p>120</p>
+                                            <p>{query?.orderSummaray?.payAbleAmout} TK</p>
                                         </div>
                                     </div>
                                 </div>
@@ -67,15 +58,15 @@ const ViewDetailsModal = ({ display, setDisplay, query }) => {
                                     <div className="bg-gray-50 text-right rounded-md border border-gray-200">
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Name</p>
-                                            <p>{result?.marchantName}</p>
+                                            <p>{query?.marchentInfo?.name}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Contact</p>
-                                            <p>{result?.contactNumber}</p>
+                                            <p>{query?.marchentInfo?.number}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Address</p>
-                                            <p>{result?.address}</p>
+                                            <p>{query?.marchentInfo?.address}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -86,15 +77,15 @@ const ViewDetailsModal = ({ display, setDisplay, query }) => {
                                     <div className="bg-gray-50 text-right rounded-md border border-gray-200">
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Name</p>
-                                            <p>MD ALAMIN M BEPARY</p>
+                                            <p>{query?.recieverDetails?.name}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Contact</p>
-                                            <p>01723546492</p>
+                                            <p>{query?.recieverDetails?.number}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
                                             <p>Address</p>
-                                            <p>West Testuri Bazar, Farmgate, Tejgaon</p>
+                                            <p>{query?.recieverDetails?.address}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -102,24 +93,20 @@ const ViewDetailsModal = ({ display, setDisplay, query }) => {
                             <div className="pb-2 px-2 mx-auto w-full lg:flex block justify-between items-center">
                                 <div className="lg:w-[48%] w-full">
                                     <h2 className="text-lg text-left mt-5 mb-3 font-bold text-green-800">
-                                        Pickup Branch Information
+                                        Order Details
                                     </h2>
                                     <div className="bg-gray-50 text-right rounded-md border border-gray-200">
                                         <div className="flex justify-between items-center border py-3 px-4">
-                                            <p>Pickup Date</p>
-                                            <p>13/06/2022</p>
+                                            <p>Order Date</p>
+                                            <p>{query?.orderSummaray?.date}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
-                                            <p>Name</p>
-                                            <p>Dhaka Tejgoan Branch</p>
+                                            <p>Product Category</p>
+                                            <p>{query?.orderDetails?.product_catagory}</p>
                                         </div>
                                         <div className="flex justify-between items-center border py-3 px-4">
-                                            <p>Contact Number</p>
-                                            <p>01813158551</p>
-                                        </div>
-                                        <div className="flex justify-between items-center border py-3 px-4">
-                                            <p>Address</p>
-                                            <p>Dhaka, Panthapath</p>
+                                            <p>Payment</p>
+                                            <p>{query?.payment}</p>
                                         </div>
                                     </div>
                                 </div>
