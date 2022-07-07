@@ -48,7 +48,6 @@ const PickUpParcelList = () => {
         setDisplay("block")
         setQuery(id)
     }
-
     let ref = useRef();
     return (
         <>
@@ -201,10 +200,10 @@ const PickUpParcelList = () => {
                 </div>
             </div>
             {/* Print Design Area Here */}
-            <div className="">
+            <div className="hidden">
                 <div className="container h-auto mx-auto min-w-fit" ref={(el) => (ref = el)}>
-                    <div className="mb-8">
-                        <div className="mt-5 flex justify-between">
+                    <div className="mb-4">
+                        <div className="mt-4 flex justify-between">
                             <div className="border border-gray-400 rounded-md flex flex-col justify-evenly px-5 font-semibold w-[25%] text-left">
                                 <h3>Merchant Name: {printData?.marchentInfo?.name}</h3>
                                 <h3>Contact Number: {printData?.marchentInfo?.number}</h3>
@@ -247,9 +246,6 @@ const PickUpParcelList = () => {
                                                 Marchant Location
                                             </th>
                                             <th className="px-6 py-3 tracking-wider border">
-                                                Charge
-                                            </th>
-                                            <th className="px-6 py-3 tracking-wider border">
                                                 Status
                                             </th>
                                         </tr>
@@ -270,9 +266,6 @@ const PickUpParcelList = () => {
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 {printData?.marchentInfo?.location}
-                                            </td>
-                                            <td className="px-2 py-3 border">
-                                                {printData?.orderSummaray?.payAbleAmout} TK
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 {printData?.orderSummaray?.status}
@@ -303,7 +296,7 @@ const PickUpParcelList = () => {
                                                 Charge
                                             </th>
                                             <th className="px-6 py-3 tracking-wider border">
-                                                Status
+                                                Payment
                                             </th>
                                         </tr>
                                     </thead>
@@ -325,7 +318,7 @@ const PickUpParcelList = () => {
                                                 {printData?.orderSummaray?.payAbleAmout} TK
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {printData?.orderSummaray?.status}
+                                                {printData?.payment}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -355,9 +348,6 @@ const PickUpParcelList = () => {
                                             <th className="px-6 py-3 tracking-wider border">
                                                 Payable Amount
                                             </th>
-                                            <th className="px-6 py-3 tracking-wider border">
-                                                Payment
-                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
@@ -366,22 +356,19 @@ const PickUpParcelList = () => {
                                                 {printData?.orderSummaray?.date}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {printData?.orderSummaray?.calcDCharge}
+                                                {printData?.orderSummaray?.calcDCharge} TK
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {printData?.orderSummaray?.cashCollection}
+                                                {printData?.orderSummaray?.cashCollection} TK
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {printData?.orderSummaray?.cod}
+                                                {printData?.orderSummaray?.cod} TK
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {printData?.orderSummaray?.weightCharge}
+                                                {printData?.orderSummaray?.weightCharge} TK
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 {printData?.orderSummaray?.payAbleAmout} TK
-                                            </td>
-                                            <td className="px-2 py-3 border">
-                                                {printData?.payment}
                                             </td>
                                         </tr>
                                     </tbody>
