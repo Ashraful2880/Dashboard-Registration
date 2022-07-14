@@ -19,7 +19,7 @@ const PickUpParcelList = () => {
             label: "Dhaka (Khilgaon)"
         },
         {
-            label: "Dhaka (Fuji Trade Center\t)"
+            label: "Dhaka (Fuji Trade Center)"
         }
     ]
 
