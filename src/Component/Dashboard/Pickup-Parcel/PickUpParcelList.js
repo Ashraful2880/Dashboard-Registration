@@ -167,7 +167,6 @@ const PickUpParcelList = () => {
                                                                 </button>
                                                             }
                                                             content={() => ref}
-                                                            documentTitle="Document of Alijahan Courier"
                                                             pageStyle="print"
                                                         />
                                                         <button onClick={() => viewModal(parcel)}>
