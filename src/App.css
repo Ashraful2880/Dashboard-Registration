@@ -1,10 +1,14 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .background {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.820), rgba(255, 255, 255, 0.820)), url("./Assests/Image/Logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.82),
+			rgba(255, 255, 255, 0.82)
+		),
+		url("./Assests/Image/Logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: left;
 }
