@@ -8,8 +8,10 @@ import ViewDetailsModal from './ViewDetailsModal';
 import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
 import ReactToPrint from 'react-to-print';
+import ReactPaginate from 'react-paginate';
 
 const PickUpParcelList = () => {
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     let area = [
         {
@@ -30,6 +32,16 @@ const PickUpParcelList = () => {
     const [display, setDisplay] = useState("none");
     const [query, setQuery] = useState("");
     const [printData, setPrintData] = useState();
+    // Pagination Function Here
+    const [pageNumber, setPageNumber] = useState(0);
+    const dataPerPage = 9;
+    const pagesVisited = pageNumber * dataPerPage;
+
+    const pageCount = Math.ceil(parcelLists.length / dataPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected)
+    };
+
 
     useEffect(() => {
         fetch(`${baseUrl}/huborders?email=${user.email}`, {
@@ -74,7 +86,7 @@ const PickUpParcelList = () => {
                             <input
                                 type="search"
                                 placeholder="Search Here"
-                                className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300" />
+                                className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-96" />
                         </div>
                     </div>
                     <div className="my-2 overflow-x-auto sm:-mx-6 lg:mx-0">
@@ -185,11 +197,21 @@ const PickUpParcelList = () => {
                         </div>
                     </div>
                     <div className="lg:flex block justify-between items-center my-2 mx-10">
-                        <div className="border border-green-700 px-4 py-2 rounded-md">
+                        <div className="border border-green-700 px-2 py-1 rounded-md">
                             <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{parcelLists.slice(0, showData).length}</span> of <span className="font-semibold">{parcelLists?.length}</span> Entries</p>
                         </div>
-                        <div>
-                            pagination Here
+                        <div className="pagination-container">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"paginationBttns"}
+                                previousLinkClassName={"previousBttn"}
+                                nextLinkClassName={"nextBttn"}
+                                disabledClassName={"paginationDisabled"}
+                                activeClassName={"paginationActive"}
+                            />
                         </div>
                     </div>
                 </div>
