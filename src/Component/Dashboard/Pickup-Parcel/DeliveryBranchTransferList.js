@@ -53,7 +53,7 @@ const DeliveryBranchTransferList = () => {
                         <input
                             type="search"
                             placeholder="Search Here"
-                            className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300" />
+                            className="border px-5 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-96" />
                     </div>
                 </div>
                 <div className="my-2 overflow-x-auto sm:-mx-6 lg:mx-0">
@@ -137,8 +137,8 @@ const DeliveryBranchTransferList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div className="border border-green-700 px-4 py-2 rounded-md">
-                        <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{deliveryBranchTransfers.slice(0, showData).length}</span> of <span className="font-semibold">{deliveryBranchTransfers?.length}</span> Entries</p>
+                    <div className="border border-green-700 px-2 py-1 rounded-md">
+                        <p>Showing <span className="font-semibold">{pagesVisited + 1}</span> to <span className="font-semibold">{deliveryBranchTransfers.slice(0, pagesVisited + dataPerPage).length}</span> of <span className="font-semibold">{deliveryBranchTransfers?.length}</span> Entries</p>
                     </div>
                     <div className="pagination-container">
                         <ReactPaginate

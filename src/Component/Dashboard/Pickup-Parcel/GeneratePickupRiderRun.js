@@ -9,6 +9,7 @@ import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
 
 const GeneratePickupRiderRun = () => {
+    let ref = useRef();
     const [runParcels, setRunParcels] = useState([]);
     const [printData, setPrintData] = useState();
     // Pagination Function Here
@@ -21,14 +22,11 @@ const GeneratePickupRiderRun = () => {
         setShowData(selected)
     };
 
-
     useEffect(() => {
         fetch("/pickUpParcelList.json")
             .then(res => res.json())
             .then(data => setRunParcels(data))
     }, [])
-
-    let ref = useRef();
 
     return (
         <div className="px-4 mx-auto">

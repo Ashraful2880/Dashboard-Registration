@@ -14,7 +14,7 @@ const DeliveryRiderRunList = () => {
     const [showData, setShowData] = useState(0);
     const [dataPerPage, setDataPerPage] = useState(10);
     const pagesVisited = showData * dataPerPage;
-    const pageCount = Math.ceil(deliveryRunLists.length / dataPerPage);
+    const pageCount = Math.ceil(deliveryRunLists?.length / dataPerPage);
 
     const changePage = ({ selected }) => {
         setShowData(selected)
@@ -93,7 +93,7 @@ const DeliveryRiderRunList = () => {
                     <div>
                         Show <span>
                             <select
-                                onChange={(e) => setShowData(e.target.value)}
+                                onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
                                 <option selected>10</option>
@@ -108,7 +108,7 @@ const DeliveryRiderRunList = () => {
                         <input
                             type="search"
                             placeholder="Search Here"
-                            className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300" />
+                            className="border px-5 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-96" />
                     </div>
                 </div>
                 {/* Main Table Design Here */}
@@ -209,8 +209,8 @@ const DeliveryRiderRunList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div className="border border-green-700 px-4 py-2 rounded-md">
-                        <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{deliveryRunLists.slice(0, showData).length}</span> of <span className="font-semibold">{deliveryRunLists?.length}</span> Entries</p>
+                    <div className="border border-green-700 px-2 py-1 rounded-md">
+                        <p>Showing <span className="font-semibold">{pagesVisited + 1}</span> to <span className="font-semibold">{deliveryRunLists.slice(0, pagesVisited + dataPerPage).length}</span> of <span className="font-semibold">{deliveryRunLists?.length}</span> Entries</p>
                     </div>
                     <div className="pagination-container">
                         <ReactPaginate

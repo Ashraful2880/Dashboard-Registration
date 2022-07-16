@@ -2,10 +2,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { faPen, faSearch, faRefresh, faEye } from '@fortawesome/free-solid-svg-icons';
+import ReactPaginate from 'react-paginate';
 
 const ParcelPaymentList = () => {
-    const [showData, setShowData] = useState(10);
     const [parcelPaymentLists, setParcelPaymentLists] = useState([]);
+    // Pagination Function Here
+    const [showData, setShowData] = useState(0);
+    const [dataPerPage, setDataPerPage] = useState(10);
+    const pagesVisited = showData * dataPerPage;
+    const pageCount = Math.ceil(parcelPaymentLists.length / dataPerPage);
+
+    const changePage = ({ selected }) => {
+        setShowData(selected)
+    };
 
     useEffect(() => {
         fetch("/pickUpParcelList.json")
@@ -63,7 +72,7 @@ const ParcelPaymentList = () => {
                     <div>
                         Show <span>
                             <select
-                                onChange={(e) => setShowData(e.target.value)}
+                                onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
                                 <option selected>10</option>
@@ -78,7 +87,7 @@ const ParcelPaymentList = () => {
                         <input
                             type="search"
                             placeholder="Search Here"
-                            className="border px-5 py-2 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300" />
+                            className="border px-5 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-96" />
                     </div>
                 </div>
                 {/* Main Table Design Here */}
@@ -118,7 +127,7 @@ const ParcelPaymentList = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {parcelPaymentLists.slice(0, showData).map((parcel) => (
+                                    {parcelPaymentLists.slice(pagesVisited, pagesVisited + dataPerPage).map((parcel) => (
                                         <tr key={parcel.sl} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
                                                 {parcel?.sl}
@@ -157,11 +166,21 @@ const ParcelPaymentList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div className="border border-green-700 px-4 py-2 rounded-md">
-                        <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{parcelPaymentLists.slice(0, showData).length}</span> of <span className="font-semibold">{parcelPaymentLists?.length}</span> Entries</p>
+                    <div className="border border-green-700 px-2 py-1 rounded-md">
+                        <p>Showing <span className="font-semibold">{pagesVisited + 1}</span> to <span className="font-semibold">{parcelPaymentLists.slice(0, pagesVisited + dataPerPage).length}</span> of <span className="font-semibold">{parcelPaymentLists?.length}</span> Entries</p>
                     </div>
-                    <div>
-                        pagination Here
+                    <div className="pagination-container">
+                        <ReactPaginate
+                            previousLabel={"Previous"}
+                            nextLabel={"Next"}
+                            pageCount={pageCount}
+                            onPageChange={changePage}
+                            containerClassName={"paginationBttns"}
+                            previousLinkClassName={"previousBttn"}
+                            nextLinkClassName={"nextBttn"}
+                            disabledClassName={"paginationDisabled"}
+                            activeClassName={"paginationActive"}
+                        />
                     </div>
                 </div>
             </div>

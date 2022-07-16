@@ -15,7 +15,6 @@ const ParcelPaymentReport = () => {
         setShowData(selected)
     };
 
-
     useEffect(() => {
         fetch("/pickUpParcelList.json")
             .then(res => res.json())

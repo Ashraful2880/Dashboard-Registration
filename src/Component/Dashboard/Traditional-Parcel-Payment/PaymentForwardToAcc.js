@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import ReactPaginate from 'react-paginate';
 import search from "../../../Assests/Image/Parcel-payment_generate.png";
 
 const PaymentForwardToAcc = () => {
     const [runParcels, setRunParcels] = useState([]);
+    // Pagination Function Here
+    const [showData, setShowData] = useState(0);
+    const dataPerPage = 10;
+    const pagesVisited = showData * dataPerPage;
+    const pageCount = Math.ceil(runParcels.length / dataPerPage);
+
+    const changePage = ({ selected }) => {
+        setShowData(selected)
+    };
+
     useEffect(() => {
         fetch("/pickUpParcelList.json")
             .then(res => res.json())
@@ -42,7 +53,7 @@ const PaymentForwardToAcc = () => {
                 <h2 className="text-left px-10 text-lg font-bold">Add Parcel For Payment</h2>
                 <div className="my-2 overflow-x-auto sm:-mx-6 lg:mx-0">
                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                        <div className="shadow overflow-hidden rounded-lg">
+                        <div className="shadow overflow-hidden rounded-lg mb-4">
                             <table className="min-w-full divide-y divide-x divide-gray-200">
                                 <thead className="bg-green-800 text-white text-center text-xs font-semibold uppercase">
                                     <tr>
@@ -64,7 +75,7 @@ const PaymentForwardToAcc = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {runParcels.map((runParcel) => (
+                                    {runParcels.slice(pagesVisited, pagesVisited + dataPerPage).map((runParcel) => (
                                         <tr key={runParcel.sl} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
                                                 <input type="checkbox" name="check" />
@@ -85,6 +96,19 @@ const PaymentForwardToAcc = () => {
                                     ))}
                                 </tbody>
                             </table>
+                        </div>
+                        <div className="pagination-container">
+                            <ReactPaginate
+                                previousLabel={"Previous"}
+                                nextLabel={"Next"}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"paginationBttns"}
+                                previousLinkClassName={"previousBttn"}
+                                nextLinkClassName={"nextBttn"}
+                                disabledClassName={"paginationDisabled"}
+                                activeClassName={"paginationActive"}
+                            />
                         </div>
                     </div>
                 </div>
