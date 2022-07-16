@@ -12,6 +12,8 @@ import ReactPaginate from 'react-paginate';
 
 const PickUpParcelList = () => {
 
+    let ref = useRef();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     let area = [
         {
@@ -27,21 +29,21 @@ const PickUpParcelList = () => {
 
     const { user } = useAuth();
     const { baseUrl } = BaseURL();
-    const [showData, setShowData] = useState(10);
     const [parcelLists, setParcelLists] = useState([]);
     const [display, setDisplay] = useState("none");
     const [query, setQuery] = useState("");
     const [printData, setPrintData] = useState();
     // Pagination Function Here
-    const [pageNumber, setPageNumber] = useState(0);
-    const dataPerPage = 9;
-    const pagesVisited = pageNumber * dataPerPage;
+    const [showData, setShowData] = useState(0);
+    const [dataPerPage, setDataPerPage] = useState(10);
 
+    // const dataPerPage = 10;
+    const pagesVisited = showData * dataPerPage;
     const pageCount = Math.ceil(parcelLists.length / dataPerPage);
-    const changePage = ({ selected }) => {
-        setPageNumber(selected)
-    };
 
+    const changePage = ({ selected }) => {
+        setShowData(selected)
+    };
 
     useEffect(() => {
         fetch(`${baseUrl}/huborders?email=${user.email}`, {
@@ -60,7 +62,6 @@ const PickUpParcelList = () => {
         setDisplay("block")
         setQuery(id)
     }
-    let ref = useRef();
 
     return (
         <>
@@ -71,7 +72,7 @@ const PickUpParcelList = () => {
                         <div>
                             Show <span>
                                 <select
-                                    onChange={(e) => setShowData(e.target.value)}
+                                    onChange={(e) => setDataPerPage(e.target.value)}
                                     name="Entries"
                                     className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
                                     <option selected>10</option>
@@ -125,7 +126,7 @@ const PickUpParcelList = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                        {parcelLists.slice(0, showData).map((parcel, index) => (
+                                        {parcelLists.slice(pagesVisited, pagesVisited + dataPerPage).map((parcel, index) => (
                                             <tr key={parcel._id} className="hover:bg-gray-100 duration-200">
                                                 <td className="px-2 py-3 border">
                                                     {index + 1}
@@ -219,7 +220,7 @@ const PickUpParcelList = () => {
                     <ViewDetailsModal display={display} setDisplay={setDisplay} query={query} />
                 </div>
             </div>
-            {/* Print Design Area Here */}
+            {/* Print Component Area Here */}
             <div className="hidden">
                 <div className="container h-auto mx-auto min-w-fit" ref={(el) => (ref = el)}>
                     <div className="mb-4">
@@ -244,7 +245,7 @@ const PickUpParcelList = () => {
                     <hr />
                     <div className="overflow-x-auto sm:-mx-6 lg:mx-0">
                         <div className="align-middle inline-block min-w-full">
-                            {/* Merchant Information */}
+                            {/* Merchant Information For Print */}
                             <div className="shadow overflow-hidden rounded-lg">
                                 <h4 className="text-xl text-left font-bold my-4">Merchant Info </h4>
                                 <table className="min-w-full divide-y divide-x divide-gray-200">
@@ -294,7 +295,7 @@ const PickUpParcelList = () => {
                                     </tbody>
                                 </table>
                             </div>
-                            {/* Receiver Details Here */}
+                            {/* Receiver Details Print Information */}
                             <div className="shadow overflow-hidden rounded-lg">
                                 <h4 className="text-xl text-left font-bold my-4">Receiver Info </h4>
                                 <table className="min-w-full divide-y divide-x divide-gray-200">
@@ -344,7 +345,7 @@ const PickUpParcelList = () => {
                                     </tbody>
                                 </table>
                             </div>
-                            {/* Order Details Here */}
+                            {/* Order Details Print Informtion */}
                             <div className="shadow overflow-hidden rounded-lg">
                                 <h4 className="text-xl text-left font-bold my-4">Order Details</h4>
                                 <table className="min-w-full divide-y divide-x divide-gray-200">
