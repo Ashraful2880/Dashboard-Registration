@@ -4,11 +4,20 @@ import { faEye, faPrint, faSearch, faRefresh, faCheck, faPen, faFileExcel } from
 import { Link } from 'react-router-dom';
 import ReactToPrint from 'react-to-print';
 import logo from "../../../Assests/Image/Logo.png";
+import ReactPaginate from 'react-paginate';
 
 const PickupRiderRunList = () => {
-    const [showData, setShowData] = useState(10);
     const [riderRunList, setRiderRunLists] = useState([]);
     const [printData, setPrintData] = useState();
+    // Pagination Function Here
+    const [showData, setShowData] = useState(0);
+    const [dataPerPage, setDataPerPage] = useState(10);
+    const pagesVisited = showData * dataPerPage;
+    const pageCount = Math.ceil(riderRunList.length / dataPerPage);
+
+    const changePage = ({ selected }) => {
+        setShowData(selected)
+    };
 
     useEffect(() => {
         fetch("/pickUpParcelList.json")
@@ -87,7 +96,7 @@ const PickupRiderRunList = () => {
                     <div>
                         Show <span>
                             <select
-                                onChange={(e) => setShowData(e.target.value)}
+                                onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
                                 <option selected>10</option>
@@ -145,7 +154,7 @@ const PickupRiderRunList = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {riderRunList.slice(0, showData).map((parcel) => (
+                                    {riderRunList.slice(pagesVisited, pagesVisited + dataPerPage).map((parcel) => (
                                         <tr key={parcel.sl} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
                                                 {parcel?.sl}
@@ -340,8 +349,18 @@ const PickupRiderRunList = () => {
                     <div className="border border-green-700 px-4 py-2 rounded-md">
                         <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{riderRunList.slice(0, showData).length}</span> of <span className="font-semibold">{riderRunList?.length}</span> Entries</p>
                     </div>
-                    <div>
-                        pagination Here
+                    <div className="pagination-container">
+                        <ReactPaginate
+                            previousLabel={"Previous"}
+                            nextLabel={"Next"}
+                            pageCount={pageCount}
+                            onPageChange={changePage}
+                            containerClassName={"paginationBttns"}
+                            previousLinkClassName={"previousBttn"}
+                            nextLinkClassName={"nextBttn"}
+                            disabledClassName={"paginationDisabled"}
+                            activeClassName={"paginationActive"}
+                        />
                     </div>
                 </div>
             </div>

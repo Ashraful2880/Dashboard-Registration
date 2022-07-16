@@ -2,10 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faPen } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 
 const DeliveryBranchTransferList = () => {
-    const [showData, setShowData] = useState(10);
     const [deliveryBranchTransfers, setDeliveryBranchTransfer] = useState([]);
+    // Pagination Function Here
+    const [showData, setShowData] = useState(0);
+    const [dataPerPage, setDataPerPage] = useState(10);
+    const pagesVisited = showData * dataPerPage;
+    const pageCount = Math.ceil(deliveryBranchTransfers.length / dataPerPage);
+
+    const changePage = ({ selected }) => {
+        setShowData(selected)
+    };
 
     useEffect(() => {
         fetch("/pickUpParcelList.json")
@@ -29,7 +38,7 @@ const DeliveryBranchTransferList = () => {
                     <div>
                         Show <span>
                             <select
-                                onChange={(e) => setShowData(e.target.value)}
+                                onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
                                 <option selected>10</option>
@@ -86,7 +95,7 @@ const DeliveryBranchTransferList = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {deliveryBranchTransfers.slice(0, showData).map((parcel) => (
+                                    {deliveryBranchTransfers.slice(pagesVisited, pagesVisited + dataPerPage).map((parcel) => (
                                         <tr key={parcel.sl} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
                                                 {parcel?.sl}
@@ -131,8 +140,18 @@ const DeliveryBranchTransferList = () => {
                     <div className="border border-green-700 px-4 py-2 rounded-md">
                         <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{deliveryBranchTransfers.slice(0, showData).length}</span> of <span className="font-semibold">{deliveryBranchTransfers?.length}</span> Entries</p>
                     </div>
-                    <div>
-                        pagination Here
+                    <div className="pagination-container">
+                        <ReactPaginate
+                            previousLabel={"Previous"}
+                            nextLabel={"Next"}
+                            pageCount={pageCount}
+                            onPageChange={changePage}
+                            containerClassName={"paginationBttns"}
+                            previousLinkClassName={"previousBttn"}
+                            nextLinkClassName={"nextBttn"}
+                            disabledClassName={"paginationDisabled"}
+                            activeClassName={"paginationActive"}
+                        />
                     </div>
                 </div>
             </div>

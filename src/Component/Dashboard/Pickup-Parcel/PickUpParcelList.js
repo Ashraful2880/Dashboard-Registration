@@ -36,8 +36,6 @@ const PickUpParcelList = () => {
     // Pagination Function Here
     const [showData, setShowData] = useState(0);
     const [dataPerPage, setDataPerPage] = useState(10);
-
-    // const dataPerPage = 10;
     const pagesVisited = showData * dataPerPage;
     const pageCount = Math.ceil(parcelLists.length / dataPerPage);
 
@@ -199,7 +197,7 @@ const PickUpParcelList = () => {
                     </div>
                     <div className="lg:flex block justify-between items-center my-2 mx-10">
                         <div className="border border-green-700 px-2 py-1 rounded-md">
-                            <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{parcelLists.slice(0, showData).length}</span> of <span className="font-semibold">{parcelLists?.length}</span> Entries</p>
+                            <p>Showing <span className="font-semibold">1</span> to <span className="font-semibold">{parcelLists.slice(0, dataPerPage).length}</span> of <span className="font-semibold">{parcelLists?.length}</span> Entries</p>
                         </div>
                         <div className="pagination-container">
                             <ReactPaginate
