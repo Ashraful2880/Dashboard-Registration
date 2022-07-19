@@ -80,10 +80,10 @@ const Dashboard = () => {
 		<main className='w-full'>
 			{/* Dashboard Menu Area */}
 			<aside
-				className='lg:w-[15%] w-full fixed top-0 left-0 hidden lg:block bg-[#121927] h-screen mobileMenuAnimation'
+				className='lg:w-[15%] w-full fixed top-0 left-0 bg-[#121927] h-screen mobileMenuAnimation'
 				style={{ display: `${visible}` }}>
 				{/* Main Logo */}
-				<div className='min-h-[5vh] lg:block hidden'>
+				<div className='min-h-[5vh]'>
 					<Link to='/home'>
 						<img
 							src={logo}
@@ -93,7 +93,7 @@ const Dashboard = () => {
 					</Link>
 				</div>
 				{/* Dashboard Menu Here */}
-				<div className='bg-[#1a2438] h-[85vh] mb-[5vh] overflow-y-scroll '>
+				<div className='bg-[#1a2438] h-[85vh] mb-[5vh] overflow-y-scroll'>
 					<div className='text-md lg:pt-4 pt-20'>
 						{/* Sigle Menu */}
 						<div
@@ -845,17 +845,14 @@ const Dashboard = () => {
 			</aside>
 			{/* Dashboard Header Area */}
 			<div
-				className={`${
-					visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"
-				} border border-transparent pt-0 mt-0`}>
+				className={`${visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"
+					} border border-transparent pt-0 mt-0`}>
 				<div
-					className={`h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-[#1a2438] overflow-hidden z-50 ${
-						visible === "block" && "lg:left-[15%] left-0"
-					}`}>
-					<div
-						className={`flex justify-between items-center ${
-							visible === "block" ? "lg:w-[85%] w-full" : "w-full"
+					className={`h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-[#1a2438] overflow-hidden z-50 ${visible === "block" && "lg:left-[15%] left-0"
 						}`}>
+					<div
+						className={`flex justify-between items-center ${visible === "block" ? "lg:w-[85%] w-full" : "w-full"
+							}`}>
 						<div className='flex lg:gap-x-5 gap-x-2 text-gray-100 items-center'>
 							<button
 								onClick={() =>

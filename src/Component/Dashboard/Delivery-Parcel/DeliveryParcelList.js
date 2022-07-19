@@ -59,7 +59,7 @@ const DeliveryParcelList = () => {
                         <input
                             type="search"
                             placeholder="Search Here"
-                            className="border px-5 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-96" />
+                            className="border px-5 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-full" />
                     </div>
                 </div>
                 <div className="my-2 overflow-x-auto sm:-mx-6 lg:mx-0">
@@ -153,7 +153,7 @@ const DeliveryParcelList = () => {
                     </div>
                 </div>
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div className="border border-green-700 px-2 py-1 rounded-md">
+                    <div className="border border-green-700 px-2 py-1 rounded-md hidden lg:block">
                         <p>Showing <span className="font-semibold">{pagesVisited + 1}</span> to <span className="font-semibold">{deliveriLists.slice(0, pagesVisited + dataPerPage).length}</span> of <span className="font-semibold">{deliveriLists?.length}</span> Entries</p>
                     </div>
                     <div className="pagination-container">

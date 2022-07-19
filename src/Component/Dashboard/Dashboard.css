@@ -4,12 +4,15 @@
 	background-color: transparent;
 	box-shadow: none !important;
 }
+
 .activeButton {
 	background-color: #000000 !important;
 }
+
 a:active {
 	background-color: #000000 !important;
 }
+
 .accordion-button::after {
 	background-image: url("../../Assests/Icon/Arrow-Down.png");
 }
