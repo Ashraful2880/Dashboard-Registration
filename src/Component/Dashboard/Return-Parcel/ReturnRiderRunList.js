@@ -33,7 +33,7 @@ const ReturnRiderRunList = () => {
             <div className="border border-gray-200 pb-5 rounded-md shadow-xl">
                 {/* Import And Generate Section Design Here */}
                 <div className="lg:flex block justify-between items-center border-b py-3 px-10">
-                    <h4 className="text-md font-bold">Return Rider Run List</h4>
+                    <h4 className="text-md font-bold hidden lg:block md:block">Return Rider Run List</h4>
                     <div className="lg:my-0 my-2">
                         <Link to="/dashboard/generateReturnRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
                             <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Return Rider Run
@@ -80,17 +80,17 @@ const ReturnRiderRunList = () => {
                         <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
                     </div>
                     <div className="flex items-end justify-end w-full lg:my-0 my-2">
-                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1">
+                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faSearch} className="text-white" />
                         </button>
-                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md mx-">
+                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md w-1/2">
                             <FontAwesomeIcon icon={faRefresh} className="text-white" />
                         </button>
                     </div>
                 </div>
                 {/* Table Search And PAgination Area Here */}
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

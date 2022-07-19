@@ -23,15 +23,15 @@ const RiderList = () => {
 
     return (
         <div className="container mx-auto pb-10">
-            <h3 className="text-2xl font-bold mb-6">Rider List</h3>
+            <h3 className="text-2xl font-bold mb-6 text-left pl-5">Rider List</h3>
             <div className="overflow-x-auto mb-4">
-                <table className="w-full mx-auto cursor-pointer mb-4 ">
+                <table className="w-full mx-auto cursor-pointer mb-4">
                     <thead>
                         <tr className="text-center text-white">
-                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">#</th>
-                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">Name</th>
-                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">Address</th>
-                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white rounded-lg py-3 px-4">Contact</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">#</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Name</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Address</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Contact</th>
                         </tr>
                     </thead>
                     <tbody>

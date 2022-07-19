@@ -67,7 +67,7 @@ const PickUpParcelList = () => {
                 <h3 className="text-2xl font-bold mb-6 text-left">Pickup Parcel List</h3>
                 <div className="border border-gray-200 py-5 rounded-md shadow-xl">
                     <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
-                        <div className="hidden lg:block md:inline-block">
+                        <div className="hidden lg:inline-block md:inline-block">
                             Show <span>
                                 <select
                                     onChange={(e) => setDataPerPage(e.target.value)}

@@ -27,7 +27,7 @@ const Warehouse = () => {
                 <h3 className="font-bold text-lg text-left px-10">Warehouse List</h3>
                 {/* Top Pagination and Search Area Design Here */}
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

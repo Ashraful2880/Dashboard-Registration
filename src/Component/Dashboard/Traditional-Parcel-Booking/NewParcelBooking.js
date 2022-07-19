@@ -51,7 +51,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Rider:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Rider</option>
                             <option defaultValue="Adnan Mahmud">Adnan Mahmud</option>
                             <option defaultValue="Sheikh Forid">Sheikh Forid</option>
@@ -83,7 +83,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Division:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Division</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -99,7 +99,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">District:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select District</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -115,7 +115,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Upazilla / Thana:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Upazila</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -131,7 +131,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Area:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Area</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -162,7 +162,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Division:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Division</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -178,7 +178,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">District:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select District</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -194,7 +194,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Upazilla / Thana:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Upazila</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -210,7 +210,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Area:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Area</option>
                             <option defaultValue="Adnan Mahmud">Dhaka</option>
                             <option defaultValue="Sheikh Forid">Mymenshing</option>
@@ -229,7 +229,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Destination Branch:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Branch</option>
                             <option defaultValue="Chattogram">Chattogram</option>
                             <option defaultValue="Mohammadpur">Mohammadpur</option>
@@ -245,7 +245,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Delivery Type:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Type</option>
                             <option defaultValue="Office Delivery (OD)">Office Delivery (OD)</option>
                             <option defaultValue="Transit Office Delivery (TOD)">Transit Office Delivery (TOD)</option>
@@ -254,7 +254,7 @@ const NewParcelBooking = () => {
                         </select>
                     </div>
                     <div>
-                        <textarea className="border w-full px-5 focus:outline-none resize-none" name="run note" cols="30" rows="4" placeholder="Note"></textarea>
+                        <textarea className="border w-full px-5 focus:outline-none resize-none mt-2 rounded-md" name="run note" cols="30" rows="4" placeholder="Note"></textarea>
                     </div>
                 </div>
                 <h3 className="text-lg font-bold mt-3 text-left px-5">Item Information</h3>
@@ -263,7 +263,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Item Category:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Item Category</option>
                             <option defaultValue="Chattogram">Manual Category</option>
                             <option defaultValue="Lift Parts">Lift Parts</option>
@@ -292,7 +292,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Item:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Item</option>
                             <option defaultValue="Office Delivery (OD)">Office Delivery (OD)</option>
                             <option defaultValue="Transit Office Delivery (TOD)">Transit Office Delivery (TOD)</option>
@@ -304,7 +304,7 @@ const NewParcelBooking = () => {
                         <h5 className="text-md font-semibold text-left my-2">Unit:</h5>
                         <select
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Unit</option>
                             <option defaultValue="Kg">Kg</option>
                             <option defaultValue="Litter">Litter</option>

@@ -33,16 +33,16 @@ const ReturnBranchTransferList = () => {
                 {/* Generate Return Branch Transfer Section Design Here */}
                 <div className="flex justify-between items-center mx-10 mb-5">
                     <h3 className="font-bold text-lg lg:block hidden">Return Branch Transfer List</h3>
-                    <div>
-                        <Link to="/dashboard/returnBranchTransfer" className="bg-green-800 border border-green-800 text-white py-2 px-4 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold">
+                    <div className="bg-green-800 border border-green-800 text-white py-2 px-2 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold">
+                        <Link to="/dashboard/returnBranchTransfer">
                             <FontAwesomeIcon icon={faPen} className="mx-2" />
                             Generate Return Branch Transfer
                         </Link>
                     </div>
                 </div>
                 {/* Top Pagination and Search Area Design Here */}
-                <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

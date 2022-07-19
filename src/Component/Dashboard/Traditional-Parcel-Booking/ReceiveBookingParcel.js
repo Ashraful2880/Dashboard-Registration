@@ -28,7 +28,7 @@ const ReceiveBookingParcel = () => {
                     <img src={deliveryTruck} alt="Delivery Truck" />
                 </div>
                 <form className="border border-gray-200 py-5 rounded-md shadow-md lg:w-1/2 w-full lg:px-10 px-6 lg:mx-6 mx-0">
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Select Vehicle</p>
                         <select
                             name="Entries"
@@ -38,7 +38,7 @@ const ReceiveBookingParcel = () => {
                             <option defaultValue="133-65">(133-65)</option>
                         </select>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Select Branch</p>
                         <select
                             name="Entries"
@@ -56,14 +56,14 @@ const ReceiveBookingParcel = () => {
                             <option defaultValue="Narshingdi">Narshingdi</option>
                         </select>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Total Run Parcel</p>
                         <p>0</p>
                     </div>
-                    <textarea className="border w-full px-5 focus:outline-none resize-none" name="run note" cols="30" rows="4" placeholder="Delivery Rider Run Note"></textarea>
-                    <div>
-                        <input className="text-lg border rounded-md mt-4 border-green-700 mx-4 py-1.5 px-5 bg-green-700 text-white hover:text-green-800 hover:bg-transparent duration-300" type="submit" value="Receive" />
-                        <input className="text-lg border rounded-md mt-4 border-red-600 mx-4 py-1.5 px-5 bg-red-600 text-white hover:text-red-600 hover:bg-transparent duration-300" type="reset" value="Reset" />
+                    <textarea className="border w-full px-3 focus:outline-none resize-none rounded-md" name="run note" cols="30" rows="4" placeholder="Delivery Rider Run Note"></textarea>
+                    <div className="w-full flex">
+                        <input className="text-lg border rounded-md mt-4 border-green-700 mx-2 py-1.5 px-3 bg-green-700 text-white hover:text-green-800 hover:bg-transparent duration-300 w-1/2" type="submit" value="Receive" />
+                        <input className="text-lg border rounded-md mt-4 border-red-600 mx-2 py-1.5 px-3 bg-red-600 text-white hover:text-red-600 hover:bg-transparent duration-300 w-1/2" type="reset" value="Reset" />
                     </div>
                 </form>
             </div>
@@ -128,20 +128,20 @@ const ReceiveBookingParcel = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="pagination-container">
-                            <ReactPaginate
-                                previousLabel={"Previous"}
-                                nextLabel={"Next"}
-                                pageCount={pageCount}
-                                onPageChange={changePage}
-                                containerClassName={"paginationBttns"}
-                                previousLinkClassName={"previousBttn"}
-                                nextLinkClassName={"nextBttn"}
-                                disabledClassName={"paginationDisabled"}
-                                activeClassName={"paginationActive"}
-                            />
-                        </div>
                     </div>
+                </div>
+                <div className="pagination-container lg:mr-6 md:mr-6 mr-0">
+                    <ReactPaginate
+                        previousLabel={"Previous"}
+                        nextLabel={"Next"}
+                        pageCount={pageCount}
+                        onPageChange={changePage}
+                        containerClassName={"paginationBttns"}
+                        previousLinkClassName={"previousBttn"}
+                        nextLinkClassName={"nextBttn"}
+                        disabledClassName={"paginationDisabled"}
+                        activeClassName={"paginationActive"}
+                    />
                 </div>
             </div>
         </div>

@@ -42,24 +42,24 @@ const ParcelPaymentReport = () => {
                     </div>
                     <div>
                         <h5 className="text-md font-semibold text-left my-2">From Date:</h5>
-                        <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
+                        <input type="date" name="date" className="border border-gray-300 px-3 py-1 rounded-md w-full" />
                     </div>
                     <div>
                         <h5 className="text-md font-semibold text-left my-2">To Date:</h5>
-                        <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
+                        <input type="date" name="date" className="border border-gray-300 px-3 py-1 rounded-md w-full" />
                     </div>
                     <div className="flex items-end justify-end w-full lg:my-0 my-2">
-                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1">
+                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-3 py-2 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faSearch} className="text-white" />
                         </button>
-                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md mx-">
+                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-3 py-2 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faRefresh} className="text-white" />
                         </button>
                     </div>
                 </div>
                 {/* Table Search And PAgination Area Here */}
                 <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}
@@ -77,7 +77,7 @@ const ParcelPaymentReport = () => {
                         <input
                             type="search"
                             placeholder="Search Here"
-                            className="border px-5 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-full" />
+                            className="border px-3 py-1.5 rounded-md focus:outline-0 focus:border focus:border-green-600 duration-300 border-gray-300 w-full" />
                     </div>
                 </div>
                 {/* Main Table Design Here */}

@@ -28,20 +28,20 @@ const BookingParcelList = () => {
             <div className="border border-gray-200 py-5 rounded-md shadow-xl">
                 <div className="flex justify-between items-center mx-10 mb-5">
                     <h3 className="font-bold text-lg lg:block hidden">Booking Parcel List</h3>
-                    <div>
-                        <button className="bg-green-800 border border-green-800 text-white py-2 px-4 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold mx-2">
+                    <div className="lg:w-2/3 gap-x-2 w-full grid lg:grid-cols-4 md:grid-cols-4 grid-cols-1">
+                        <button className="bg-green-800 border border-green-800 text-white py-2 px-2 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold my-1 w-full">
                             <FontAwesomeIcon icon={faFileExcel} className="mx-2" />
                             Download Excel
                         </button>
-                        <button className="bg-green-800 border border-green-800 text-white py-2 px-4 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold mx-2">
+                        <button className="bg-green-800 border border-green-800 text-white py-2 px-2 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold my-1 w-full">
                             <FontAwesomeIcon icon={faFilePdf} className="mx-2" />
                             Download PDF
                         </button>
-                        <button className="bg-green-800 border border-green-800 text-white py-2 px-4 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold mx-2">
+                        <button className="bg-green-800 border border-green-800 text-white py-2 px-2 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold my-1 w-full">
                             <FontAwesomeIcon icon={faPrint} className="mx-2" />
                             Print
                         </button>
-                        <Link to="/dashboard/parcelBooking" className="bg-green-800 border border-green-800 text-white py-2 px-4 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold mx-2">
+                        <Link to="/dashboard/parcelBooking" className="bg-green-800 border border-green-800 text-white py-2 px-2 rounded-md hover:bg-transparent hover:text-green-800 duration-300 font-semibold my-1 w-full">
                             <FontAwesomeIcon icon={faPen} className="mx-2" />
                             Add New Booking
                         </Link>
@@ -99,16 +99,16 @@ const BookingParcelList = () => {
                         <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
                     </div>
                     <div className="flex items-end justify-end w-full lg:my-0 my-2">
-                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1">
+                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faSearch} className="text-white" />
                         </button>
-                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md mx-">
+                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faRefresh} className="text-white" />
                         </button>
                     </div>
                 </div>
-                <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

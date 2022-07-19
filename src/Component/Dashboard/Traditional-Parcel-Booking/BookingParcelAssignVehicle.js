@@ -27,7 +27,7 @@ const BookingParcelAssignVehicle = () => {
             <div className="lg:flex block justify-between w-full">
                 <form className="border border-gray-200 py-5 rounded-md shadow-md lg:w-1/2 w-full lg:px-10 px-6 lg:mx-6 mx-0">
                     <h2 className="text-green-700 text-xl font-bold text-left lg:mb-5 mb-2">Assign Vehicle</h2>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Vehicle</p>
                         <select
                             name="Entries"
@@ -37,26 +37,26 @@ const BookingParcelAssignVehicle = () => {
                             <option defaultValue="Pickup Vss">Pickup Vss</option>
                         </select>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Date</p>
                         <input type="date" name="date" />
                     </div>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Vehicle SL</p>
                         <p>214151051</p>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Vehicle No</p>
                         <p>124264</p>
                     </div>
-                    <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
+                    <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Total Parcel</p>
                         <p>0</p>
                     </div>
-                    <textarea className="border w-full px-5 focus:outline-none resize-none" name="run note" cols="30" rows="4" placeholder="Note"></textarea>
-                    <div>
-                        <input className="text-lg border rounded-md mt-4 border-green-700 mx-4 py-1.5 px-5 bg-green-700 text-white hover:text-green-800 hover:bg-transparent duration-300" type="submit" value="Assign" />
-                        <input className="text-lg border rounded-md mt-4 border-red-600 mx-4 py-1.5 px-5 bg-red-600 text-white hover:text-red-600 hover:bg-transparent duration-300" type="reset" value="Reset" />
+                    <textarea className="border w-full px-3 focus:outline-none resize-none rounded-md" name="run note" cols="30" rows="4" placeholder="Note"></textarea>
+                    <div className="w-full flex">
+                        <input className="text-lg border rounded-md mt-4 border-green-700 mx-2 py-1.5 px-2 bg-green-700 text-white hover:text-green-800 hover:bg-transparent duration-300 w-1/2" type="submit" value="Assign" />
+                        <input className="text-lg border rounded-md mt-4 border-red-600 mx-2 py-1.5 px-2 bg-red-600 text-white hover:text-red-600 hover:bg-transparent duration-300 w-1/2" type="reset" value="Reset" />
                     </div>
                 </form>
                 <div className="lg:w-1/2 w-full border border-gray-200 py-5 rounded-md shadow-md lg:px-10 px-6 lg:mx-6 mx-0">
@@ -136,20 +136,20 @@ const BookingParcelAssignVehicle = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="pagination-container">
-                            <ReactPaginate
-                                previousLabel={"Previous"}
-                                nextLabel={"Next"}
-                                pageCount={pageCount}
-                                onPageChange={changePage}
-                                containerClassName={"paginationBttns"}
-                                previousLinkClassName={"previousBttn"}
-                                nextLinkClassName={"nextBttn"}
-                                disabledClassName={"paginationDisabled"}
-                                activeClassName={"paginationActive"}
-                            />
-                        </div>
                     </div>
+                </div>
+                <div className="pagination-container lg:mr-6 md:mr-6 mr-0">
+                    <ReactPaginate
+                        previousLabel={"Previous"}
+                        nextLabel={"Next"}
+                        pageCount={pageCount}
+                        onPageChange={changePage}
+                        containerClassName={"paginationBttns"}
+                        previousLinkClassName={"previousBttn"}
+                        nextLinkClassName={"nextBttn"}
+                        disabledClassName={"paginationDisabled"}
+                        activeClassName={"paginationActive"}
+                    />
                 </div>
             </div>
         </div>

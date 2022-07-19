@@ -27,8 +27,8 @@ const ReceivedTransferList = () => {
             <div className="border border-gray-200 pb-5 rounded-md shadow-xl">
                 <h4 className="text-md font-bold text-left px-10 py-2 border-b">Received Branch Transfer List</h4>
                 {/* Table Search And PAgination Area Here */}
-                <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

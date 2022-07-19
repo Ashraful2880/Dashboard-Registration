@@ -42,8 +42,8 @@ const ReturnParcelList = () => {
                     </div>
                 </div>
                 {/* Top Pagination and Search Area Design Here */}
-                <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

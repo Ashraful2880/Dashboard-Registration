@@ -25,17 +25,17 @@ const DeliveryBranchTransferList = () => {
     return (
         <div className='px-4 mx-auto'>
             <div className="border border-gray-200 py-5 rounded-md shadow-xl">
-                <div className="lg:flex block justify-between items-center px-10 border-b pb-4">
+                <div className="lg:flex md:flex block justify-between items-center px-10 border-b pb-4">
                     <h4 className="text-xl font-semibold">Delivery Branch Transfer List</h4>
-                    <div>
-                        <Link to="/" className="bg-green-700 hover:bg-green-800 duration-300 py-1.5 px-4 rounded-md text-white text-md font-semibold mx-2">
+                    <div className='bg-green-700 hover:bg-green-800 duration-300 py-1.5 px-2 rounded-md text-white text-md font-semibold'>
+                        <Link to="/">
                             <FontAwesomeIcon icon={faPen} className="text-white mr-1" />
                             Generate Delivery Branch Transfer
                         </Link>
                     </div>
                 </div>
-                <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}

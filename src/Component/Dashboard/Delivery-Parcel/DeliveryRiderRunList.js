@@ -33,7 +33,7 @@ const DeliveryRiderRunList = () => {
             <div className="border border-gray-200 pb-5 rounded-md shadow-xl">
                 {/* Import And Generate Section Design Here */}
                 <div className="lg:flex block justify-between items-center border-b py-3 px-10">
-                    <h4 className="text-md font-bold">Delivery Rider Run List</h4>
+                    <h4 className="text-lg font-bold">Delivery Rider Run List</h4>
                     <div className="lg:my-0 my-2">
                         <Link to="/dashboard/generateDeliveryRiderRun" className="bg-green-700 hover:bg-green-800 duration-300 py-2 px-4 rounded-md text-white text-md font-semibold mx-2">
                             <FontAwesomeIcon icon={faPen} className="text-white mr-1" /> Generate Delivery Rider Run
@@ -49,7 +49,7 @@ const DeliveryRiderRunList = () => {
                         <select
                             onChange={(e) => setDataPerPage(e.target.value)}
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Rider</option>
                             <option defaultValue="Adnan Mahmud">Adnan Mahmud</option>
                             <option defaultValue="Sheikh Forid">Sheikh Forid</option>
@@ -63,7 +63,7 @@ const DeliveryRiderRunList = () => {
                         <select
                             onChange={(e) => setShowData(e.target.value)}
                             name="Entries"
-                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2 w-full">
+                            className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
                             <option selected>Select Run Status</option>
                             <option defaultValue="Run Create">Run Create</option>
                             <option defaultValue="Run Start">Run Start</option>
@@ -80,17 +80,17 @@ const DeliveryRiderRunList = () => {
                         <input type="date" name="date" className="border border-gray-300 px-5 py-1 rounded-md w-full" />
                     </div>
                     <div className="flex items-end justify-end w-full lg:my-0 my-2">
-                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1">
+                        <button className="bg-green-700 hover:bg-green-900 duration-300 px-5 py-1 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faSearch} className="text-white" />
                         </button>
-                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md mx-">
+                        <button className="bg-red-600 hover:bg-red-700 duration-300 px-5 py-1 rounded-md mx-1 w-1/2">
                             <FontAwesomeIcon icon={faRefresh} className="text-white" />
                         </button>
                     </div>
                 </div>
                 {/* Table Search And PAgination Area Here */}
-                <div className="lg:flex block justify-between items-center my-2 mx-10">
-                    <div>
+                <div className="lg:flex md:flex block justify-between items-center my-2 mx-10">
+                    <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
                                 onChange={(e) => setDataPerPage(e.target.value)}
