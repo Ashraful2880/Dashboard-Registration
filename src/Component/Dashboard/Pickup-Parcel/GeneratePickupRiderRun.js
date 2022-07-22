@@ -12,7 +12,7 @@ import Loading from '../../Loading/Loading';
 const GeneratePickupRiderRun = () => {
     let ref = useRef();
     const { baseUrl } = BaseURL();
-    const { user, isloading, setIsLoading } = useAuth();
+    const { user } = useAuth();
     let area = [
         {
             label: "Dhaka (Jatrabari)"
@@ -26,6 +26,7 @@ const GeneratePickupRiderRun = () => {
     ]
     const [runParcels, setRunParcels] = useState([]);
     const [printData, setPrintData] = useState();
+    const [printLoading, setPrintLoading] = useState(false);
     // Pagination Function Here
     const [showData, setShowData] = useState(0);
     const dataPerPage = 10;
@@ -46,7 +47,16 @@ const GeneratePickupRiderRun = () => {
             .then(res => res.json())
             .then(data => setRunParcels(data))
             .catch(error => console.log(error))
-    }, [user.email])
+    }, [user.email]);
+
+    const printDataLoading = (runParcel) => {
+        setPrintData(runParcel);
+        setPrintLoading(true);
+    }
+    setTimeout(() => {
+        setPrintLoading(false);
+    }, 3000);
+
 
     return (
         <div className="px-4 mx-auto">
@@ -186,14 +196,22 @@ const GeneratePickupRiderRun = () => {
                                                         trigger={() =>
                                                             <button>
                                                                 <FontAwesomeIcon
-                                                                    onClick={() => setPrintData(runParcel)
-                                                                    }
+                                                                    onClick={() =>
+                                                                        printDataLoading(runParcel)}
                                                                     icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
                                                             </button>
                                                         }
                                                         content={() => ref}
                                                         pageStyle="print"
+                                                        onBeforePrint={() => {
+                                                            setPrintLoading(false);
+                                                        }}
                                                     />
+                                                    {printLoading &&
+                                                        <div class="flex justify-center items-center">
+                                                            <div class="spinner-border animate-spin inline-block w-6 h-6 border-4 rounded-full text-green-700" role="status">
+                                                            </div>
+                                                        </div>}
                                                 </div>
                                             </td>
                                         </tr>
