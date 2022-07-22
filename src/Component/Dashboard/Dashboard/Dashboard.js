@@ -36,6 +36,7 @@ import {
 	faArrowTurnDown,
 	faBell,
 	faEnvelopeCircleCheck,
+	faPersonBiking,
 } from "@fortawesome/free-solid-svg-icons";
 import Profile from "../Profile/Profile";
 import NotFound from "../../NotFound/NotFound";
@@ -72,6 +73,7 @@ import OrderTracking from "../OrderTracking/OrderTracking";
 import RiderList from "./../RiderList/RiderList";
 import MarchantList from "./../MarchentList/MarchantList";
 import useAuth from "./../../../Hooks/UseAuth";
+import RiderRequest from "../RiderRequest/RiderRequest";
 
 const Dashboard = () => {
 	const [visible, setVisible] = useState("block");
@@ -105,7 +107,7 @@ const Dashboard = () => {
 								className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
-									className='flex items-center px-5 py-4 hover:bg-[black] duration-300'
+									className='flex items-center px-3 py-2 duration-300'
 									type='button'>
 									<div>
 										<FontAwesomeIcon
@@ -129,7 +131,7 @@ const Dashboard = () => {
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
-									className='flex items-center px-5 py-4 hover:bg-[black] duration-300'
+									className='flex items-center px-3 py-2 duration-300'
 									type='button'>
 									<div>
 										<FontAwesomeIcon
@@ -143,12 +145,35 @@ const Dashboard = () => {
 								</div>
 							</Link>
 						</div>
-
+						<div
+							className={
+								window?.location?.pathname.includes("/dashboard/riderRequest") &&
+								"activeButton"
+							}>
+							<Link
+								to='/dashboard/riderRequest'
+								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
+								id='accordionExample'>
+								<div
+									className='flex items-center px-3 py-2  duration-300'
+									type='button'>
+									<div>
+										<FontAwesomeIcon
+											icon={faPersonBiking}
+											className='w-5 h-5 text-green-500'
+										/>
+									</div>
+									<div className='flex justify-between items-center w-full'>
+										<h5 className='ml-4'>Rider Request</h5>
+									</div>
+								</div>
+							</Link>
+						</div>
 						<div
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
 							<div
-								className='flex items-center px-5 py-4 accordion-button collapsed relative hover:bg-[black] duration-300'
+								className='flex items-center px-3 py-2 accordion-button collapsed relative  duration-300'
 								type='button'
 								data-bs-toggle='collapse'
 								data-bs-target='#collapseTwo'
@@ -166,7 +191,7 @@ const Dashboard = () => {
 							</div>
 							{/* Dashboard Sub Menu */}
 							<div
-								className='flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
 								data-bs-parent='#accordionExample'
 								id='collapseTwo'>
 								<div
@@ -176,8 +201,8 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
-										to='pickupParcelList'>
+										to='pickupParcelList'
+										className=" text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block">
 										<FontAwesomeIcon
 											icon={faList}
 											className='h-5 w-5 inline mr-4 text-green-500'
@@ -192,7 +217,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='generatePickupRiderRun'>
 										<FontAwesomeIcon
 											icon={faPersonRunning}
@@ -208,7 +233,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='pickupRiderRunList'>
 										<FontAwesomeIcon
 											icon={faTruckFast}
@@ -224,7 +249,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='genBranchTransfer'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
@@ -240,7 +265,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='deliveryBranchTransferList'>
 										<FontAwesomeIcon
 											icon={faArrowRotateLeft}
@@ -255,7 +280,7 @@ const Dashboard = () => {
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
 							<div
-								className='flex items-center hover:bg-black duration-300 px-5 py-4 accordion-button collapsed relative transition'
+								className='flex items-center duration-300 px-3 py-2 accordion-button collapsed relative transition'
 								type='button'
 								data-bs-toggle='collapse'
 								data-bs-target='#collapseThree'
@@ -273,7 +298,7 @@ const Dashboard = () => {
 							</div>
 							{/* Dashboard Sub Menu */}
 							<div
-								className='flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
 								data-bs-parent='#accordionExample'
 								id='collapseThree'>
 								<div
@@ -283,7 +308,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='deliveryParcelList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
@@ -299,7 +324,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='generateDeliveryRiderRun'>
 										<FontAwesomeIcon
 											icon={faTruckLoading}
@@ -315,7 +340,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='deliveryRiderRunList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
@@ -331,7 +356,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='receivedTransferList'>
 										<FontAwesomeIcon
 											icon={faHandshake}
@@ -347,7 +372,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='deliveryPaymentGenerate'>
 										<FontAwesomeIcon
 											icon={faFilePen}
@@ -363,7 +388,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='deliveryPaymentList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
@@ -379,7 +404,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='returnBranchTransfer'>
 										<FontAwesomeIcon
 											icon={faRetweet}
@@ -410,7 +435,7 @@ const Dashboard = () => {
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
 							<div
-								className='flex items-center px-5 py-4 hover:bg-black duration-300 accordion-button collapsed relative transition'
+								className='flex items-center px-3 py-2 duration-300 accordion-button collapsed relative transition'
 								type='button'
 								data-bs-toggle='collapse'
 								data-bs-target='#collapseFour'
@@ -428,7 +453,7 @@ const Dashboard = () => {
 							</div>
 							{/* Dashboard Sub Menu */}
 							<div
-								className='flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
 								data-bs-parent='#accordionExample'
 								id='collapseFour'>
 								<div
@@ -438,7 +463,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='returnParcelList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
@@ -454,7 +479,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='generateReturnRiderRun'>
 										<FontAwesomeIcon
 											icon={faPen}
@@ -470,7 +495,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='returnRiderRunList'>
 										<FontAwesomeIcon
 											icon={faArrowUpWideShort}
@@ -486,7 +511,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='ReceivedReturnTransferList'>
 										<FontAwesomeIcon
 											icon={faArrowTurnDown}
@@ -501,7 +526,7 @@ const Dashboard = () => {
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
 							<div
-								className='flex items-center px-5 py-4 hover:bg-black duration-300  accordion-button collapsed relative transition'
+								className='flex items-center px-3 py-2 duration-300  accordion-button collapsed relative transition'
 								type='button'
 								data-bs-toggle='collapse'
 								data-bs-target='#collapseFive'
@@ -519,7 +544,7 @@ const Dashboard = () => {
 							</div>
 							{/* Dashboard Sub Menu */}
 							<div
-								className='flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
 								data-bs-parent='#accordionExample'
 								id='collapseFive'>
 								<div
@@ -529,7 +554,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='parcelBooking'>
 										<FontAwesomeIcon
 											icon={faTruckFast}
@@ -545,7 +570,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='bookingParcelList'>
 										<FontAwesomeIcon
 											icon={faList}
@@ -561,7 +586,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='BookingParcelVehicle'>
 										<FontAwesomeIcon
 											icon={faTruckPickup}
@@ -577,7 +602,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='bookingParcelReceiveList'>
 										<FontAwesomeIcon
 											icon={faList}
@@ -593,7 +618,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='receiveBookingParcel'>
 										<FontAwesomeIcon
 											icon={faHandHolding}
@@ -608,7 +633,7 @@ const Dashboard = () => {
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
 							<div
-								className='flex items-center hover:bg-black duration-300 px-5 py-4 accordion-button collapsed relative transition'
+								className='flex items-center duration-300 px-3 py-2 accordion-button collapsed relative transition'
 								type='button'
 								data-bs-toggle='collapse'
 								data-bs-target='#collapseSix'
@@ -626,7 +651,7 @@ const Dashboard = () => {
 							</div>
 							{/* Dashboard Sub Menu */}
 							<div
-								className='flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
 								data-bs-parent='#accordionExample'
 								id='collapseSix'>
 								<div
@@ -636,7 +661,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='parcelPaymentList'>
 										<FontAwesomeIcon
 											icon={faMoneyBill}
@@ -652,7 +677,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='paymentForward'>
 										<FontAwesomeIcon
 											icon={faMoneyBillTransfer}
@@ -668,7 +693,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='parcelPaymentReport'>
 										<FontAwesomeIcon
 											icon={faMoneyCheckDollar}
@@ -683,7 +708,7 @@ const Dashboard = () => {
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
 							<div
-								className='flex items-center hover:bg-black px-5 py-4  accordion-button collapsed relative transition duration-300'
+								className='flex items-center px-3 py-2  accordion-button collapsed relative transition duration-300'
 								type='button'
 								data-bs-toggle='collapse'
 								data-bs-target='#collapseSeven'
@@ -701,7 +726,7 @@ const Dashboard = () => {
 							</div>
 							{/* Dashboard Sub Menu */}
 							<div
-								className='flex flex-col gap-y-4 text-left lg:pl-5 pl-3 mt-4 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
 								data-bs-parent='#accordionExample'
 								id='collapseSeven'>
 								<div
@@ -710,7 +735,7 @@ const Dashboard = () => {
 										"activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='vehicle'>
 										<FontAwesomeIcon
 											icon={faTruck}
@@ -726,7 +751,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='warehouse'>
 										<FontAwesomeIcon
 											icon={faWarehouse}
@@ -742,7 +767,7 @@ const Dashboard = () => {
 										) && "activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='itemCategory'>
 										<FontAwesomeIcon
 											icon={faTableList}
@@ -757,7 +782,7 @@ const Dashboard = () => {
 										"activeButton"
 									}>
 									<Link
-										className='text-gray-300 hover:text-green-500 duration-200'
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
 										to='item'>
 										<FontAwesomeIcon
 											icon={faList}
@@ -779,7 +804,7 @@ const Dashboard = () => {
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
-									className='flex items-center px-5 py-4 hover:bg-black duration-300'
+									className='flex items-center px-3 py-2 duration-300'
 									type='button'>
 									<div>
 										<FontAwesomeIcon
@@ -804,7 +829,7 @@ const Dashboard = () => {
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
-									className='flex items-center px-5 py-4 hover:bg-black duration-300'
+									className='flex items-center px-3 py-2 duration-300'
 									type='button'>
 									<div>
 										<FontAwesomeIcon
@@ -828,7 +853,7 @@ const Dashboard = () => {
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
-									className='flex items-center px-5 py-4 hover:bg-black duration-300'
+									className='flex items-center px-3 py-2 duration-300'
 									type='button'>
 									<div>
 										<FontAwesomeIcon
@@ -911,6 +936,7 @@ const Dashboard = () => {
 						<Route path='/' element={<DashboardHome />} />
 						<Route path='/*' element={<NotFound />} />
 						<Route path='/profile' element={<Profile />} />
+						<Route path='/riderRequest' element={<RiderRequest />} />
 						<Route path='/pickupParcelList' element={<PickUpParcelList />} />
 						<Route
 							path='/generatePickupRiderRun'
