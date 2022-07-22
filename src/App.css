@@ -43,3 +43,15 @@
 	background-color: #166534;
 	color: #fff;
 }
+
+/* Remove Arrow Icon From Input Type Number */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}

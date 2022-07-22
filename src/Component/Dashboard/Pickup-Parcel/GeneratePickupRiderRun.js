@@ -7,7 +7,6 @@ import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
 import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
-import Loading from '../../Loading/Loading';
 
 const GeneratePickupRiderRun = () => {
     let ref = useRef();
@@ -50,14 +49,10 @@ const GeneratePickupRiderRun = () => {
             .catch(error => console.log(error))
     }, [user.email]);
 
-    const printDataLoading = (runParcel) => {
+    const dataToPrint = (runParcel) => {
         setPrintData(runParcel);
         setPrintLoading(true);
     }
-    setTimeout(() => {
-        setPrintLoading(false);
-    }, 3000);
-
 
     return (
         <div className="px-4 mx-auto">
@@ -198,7 +193,7 @@ const GeneratePickupRiderRun = () => {
                                                             <button>
                                                                 <FontAwesomeIcon
                                                                     onClick={() =>
-                                                                        printDataLoading(runParcel)}
+                                                                        dataToPrint(runParcel)}
                                                                     icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
                                                             </button>
                                                         }
