@@ -1,15 +1,29 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import search from "../../../Assests/Image/Search-Image.png";
 import logo from "../../../Assests/Image/Logo.png";
 import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
+import BaseURL from '../../../Hooks/BaseUrl';
+import useAuth from '../../../Hooks/UseAuth';
+import Loading from '../../Loading/Loading';
 
 const GeneratePickupRiderRun = () => {
     let ref = useRef();
+    const { baseUrl } = BaseURL();
+    const { user, isloading, setIsLoading } = useAuth();
+    let area = [
+        {
+            label: "Dhaka (Jatrabari)"
+        },
+        {
+            label: "Dhaka (Khilgaon)"
+        },
+        {
+            label: "Dhaka (Fuji Trade Center)"
+        }
+    ]
     const [runParcels, setRunParcels] = useState([]);
     const [printData, setPrintData] = useState();
     // Pagination Function Here
@@ -21,12 +35,18 @@ const GeneratePickupRiderRun = () => {
     const changePage = ({ selected }) => {
         setShowData(selected)
     };
-
     useEffect(() => {
-        fetch("/pickUpParcelList.json")
+        fetch(`${baseUrl}/huborders/status?email=${user.email}&&status=Accepted`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(area)
+        })
             .then(res => res.json())
             .then(data => setRunParcels(data))
-    }, [])
+            .catch(error => console.log(error))
+    }, [user.email])
 
     return (
         <div className="px-4 mx-auto">
@@ -37,14 +57,15 @@ const GeneratePickupRiderRun = () => {
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider</p>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
-                            <option selected>Select Rider</option>
-                            <option defaultValue="Omar Faruk">Omar Faruk</option>
-                            <option defaultValue="Mr. Tahmidur Rahman">Mr. Tahmidur Rahman</option>
-                            <option defaultValue="Istiyaq Hossain Chowdhury">Istiyaq Hossain Chowdhury</option>
-                            <option defaultValue="Md.Ibrahim Khalil Ullah">Md.Ibrahim Khalil Ullah</option>
-                            <option defaultValue="Tafim Hossain">Tafim Hossain</option>
+                            <option value="DEFAULT">Select Rider</option>
+                            <option value="Omar Faruk">Omar Faruk</option>
+                            <option value="Mr. Tahmidur Rahman">Mr. Tahmidur Rahman</option>
+                            <option value="Istiyaq Hossain Chowdhury">Istiyaq Hossain Chowdhury</option>
+                            <option value="Md.Ibrahim Khalil Ullah">Md.Ibrahim Khalil Ullah</option>
+                            <option value="Tafim Hossain">Tafim Hossain</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
@@ -67,10 +88,13 @@ const GeneratePickupRiderRun = () => {
                         <p className="font-semibold">Total Run Parcel</p>
                         <p>0</p>
                     </div>
-                    <textarea className="border w-full px-5 focus:outline-none resize-none" name="run note" cols="30" rows="4" placeholder="Pickup rider Run Note"></textarea>
-                    <div>
-                        <input className="text-lg border rounded-md mt-4 border-green-700 mx-4 py-1.5 px-5 bg-green-700 text-white hover:text-green-800 hover:bg-transparent duration-300" type="submit" value="Generate" />
-                        <input className="text-lg border rounded-md mt-4 border-red-600 mx-4 py-1.5 px-5 bg-red-600 text-white hover:text-red-600 hover:bg-transparent duration-300" type="reset" value="Reset" />
+                    <textarea
+                        className="border w-full px-5 focus:outline-none resize-none" name="run note" cols="30" rows="4"
+                        placeholder="Pickup rider Run Note">
+                    </textarea>
+                    <div className="w-full flex">
+                        <input className="text-lg border rounded-md mt-4 border-green-700 mx-4 py-1.5 px-5 bg-green-700 text-white hover:text-green-800 hover:bg-transparent duration-300 w-1/2" type="submit" value="Generate" />
+                        <input className="text-lg border rounded-md mt-4 border-red-600 mx-4 py-1.5 px-5 bg-red-600 text-white hover:text-red-600 hover:bg-transparent duration-300 w-1/2" type="reset" value="Reset" />
                     </div>
                 </form>
                 <div className="lg:w-1/2 w-full border border-gray-200 py-5 rounded-md shadow-md lg:px-10 px-6 lg:mx-6 mx-0">
@@ -98,10 +122,7 @@ const GeneratePickupRiderRun = () => {
                                             <input type="checkbox" name="check" /> All
                                         </th>
                                         <th className="px-6 py-3 tracking-wider border">
-                                            Invoice
-                                        </th>
-                                        <th className="px-6 py-3 tracking-wider border">
-                                            Marchant Order
+                                            Order Date
                                         </th>
                                         <th className="px-6 py-3 tracking-wider border">
                                             Marchant Name
@@ -118,6 +139,12 @@ const GeneratePickupRiderRun = () => {
                                         <th className="px-6 py-3 tracking-wider border">
                                             Customer Number
                                         </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Delivery Area
+                                        </th>
+                                        <th className="px-6 py-3 tracking-wider border">
+                                            Status
+                                        </th>
                                         <th className="px-6 py-3 uppercase tracking-wider border">
                                             Action
                                         </th>
@@ -125,30 +152,33 @@ const GeneratePickupRiderRun = () => {
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
                                     {runParcels.slice(pagesVisited, pagesVisited + dataPerPage).map((runParcel) => (
-                                        <tr key={runParcel.sl} className="hover:bg-gray-100 duration-200">
+                                        <tr key={runParcel._id} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
                                                 <input type="checkbox" name="check" />
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {runParcel?.invoice}
+                                                {runParcel?.orderSummaray?.date}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {runParcel?.marchantName}
+                                                {runParcel?.marchentInfo?.name}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {runParcel?.contactNumber}
+                                                {runParcel?.marchentInfo?.number}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {runParcel?.address}
+                                                {runParcel?.marchentInfo?.address}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {runParcel?.district}
+                                                {runParcel?.recieverDetails?.name}
                                             </td>
                                             <td className="px-2 py-3 border">
-                                                {runParcel?.charge}
+                                                {runParcel?.recieverDetails?.number}
                                             </td>
-                                            <td className="px-2 py-3 text-sm text-green-700 font-bold border">
-                                                {runParcel?.status}
+                                            <td className="px-2 py-3 border">
+                                                {runParcel?.recieverDetails?.deliveryArea}
+                                            </td>
+                                            <td className="px-2 py-3 border text-green-600 font-bold">
+                                                {runParcel?.orderSummaray?.status}
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 <div className="flex justify-evenly items-center">
@@ -156,7 +186,8 @@ const GeneratePickupRiderRun = () => {
                                                         trigger={() =>
                                                             <button>
                                                                 <FontAwesomeIcon
-                                                                    onClick={() => setPrintData(runParcel)}
+                                                                    onClick={() => setPrintData(runParcel)
+                                                                    }
                                                                     icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
                                                             </button>
                                                         }
@@ -320,7 +351,7 @@ const GeneratePickupRiderRun = () => {
                     <p className="text-left italic text-gray-500 mt-4">This is an Auto Generated Report of <span className="text-green-700 font-semibold">Alijahan Courier</span></p>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

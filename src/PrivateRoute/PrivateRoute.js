@@ -1,6 +1,7 @@
 import React from "react";
 import useAuth from "../Hooks/UseAuth";
 import { Navigate, useLocation } from "react-router-dom";
+import Loading from "../Component/Loading/Loading";
 
 const PrivateRoute = ({ children }) => {
 	const { user, isloading } = useAuth();
@@ -8,9 +9,7 @@ const PrivateRoute = ({ children }) => {
 
 	if (isloading) {
 		return (
-			<div className='h-screen flex justify-center items-center'>
-				<div className='animate-spin rounded-full h-32 w-32 border-b-2 border-green-900'></div>
-			</div>
+			<Loading />
 		);
 	} else {
 		if (user) {

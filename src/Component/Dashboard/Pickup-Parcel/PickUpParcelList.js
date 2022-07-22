@@ -9,6 +9,8 @@ import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
 import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
+import { useSelector, useDispatch } from 'react-redux';
+import { changePage } from '../../../Redux/Slices/paginationSlice';
 
 const PickUpParcelList = () => {
 
@@ -39,9 +41,11 @@ const PickUpParcelList = () => {
     const pagesVisited = showData * dataPerPage;
     const pageCount = Math.ceil(parcelLists.length / dataPerPage);
 
-    const changePage = ({ selected }) => {
-        setShowData(selected)
-    };
+    /*  const changePage = ({ selected }) => {
+         setShowData(selected)
+     }; */
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         fetch(`${baseUrl}/huborders?email=${user.email}`, {
@@ -60,6 +64,9 @@ const PickUpParcelList = () => {
         setDisplay("block")
         setQuery(id)
     }
+
+    const test = useSelector(state => state.reducer.showData);
+    console.log("This is test Document", test);
 
     return (
         <>
@@ -183,9 +190,6 @@ const PickUpParcelList = () => {
                                                         <button onClick={() => viewModal(parcel)}>
                                                             <FontAwesomeIcon icon={faEye} className="h-4 w-4 bg-gray-600 text-white px-2 py-1 rounded-sm" />
                                                         </button>
-                                                        <button>
-                                                            <FontAwesomeIcon icon={faPenToSquare} className="h-4 w-4 bg-cyan-600 text-white px-2 py-1 rounded-sm" />
-                                                        </button>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -204,7 +208,7 @@ const PickUpParcelList = () => {
                                 previousLabel={"Previous"}
                                 nextLabel={"Next"}
                                 pageCount={pageCount}
-                                onPageChange={changePage}
+                                onPageChange={dispatch(changePage())}
                                 containerClassName={"paginationBttns"}
                                 previousLinkClassName={"previousBttn"}
                                 nextLinkClassName={"nextBttn"}
