@@ -13,6 +13,7 @@ const GeneratePickupRiderRun = () => {
     let ref = useRef();
     const { baseUrl } = BaseURL();
     const { user } = useAuth();
+
     let area = [
         {
             label: "Dhaka (Jatrabari)"

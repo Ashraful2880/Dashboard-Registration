@@ -2,9 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
+import useAuth from '../../../Hooks/UseAuth';
 
 const RiderList = () => {
     const [riders, setRiders] = useState([]);
+    const { user } = useAuth();
     // Pagination Function Here
     const [showData, setShowData] = useState(0);
     const dataPerPage = 10;
@@ -16,10 +18,10 @@ const RiderList = () => {
     };
 
     useEffect(() => {
-        fetch("/RiderListData.json")
+        fetch(`https://www.alijahan.xyz/singleuser?email=${user?.email}`)
             .then(res => res.json())
-            .then(data => setRiders(data))
-    }, [])
+            .then(data => setRiders(data?.riders));
+    }, [user?.email])
 
     return (
         <div className="container mx-auto pb-10">
@@ -28,26 +30,30 @@ const RiderList = () => {
                 <table className="w-full mx-auto cursor-pointer mb-4">
                     <thead>
                         <tr className="text-center text-white">
-                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">#</th>
                             <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Name</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Email</th>
                             <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Address</th>
-                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Contact</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Number</th>
+                            <th className="bg-green-800 lg:border-x-3 border-x-2 border-white py-3 px-4">Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         {riders.slice(pagesVisited, pagesVisited + dataPerPage).map((rider) => (
-                            <tr className="text-center border hover:shadow-md duration-300" key={rider.sl}>
-                                <td className="border border-gray-300 py-3 px-4">
-                                    {rider?.sl}
-                                </td>
+                            <tr className="text-center border hover:shadow-md duration-300" key={rider._id}>
                                 <td className="border border-gray-300 py-3 px-4">
                                     {rider?.name}
+                                </td>
+                                <td className="border border-gray-300 py-3 px-4">
+                                    {rider?.email}
                                 </td>
                                 <td className="border border-gray-300 py-3 px-4">
                                     {rider?.address}
                                 </td>
                                 <td className="border border-gray-300 py-3 px-4">
-                                    {rider?.contact}
+                                    {rider?.number}
+                                </td>
+                                <td className="border border-gray-300 py-3 px-4">
+                                    {rider?.status === "Active" && <span className="text-green-600 font-bold">{rider?.status}</span>}
                                 </td>
                             </tr>
                         ))}
