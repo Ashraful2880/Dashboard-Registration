@@ -2,9 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
+import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
 
 const RiderList = () => {
+    const { baseUrl } = BaseURL();
     const [riders, setRiders] = useState([]);
     const { user } = useAuth();
     // Pagination Function Here
@@ -18,11 +20,10 @@ const RiderList = () => {
     };
 
     useEffect(() => {
-        fetch(`https://www.alijahan.xyz/singleuser?email=${user?.email}`)
+        fetch(`${baseUrl}/singleuser?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setRiders(data?.riders));
     }, [user?.email])
-
     return (
         <div className="container mx-auto pb-10">
             <h3 className="text-2xl font-bold mb-6 text-left pl-5">Rider List</h3>
@@ -38,7 +39,7 @@ const RiderList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {riders.slice(pagesVisited, pagesVisited + dataPerPage).map((rider) => (
+                        {riders?.slice(pagesVisited, pagesVisited + dataPerPage).map((rider) => (
                             <tr className="text-center border hover:shadow-md duration-300" key={rider._id}>
                                 <td className="border border-gray-300 py-3 px-4">
                                     {rider?.name}
