@@ -151,6 +151,9 @@ const Dashboard = () => {
 								"activeButton"
 							}>
 							<Link
+								onClick={() =>
+									setVisible(visible === "block" ? "none" : "block")
+								}
 								to='/dashboard/riderRequest'
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
