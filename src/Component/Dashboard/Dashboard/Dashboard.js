@@ -853,7 +853,7 @@ const Dashboard = () => {
 							<Link to='/home' className='lg:hidden block'>
 								<img src={logo} alt='Main logo' className='h-8 w-8' />
 							</Link>
-							<button className="lg:hidden block pt-1 px-3"
+							{visible === "none" ? <button className="lg:hidden block pt-1 px-3"
 								onClick={() =>
 									setVisible(visible === "block" ? "none" : "block")
 								}
@@ -863,6 +863,25 @@ const Dashboard = () => {
 									className='hover:text-green-500 duration-150 font-bold text-lg'
 								/>
 							</button>
+								: <button className="lg:hidden block pt-1 px-3"
+									onClick={() =>
+										setVisible(visible === "block" ? "none" : "block")
+									}
+								>
+									<svg
+										className="h-7 w-7"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="white"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									>
+										<line x1="18" y1="6" x2="6" y2="18" />
+										<line x1="6" y1="6" x2="18" y2="18" />
+									</svg>
+								</button>}
+
 							<Link
 								to='/dashboard'
 								className='font-semibold hover:text-green-500 duration-200'>
