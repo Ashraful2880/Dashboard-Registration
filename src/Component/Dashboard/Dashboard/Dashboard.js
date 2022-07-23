@@ -4,38 +4,10 @@ import DashboardHome from "./../DashboardHome/DashboardHome";
 import logo from "../../../Assests/Image/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faArrowRightArrowLeft,
-	faBars,
-	faBriefcase,
-	faCarSide,
-	faGear,
-	faHome,
-	faList,
-	faMoneyBill,
-	faMoneyBillTransfer,
-	faMoneyCheckDollar,
-	faTableList,
-	faTruck,
-	faUser,
-	faWarehouse,
-	faDollarSign,
-	faBox,
-	faTruckFast,
-	faTruckPickup,
-	faHandHolding,
-	faPersonRunning,
-	faTruckMoving,
-	faClipboardList,
-	faArrowRotateLeft,
-	faRetweet,
-	faFilePen,
-	faHandshake,
-	faTruckLoading,
-	faPen,
-	faArrowUpWideShort,
-	faArrowTurnDown,
-	faBell,
-	faEnvelopeCircleCheck,
+	faArrowRightArrowLeft, faBars, faBriefcase, faCarSide, faGear, faHome, faList, faMoneyBill,
+	faMoneyBillTransfer, faMoneyCheckDollar, faTableList, faTruck, faUser, faWarehouse,
+	faDollarSign, faBox, faTruckFast, faTruckPickup, faHandHolding, faPersonRunning, faTruckMoving, faClipboardList, faArrowRotateLeft, faRetweet, faFilePen, faHandshake,
+	faTruckLoading, faPen, faArrowUpWideShort, faArrowTurnDown, faBell, faEnvelopeCircleCheck,
 	faPersonBiking,
 } from "@fortawesome/free-solid-svg-icons";
 import Profile from "../Profile/Profile";
@@ -74,16 +46,16 @@ import RiderList from "./../RiderList/RiderList";
 import MarchantList from "./../MarchentList/MarchantList";
 import useAuth from "./../../../Hooks/UseAuth";
 import RiderRequest from "../RiderRequest/RiderRequest";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 const Dashboard = () => {
-	const [visible, setVisible] = useState("block");
 	const { handleSignOut } = useAuth();
+	const [visible, setVisible] = useState("none");
 	return (
 		<main className='w-full'>
 			{/* Dashboard Menu Area */}
 			<aside
-				className='lg:w-[15%] w-full fixed top-0 left-0 bg-[#121927] h-screen mobileMenuAnimation'
-				style={{ display: `${visible}` }}>
+				className="lg:w-[15%] w-full fixed top-0 left-0 bg-[#121927] h-screen mobileMenuAnimation">
 				{/* Main Logo */}
 				<div className='min-h-[5vh]'>
 					<Link to='/home'>
@@ -151,9 +123,6 @@ const Dashboard = () => {
 								"activeButton"
 							}>
 							<Link
-								onClick={() =>
-									setVisible(visible === "block" ? "none" : "block")
-								}
 								to='/dashboard/riderRequest'
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
@@ -871,29 +840,29 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</aside>
+			{/* Mobile Menu Here */}
+			<MobileMenu visible={visible} setVisible={setVisible} />
 			{/* Dashboard Header Area */}
 			<div
-				className={`${visible === "block" ? "w-[85%] ml-[15%]" : "w-[1/2] ml-0"
-					} border border-transparent pt-0 mt-0`}>
+				className="w-[85%] ml-[15%] border border-transparent pt-0 mt-0 sidelayout">
 				<div
-					className={`h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-[#1a2438] overflow-hidden z-50 ${visible === "block" && "lg:left-[15%] left-0"
-						}`}>
+					className="h-16 w-full flex flex-col justify-center items-start px-5 fixed top-0 bg-[#1a2438] overflow-hidden z-50 lg:left-[15%] left-0">
 					<div
-						className={`flex justify-between items-center ${visible === "block" ? "lg:w-[85%] w-full" : "w-full"
-							}`}>
+						className="flex justify-between items-center lg:w-[85%] w-full">
 						<div className='flex lg:gap-x-5 gap-x-2 text-gray-100 items-center'>
-							<button
+							<Link to='/home' className='lg:hidden block'>
+								<img src={logo} alt='Main logo' className='h-8 w-8' />
+							</Link>
+							<button className="lg:hidden block pt-1 px-3"
 								onClick={() =>
 									setVisible(visible === "block" ? "none" : "block")
-								}>
+								}
+							>
 								<FontAwesomeIcon
 									icon={faBars}
 									className='hover:text-green-500 duration-150 font-bold text-lg'
 								/>
 							</button>
-							<Link to='/home' className='lg:hidden block'>
-								<img src={logo} alt='Main logo' className='h-8 w-8' />
-							</Link>
 							<Link
 								to='/dashboard'
 								className='font-semibold hover:text-green-500 duration-200'>
