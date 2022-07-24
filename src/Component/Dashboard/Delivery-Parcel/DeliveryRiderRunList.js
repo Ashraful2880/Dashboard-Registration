@@ -103,7 +103,7 @@ const DeliveryRiderRunList = () => {
                             </select>
                         </span> Entries
                     </div>
-                    <div className="lg:mt-0 mt-2">
+                    <div className="lg:mt-0 mt-2 flex items-center">
                         <label htmlFor="text" className="font-semibold mr-2 lg:inline-block hidden">Search </label>
                         <input
                             type="search"

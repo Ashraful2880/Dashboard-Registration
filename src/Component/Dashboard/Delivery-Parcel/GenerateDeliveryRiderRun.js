@@ -29,14 +29,15 @@ const GenerateDeliveryRiderRun = () => {
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider</p>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
-                            <option selected>Select Rider</option>
-                            <option defaultValue="Omar Faruk">Omar Faruk</option>
-                            <option defaultValue="Md. Tahmidur Rahman">Md. Tahmidur Rahman</option>
-                            <option defaultValue="Istiyaq Hossain Chowdhury">Istiyaq Hossain Chowdhury</option>
-                            <option defaultValue="Md. Ibrahim Khalil Ullah">Md. Ibrahim Khalil Ullah</option>
-                            <option defaultValue="Tafim Hossain">Tafim Hossain</option>
+                            <option value="DEFAULT">Select Rider</option>
+                            <option value="Omar Faruk">Omar Faruk</option>
+                            <option value="Md. Tahmidur Rahman">Md. Tahmidur Rahman</option>
+                            <option value="Istiyaq Hossain Chowdhury">Istiyaq Hossain Chowdhury</option>
+                            <option value="Md. Ibrahim Khalil Ullah">Md. Ibrahim Khalil Ullah</option>
+                            <option value="Tafim Hossain">Tafim Hossain</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">

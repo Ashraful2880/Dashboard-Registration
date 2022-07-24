@@ -67,7 +67,7 @@ const DeliveryPaymentGenerate = () => {
                             <table className="min-w-full divide-y divide-x divide-gray-200">
                                 <thead className="bg-green-800 text-white text-center text-xs font-semibold uppercase">
                                     <tr>
-                                        <th clatracking-widerssName="px-6 py-3 tracking-wider border">
+                                        <th clssName="px-6 py-3 tracking-wider border">
                                             <input type="checkbox" name="check" /> All
                                         </th>
                                         <th className="px-6 py-3 tracking-wider border">

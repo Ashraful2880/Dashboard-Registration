@@ -31,29 +31,31 @@ const ReceiveBookingParcel = () => {
                     <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Select Vehicle</p>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
-                            <option selected>Select Vehicle</option>
-                            <option defaultValue="133-69">(133-69)</option>
-                            <option defaultValue="133-65">(133-65)</option>
+                            <option value="DEFAULT">Select Vehicle</option>
+                            <option value="133-69">(133-69)</option>
+                            <option value="133-65">(133-65)</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Select Branch</p>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
-                            <option selected>Select Branch</option>
-                            <option defaultValue="All Branch">All Branch</option>
-                            <option defaultValue="Dhaka Tejgoan Branch">Dhaka Tejgoan Branch</option>
-                            <option defaultValue="Chattogram">Chattogram</option>
-                            <option defaultValue="Mohammadpur">Mohammadpur</option>
-                            <option defaultValue="Tongi">Tongi</option>
-                            <option defaultValue="Malitola">Malitola</option>
-                            <option defaultValue="Rangpur">Rangpur</option>
-                            <option defaultValue="Khulna">Khulna</option>
-                            <option defaultValue="Dhanmondi">Dhanmondi</option>
-                            <option defaultValue="Narshingdi">Narshingdi</option>
+                            <option value="DEFAULT">Select Branch</option>
+                            <option value="All Branch">All Branch</option>
+                            <option value="Dhaka Tejgoan Branch">Dhaka Tejgoan Branch</option>
+                            <option value="Chattogram">Chattogram</option>
+                            <option value="Mohammadpur">Mohammadpur</option>
+                            <option value="Tongi">Tongi</option>
+                            <option value="Malitola">Malitola</option>
+                            <option value="Rangpur">Rangpur</option>
+                            <option value="Khulna">Khulna</option>
+                            <option value="Dhanmondi">Dhanmondi</option>
+                            <option value="Narshingdi">Narshingdi</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">

@@ -41,13 +41,14 @@ const ParcelPaymentList = () => {
                     <div>
                         <h5 className="text-md font-semibold text-left my-2">Delivery Payment Type:</h5>
                         <select
+                            defaultValue={'DEFAULT'}
                             onChange={(e) => setShowData(e.target.value)}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
-                            <option selected>Select Delivery Payment Type</option>
-                            <option defaultValue="Send Request">Send Request</option>
-                            <option defaultValue="Request Accept">Request Accept</option>
-                            <option defaultValue="Request Cancel">Request Cancel</option>
+                            <option value="DEFAULT">Select Delivery Payment Type</option>
+                            <option value="Send Request">Send Request</option>
+                            <option value="Request Accept">Request Accept</option>
+                            <option value="Request Cancel">Request Cancel</option>
                         </select>
                     </div>
                     <div>
@@ -72,17 +73,18 @@ const ParcelPaymentList = () => {
                     <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
+                                defaultValue={'DEFAULT'}
                                 onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
-                                <option selected>10</option>
-                                <option defaultValue="25">25</option>
-                                <option defaultValue="50">50</option>
-                                <option defaultValue="100">100</option>
+                                <option value="DEFAULT">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
                             </select>
                         </span> Entries
                     </div>
-                    <div className="lg:mt-0 mt-2">
+                    <div className="lg:mt-0 mt-2 flex items-center">
                         <label htmlFor="text" className="font-semibold mr-2 lg:inline-block hidden">Search </label>
                         <input
                             type="search"

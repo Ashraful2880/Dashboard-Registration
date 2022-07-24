@@ -3,13 +3,12 @@ import "../Dashboard.css";
 import logo from "../../../Assests/Image/Logo.png";
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faPenToSquare, faPrint } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faPrint } from '@fortawesome/free-solid-svg-icons';
 import ViewDetailsModal from './ViewDetailsModal';
 import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
 import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
-import { useSelector, useDispatch } from 'react-redux';
 import { changePage } from '../../../Redux/Slices/paginationSlice';
 
 const PickUpParcelList = () => {
@@ -35,17 +34,16 @@ const PickUpParcelList = () => {
     const [display, setDisplay] = useState("none");
     const [query, setQuery] = useState("");
     const [printData, setPrintData] = useState();
+    const [printLoading, setPrintLoading] = useState(false);
     // Pagination Function Here
     const [showData, setShowData] = useState(0);
     const [dataPerPage, setDataPerPage] = useState(10);
     const pagesVisited = showData * dataPerPage;
     const pageCount = Math.ceil(parcelLists.length / dataPerPage);
 
-    /*  const changePage = ({ selected }) => {
-         setShowData(selected)
-     }; */
-
-    const dispatch = useDispatch();
+    const changePage = ({ selected }) => {
+        setShowData(selected)
+    };
 
     useEffect(() => {
         fetch(`${baseUrl}/huborders?email=${user.email}`, {
@@ -64,10 +62,10 @@ const PickUpParcelList = () => {
         setDisplay("block")
         setQuery(id)
     }
-
-    const test = useSelector(state => state.reducer.showData);
-    console.log("This is test Document", test);
-
+    const dataToPrint = (parcel) => {
+        setPrintData(parcel);
+        setPrintLoading(true);
+    }
     return (
         <>
             <div className="px-4 mx-auto">
@@ -77,17 +75,18 @@ const PickUpParcelList = () => {
                         <div className="hidden lg:inline-block md:inline-block">
                             Show <span>
                                 <select
+                                    defaultValue={'DEFAULT'}
                                     onChange={(e) => setDataPerPage(e.target.value)}
                                     name="Entries"
                                     className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
-                                    <option selected>10</option>
-                                    <option defaultValue="25">25</option>
-                                    <option defaultValue="50">50</option>
-                                    <option defaultValue="100">100</option>
+                                    <option value="DEFAULT">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
                                 </select>
                             </span> Entries
                         </div>
-                        <div className="lg:mt-0 mt-2">
+                        <div className="lg:mt-0 mt-2 flex items-center">
                             <label htmlFor="text" className="font-semibold mr-2 lg:inline-block hidden">Search </label>
                             <input
                                 type="search"
@@ -180,7 +179,8 @@ const PickUpParcelList = () => {
                                                             trigger={() =>
                                                                 <button>
                                                                     <FontAwesomeIcon
-                                                                        onClick={() => setPrintData(parcel)}
+                                                                        onClick={() =>
+                                                                            dataToPrint(parcel)}
                                                                         icon={faPrint} className="h-4 w-4 bg-green-600 text-white px-2 py-1 rounded-sm" />
                                                                 </button>
                                                             }
@@ -208,7 +208,7 @@ const PickUpParcelList = () => {
                                 previousLabel={"Previous"}
                                 nextLabel={"Next"}
                                 pageCount={pageCount}
-                                onPageChange={dispatch(changePage())}
+                                onPageChange={changePage}
                                 containerClassName={"paginationBttns"}
                                 previousLinkClassName={"previousBttn"}
                                 nextLinkClassName={"nextBttn"}

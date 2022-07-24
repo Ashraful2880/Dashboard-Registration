@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { faPen, faPrint, faEye, faPenToSquare, faFileExcel, faFilePdf, faRefresh, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPrint, faFileExcel, faFilePdf, faRefresh, faSearch } from '@fortawesome/free-solid-svg-icons';
 import ReactPaginate from 'react-paginate';
 
 const BookingParcelList = () => {
@@ -51,25 +51,27 @@ const BookingParcelList = () => {
                     <div>
                         <h5 className="text-md font-semibold text-left">Booking Type:</h5>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
-                            <option selected>Select Booking Type</option>
-                            <option defaultValue="Cash">Cash</option>
-                            <option defaultValue="To Pay">To Pay</option>
-                            <option defaultValue="Credit">Credit</option>
-                            <option defaultValue="Condition">Condition</option>
+                            <option value="DEFAULT">Select Booking Type</option>
+                            <option value="Cash">Cash</option>
+                            <option value="To Pay">To Pay</option>
+                            <option value="Credit">Credit</option>
+                            <option value="Condition">Condition</option>
                         </select>
                     </div>
                     <div>
                         <h5 className="text-md font-semibold text-left">Delivery Type:</h5>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
-                            <option selected>Select Delivery Type</option>
-                            <option defaultValue="OD">OD</option>
-                            <option defaultValue="TOD">TOD</option>
-                            <option defaultValue="HD">HD</option>
-                            <option defaultValue="THD">THD</option>
+                            <option value="DEFAULT">Select Delivery Type</option>
+                            <option value="OD">OD</option>
+                            <option value="TOD">TOD</option>
+                            <option value="HD">HD</option>
+                            <option value="THD">THD</option>
                         </select>
                     </div>
                     <div>
@@ -77,17 +79,17 @@ const BookingParcelList = () => {
                         <select
                             name="Entries"
                             className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
-                            <option selected>Select Status</option>
-                            <option defaultValue="Parcel Reject">Parcel Reject</option>
-                            <option defaultValue="Confirmed Booking">Confirmed Booking</option>
-                            <option defaultValue="Vehicle Assigned">Vehicle Assigned</option>
-                            <option defaultValue="Warehouse Assigned">Warehouse Assigned</option>
-                            <option defaultValue="Warehouse Received Parcel">Warehouse Received Parcel</option>
-                            <option defaultValue="Warehouse To Warehouse Assigned">Warehouse To Warehouse Assigned</option>
-                            <option defaultValue="On The Way To Destination">On The Way To Destination</option>
-                            <option defaultValue="Branch Received">Branch Received</option>
-                            <option defaultValue="Delivery Complete">Delivery Complete</option>
-                            <option defaultValue="Delivery Return">Delivery Return</option>
+                            <option value="DEFAULT">Select Status</option>
+                            <option value="Parcel Reject">Parcel Reject</option>
+                            <option value="Confirmed Booking">Confirmed Booking</option>
+                            <option value="Vehicle Assigned">Vehicle Assigned</option>
+                            <option value="Warehouse Assigned">Warehouse Assigned</option>
+                            <option value="Warehouse Received Parcel">Warehouse Received Parcel</option>
+                            <option value="Warehouse To Warehouse Assigned">Warehouse To Warehouse Assigned</option>
+                            <option value="On The Way To Destination">On The Way To Destination</option>
+                            <option value="Branch Received">Branch Received</option>
+                            <option value="Delivery Complete">Delivery Complete</option>
+                            <option value="Delivery Return">Delivery Return</option>
                         </select>
                     </div>
                     <div>
@@ -111,17 +113,18 @@ const BookingParcelList = () => {
                     <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
+                                defaultValue={'DEFAULT'}
                                 onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
-                                <option selected>10</option>
-                                <option defaultValue="25">25</option>
-                                <option defaultValue="50">50</option>
-                                <option defaultValue="100">100</option>
+                                <option value="DEFAULT">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
                             </select>
                         </span> Entries
                     </div>
-                    <div className="lg:mt-0 mt-2">
+                    <div className="lg:mt-0 mt-2 flex items-center">
                         <label htmlFor="text" className="font-semibold mr-2 lg:inline-block hidden">Search </label>
                         <input
                             type="search"

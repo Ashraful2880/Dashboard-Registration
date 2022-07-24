@@ -51,28 +51,30 @@ const PickupRiderRunList = () => {
                     <div>
                         <h5 className="text-md font-semibold text-left">Rider:</h5>
                         <select
+                            defaultValue={'DEFAULT'}
                             onChange={(e) => setShowData(e.target.value)}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
-                            <option selected>Select Rider</option>
-                            <option defaultValue="Adnan Mahmud">Adnan Mahmud</option>
-                            <option defaultValue="Sheikh Forid">Sheikh Forid</option>
-                            <option defaultValue="Safikul Islam">Safikul Islam</option>
-                            <option defaultValue="Md Saiful Islam">Md Saiful Islam</option>
-                            <option defaultValue="Omar faruk">Omar faruk</option>
+                            <option value="DEFAULT">Select Rider</option>
+                            <option value="Adnan Mahmud">Adnan Mahmud</option>
+                            <option value="Sheikh Forid">Sheikh Forid</option>
+                            <option value="Safikul Islam">Safikul Islam</option>
+                            <option value="Md Saiful Islam">Md Saiful Islam</option>
+                            <option value="Omar faruk">Omar faruk</option>
                         </select>
                     </div>
                     <div>
                         <h5 className="text-md font-semibold text-left">Run Status:</h5>
                         <select
+                            defaultValue={'DEFAULT'}
                             onChange={(e) => setShowData(e.target.value)}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 w-full">
-                            <option selected>Select Run Status</option>
-                            <option defaultValue="Run Create">Run Create</option>
-                            <option defaultValue="Run Start">Run Start</option>
-                            <option defaultValue="Run Cancel">Run Cancel</option>
-                            <option defaultValue="Run Complete">Run Complete</option>
+                            <option value="DEFAULT">Select Run Status</option>
+                            <option value="Run Create">Run Create</option>
+                            <option value="Run Start">Run Start</option>
+                            <option value="Run Cancel">Run Cancel</option>
+                            <option value="Run Complete">Run Complete</option>
                         </select>
                     </div>
                     <div>
@@ -97,17 +99,18 @@ const PickupRiderRunList = () => {
                     <div className="hidden lg:inline-block md:inline-block">
                         Show <span>
                             <select
+                                defaultValue={'DEFAULT'}
                                 onChange={(e) => setDataPerPage(e.target.value)}
                                 name="Entries"
                                 className="border border-gray-300 focus:outline-none focus:border focus:border-green-600 rounded-md px-2 py-1 mx-2">
-                                <option selected>10</option>
+                                <option value="DEFAULT">10</option>
                                 <option defaultValue="25">25</option>
                                 <option defaultValue="50">50</option>
                                 <option defaultValue="100">100</option>
                             </select>
                         </span> Entries
                     </div>
-                    <div className="lg:mt-0 mt-2">
+                    <div className="lg:mt-0 mt-2 flex items-center">
                         <label htmlFor="text" className="font-semibold mr-2 lg:inline-block hidden">Search </label>
                         <input
                             type="search"

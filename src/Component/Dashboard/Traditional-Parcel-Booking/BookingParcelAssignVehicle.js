@@ -30,11 +30,12 @@ const BookingParcelAssignVehicle = () => {
                     <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
                         <p className="font-semibold">Vehicle</p>
                         <select
+                            defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
-                            <option selected>Select Vehicle</option>
-                            <option defaultValue="Pickup Van">Pickup Van</option>
-                            <option defaultValue="Pickup Vss">Pickup Vss</option>
+                            <option value="DEFAULT">Select Vehicle</option>
+                            <option value="Pickup Van">Pickup Van</option>
+                            <option value="Pickup Vss">Pickup Vss</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-3 my-2 border rounded-md">
@@ -67,14 +68,15 @@ const BookingParcelAssignVehicle = () => {
                         </div>
                         <div>
                             <select
+                                defaultValue={'DEFAULT'}
                                 name="Entries"
                                 className="border rounded-md w-full py-2 px-5 my-2 focus:outline-none focus:border-green-600">
-                                <option selected>Select Branch</option>
-                                <option defaultValue="Dhaka Tejgoan Branch">Dhaka Tejgoan Branch</option>
-                                <option defaultValue="Chattogram">Chattogram</option>
-                                <option defaultValue="Tongi">Tongi</option>
-                                <option defaultValue="Khulna">Khulna</option>
-                                <option defaultValue="Mohammadpur">Mohammadpur</option>
+                                <option value="DEFAULT">Select Branch</option>
+                                <option value="Dhaka Tejgoan Branch">Dhaka Tejgoan Branch</option>
+                                <option value="Chattogram">Chattogram</option>
+                                <option value="Tongi">Tongi</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Mohammadpur">Mohammadpur</option>
                             </select>
                         </div>
                         <input className="bg-green-700 border border-green-700 hover:bg-transparent text-white hover:text-green-700 duration-500 py-1.5 px-5 rounded-md w-full" type="submit" value="Search" />
