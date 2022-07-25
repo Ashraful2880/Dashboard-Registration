@@ -47,6 +47,8 @@ import MarchantList from "./../MarchentList/MarchantList";
 import useAuth from "./../../../Hooks/UseAuth";
 import RiderRequest from "../RiderRequest/RiderRequest";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import WirehouseRiderRun from './../WirehouseRiderRun/WirehouseRiderRun';
+import WirehouseRunList from "../WirehouseRunList/WirehouseRunList";
 
 const Dashboard = () => {
 	const { handleSignOut } = useAuth();
@@ -148,6 +150,65 @@ const Dashboard = () => {
 								className='flex items-center px-3 py-2 accordion-button collapsed relative  duration-300'
 								type='button'
 								data-bs-toggle='collapse'
+								data-bs-target='#wirehouseCollapse'
+								aria-expanded='false'
+								aria-controls='wirehouseCollapse'>
+								<div>
+									<FontAwesomeIcon
+										icon={faTruckPickup}
+										className='w-5 h-5 text-green-500'
+									/>
+								</div>
+								<div className='flex justify-between items-center w-full'>
+									<h5 className='ml-4'>Warehouse Trip</h5>
+								</div>
+							</div>
+							{/* Dashboard Sub Menu */}
+							<div
+								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
+								data-bs-parent='#accordionExample'
+								id='wirehouseCollapse'>
+								<div
+									className={
+										window?.location?.pathname.includes(
+											"/dashboard/wirehouseRiderRun",
+										) && "activeButton"
+									}>
+									<Link
+										to='wirehouseRiderRun'
+										className=" text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block">
+										<FontAwesomeIcon
+											icon={faList}
+											className='h-5 w-5 inline mr-2 text-green-500'
+										/>
+										Wirehouse Rider Run
+									</Link>
+								</div>
+								<div
+									className={
+										window?.location?.pathname.includes(
+											"/dashboard/wirehouseRunList",
+										) && "activeButton"
+									}>
+									<Link
+										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
+										to='wirehouseRunList'>
+										<FontAwesomeIcon
+											icon={faPersonRunning}
+											className='h-5 w-5 inline mr-2 text-green-500'
+										/>
+										Warehouse Run List
+									</Link>
+								</div>
+							</div>
+						</div>
+						<div
+							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
+							id='accordionExample'>
+							<div
+								className='flex items-center px-3 py-2 accordion-button collapsed relative  duration-300'
+								type='button'
+								data-bs-toggle='collapse'
 								data-bs-target='#collapseTwo'
 								aria-expanded='false'
 								aria-controls='collapseTwo'>
@@ -177,7 +238,7 @@ const Dashboard = () => {
 										className=" text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block">
 										<FontAwesomeIcon
 											icon={faList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Pickup Parcel List
 									</Link>
@@ -193,7 +254,7 @@ const Dashboard = () => {
 										to='generatePickupRiderRun'>
 										<FontAwesomeIcon
 											icon={faPersonRunning}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Generate Pickup Rider Run
 									</Link>
@@ -209,7 +270,7 @@ const Dashboard = () => {
 										to='pickupRiderRunList'>
 										<FontAwesomeIcon
 											icon={faTruckFast}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Pickup Rider Run List
 									</Link>
@@ -225,7 +286,7 @@ const Dashboard = () => {
 										to='genBranchTransfer'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Generate Branch Transfer (Trip)
 									</Link>
@@ -241,7 +302,7 @@ const Dashboard = () => {
 										to='deliveryBranchTransferList'>
 										<FontAwesomeIcon
 											icon={faArrowRotateLeft}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Delivery Branch Transfer List (Trip)
 									</Link>
@@ -284,7 +345,7 @@ const Dashboard = () => {
 										to='deliveryParcelList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Delivery Parcel List
 									</Link>
@@ -300,7 +361,7 @@ const Dashboard = () => {
 										to='generateDeliveryRiderRun'>
 										<FontAwesomeIcon
 											icon={faTruckLoading}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Generate Delivery Rider Run
 									</Link>
@@ -316,7 +377,7 @@ const Dashboard = () => {
 										to='deliveryRiderRunList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Delivery Rider Run List
 									</Link>
@@ -332,7 +393,7 @@ const Dashboard = () => {
 										to='receivedTransferList'>
 										<FontAwesomeIcon
 											icon={faHandshake}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Received Transfer List (Trip)
 									</Link>
@@ -348,7 +409,7 @@ const Dashboard = () => {
 										to='deliveryPaymentGenerate'>
 										<FontAwesomeIcon
 											icon={faFilePen}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Delivery Payment Generate
 									</Link>
@@ -364,7 +425,7 @@ const Dashboard = () => {
 										to='deliveryPaymentList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Delivery Payment List
 									</Link>
@@ -380,7 +441,7 @@ const Dashboard = () => {
 										to='returnBranchTransfer'>
 										<FontAwesomeIcon
 											icon={faRetweet}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Return Branch Transfer (Trip)
 									</Link>
@@ -396,7 +457,7 @@ const Dashboard = () => {
 										to='returnBranchTransferList'>
 										<FontAwesomeIcon
 											icon={faArrowRotateLeft}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Return Branch Transfer List (Trip)
 									</Link>
@@ -439,7 +500,7 @@ const Dashboard = () => {
 										to='returnParcelList'>
 										<FontAwesomeIcon
 											icon={faClipboardList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Return Parcel List
 									</Link>
@@ -455,7 +516,7 @@ const Dashboard = () => {
 										to='generateReturnRiderRun'>
 										<FontAwesomeIcon
 											icon={faPen}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Generate Return Rider Run
 									</Link>
@@ -471,7 +532,7 @@ const Dashboard = () => {
 										to='returnRiderRunList'>
 										<FontAwesomeIcon
 											icon={faArrowUpWideShort}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Return Rider Run List
 									</Link>
@@ -487,7 +548,7 @@ const Dashboard = () => {
 										to='ReceivedReturnTransferList'>
 										<FontAwesomeIcon
 											icon={faArrowTurnDown}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Received Return Transfer List (Trip)
 									</Link>
@@ -530,7 +591,7 @@ const Dashboard = () => {
 										to='parcelBooking'>
 										<FontAwesomeIcon
 											icon={faTruckFast}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										New Parcel Booking
 									</Link>
@@ -546,7 +607,7 @@ const Dashboard = () => {
 										to='bookingParcelList'>
 										<FontAwesomeIcon
 											icon={faList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Booking Parcel List
 									</Link>
@@ -562,7 +623,7 @@ const Dashboard = () => {
 										to='BookingParcelVehicle'>
 										<FontAwesomeIcon
 											icon={faTruckPickup}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Booking Parcel Assign Vehicle
 									</Link>
@@ -578,7 +639,7 @@ const Dashboard = () => {
 										to='bookingParcelReceiveList'>
 										<FontAwesomeIcon
 											icon={faList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Booking Parcel Receive List
 									</Link>
@@ -594,7 +655,7 @@ const Dashboard = () => {
 										to='receiveBookingParcel'>
 										<FontAwesomeIcon
 											icon={faHandHolding}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Receive Booking Parcel
 									</Link>
@@ -637,7 +698,7 @@ const Dashboard = () => {
 										to='parcelPaymentList'>
 										<FontAwesomeIcon
 											icon={faMoneyBill}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Parcel Payment List
 									</Link>
@@ -653,7 +714,7 @@ const Dashboard = () => {
 										to='paymentForward'>
 										<FontAwesomeIcon
 											icon={faMoneyBillTransfer}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Payment Forward to Accounts
 									</Link>
@@ -669,7 +730,7 @@ const Dashboard = () => {
 										to='parcelPaymentReport'>
 										<FontAwesomeIcon
 											icon={faMoneyCheckDollar}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Parcel Payment Report
 									</Link>
@@ -711,7 +772,7 @@ const Dashboard = () => {
 										to='vehicle'>
 										<FontAwesomeIcon
 											icon={faTruck}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Vehicle
 									</Link>
@@ -727,7 +788,7 @@ const Dashboard = () => {
 										to='warehouse'>
 										<FontAwesomeIcon
 											icon={faWarehouse}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Warehouse
 									</Link>
@@ -743,7 +804,7 @@ const Dashboard = () => {
 										to='itemCategory'>
 										<FontAwesomeIcon
 											icon={faTableList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Item Category
 									</Link>
@@ -758,7 +819,7 @@ const Dashboard = () => {
 										to='item'>
 										<FontAwesomeIcon
 											icon={faList}
-											className='h-5 w-5 inline mr-4 text-green-500'
+											className='h-5 w-5 inline mr-2 text-green-500'
 										/>
 										Item
 									</Link>
@@ -927,6 +988,8 @@ const Dashboard = () => {
 						<Route path='/*' element={<NotFound />} />
 						<Route path='/profile' element={<Profile />} />
 						<Route path='/riderRequest' element={<RiderRequest />} />
+						<Route path='/wirehouseRiderRun' element={<WirehouseRiderRun />} />
+						<Route path='/wirehouseRunList' element={<WirehouseRunList />} />
 						<Route path='/pickupParcelList' element={<PickUpParcelList />} />
 						<Route
 							path='/generatePickupRiderRun'

@@ -7,7 +7,7 @@ const RiderRequest = () => {
     const { baseUrl } = BaseURL();
     const { user } = useAuth();
     const [hubInfo, setHubInfo] = useState();
-    const [submit, setSubmit] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState(false);
     const [riderInfo, setRiderInfo] = useState({
         name: "", email: "", address: "", number: "", nid: "", license: "", dob: "", password: "", confirmPassword: "", status: "pending"
@@ -31,10 +31,10 @@ const RiderRequest = () => {
     // Handle Submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmit(true);
+        setLoading(true);
         if (riderInfo?.password !== riderInfo?.confirmPassword) {
             setAlert(true);
-            setSubmit(false);
+            setLoading(false);
         } else {
             fetch(`${baseUrl}/rider/request?email=${user.email}`, {
                 method: 'POST',
@@ -45,15 +45,15 @@ const RiderRequest = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    setSubmit(false)
+                    setLoading(false)
                     e.target.reset()
                 }
                 )
-                .catch(error => setSubmit(false))
+                .catch(error => setLoading(false))
         }
     }
     // Loading Effect For Submission
-    if (submit) {
+    if (loading) {
         return <Loading />
     }
 

@@ -7,6 +7,7 @@ import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
 import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
+import Loading from '../../Loading/Loading';
 
 const GeneratePickupRiderRun = () => {
     let ref = useRef();
@@ -17,11 +18,17 @@ const GeneratePickupRiderRun = () => {
     const [singleRider, setSingleRider] = useState("");
     const [printData, setPrintData] = useState();
     const [printLoading, setPrintLoading] = useState(false);
+    const [hubInfo, setHubInfo] = useState();
+    const [checkData, setCheckData] = useState([]);
+    const [date, setDate] = useState("");
+    const [note, setNote] = useState("");
+    const [loading, setLoading] = useState(false);
     // Pagination Function Here
     const [showData, setShowData] = useState(0);
     const dataPerPage = 10;
     const pagesVisited = showData * dataPerPage;
-    const pageCount = Math.ceil(runParcels.length / dataPerPage);
+    const pageCount = Math.ceil(runParcels?.length / dataPerPage);
+
     let area = [
         {
             label: "Dhaka (Jatrabari)"
@@ -61,45 +68,112 @@ const GeneratePickupRiderRun = () => {
             .then(res => res.json())
             .then(data => setRiders(data?.riders));
     }, [baseUrl, user?.email]);
-    console.log(riders);
+    // Post Generate Rider 
+
+    // Get Hub Info
+    useEffect(() => {
+        fetch(`${baseUrl}/singleuser?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setHubInfo(data));
+    }, [baseUrl, user?.email]);
+
+    const tripInfo = {
+        riderInfo: { "riderName": singleRider?.name, "riderEmail": singleRider?.email, "date": date, "note": note },
+        hubInfo: { "hubName": hubInfo?.name, "hubEmail": hubInfo?.email },
+        tripOrder: [checkData]
+    }
+
+    // Post Generate Rider Run
+    const handleGenerateRider = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        if (checkData.length > 0) {
+            fetch(`${baseUrl}/trip/pickup?email=${user.email}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(tripInfo)
+            })
+                .then(res => res.json())
+                .then(data => setLoading(false))
+                .catch(error => setLoading(false))
+        } else {
+            alert("Please Select Parcels")
+            setLoading(false);
+            return false;
+        }
+    }
+
+    // Select Option Function Here
+
+    const handleChange = (e) => {
+        const { name, value, checked } = e.target;
+        if (checked) {
+            setCheckData([...checkData, value]);
+        } else {
+            const filteredData = checkData.filter(item => item !== value)
+            setCheckData(filteredData);
+        }
+        if (name === "allSelect") {
+            let tempUser = runParcels.map((user) => {
+                return { ...user, isChecked: checked };
+            });
+            setRunParcels(tempUser);
+        } else {
+            let tempUser = runParcels.map((user) =>
+                user.name === name ? { ...user, isChecked: checked } : user
+            );
+            setRunParcels(tempUser);
+        }
+    }
+
+    if (loading) {
+        return <Loading />
+    }
+
     return (
         <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left text-gray-500">Generate Pickup Rider Run</h3>
             <div className="lg:flex block justify-between w-full">
-                <form className="border border-gray-200 py-5 rounded-md shadow-md lg:w-1/2 w-full lg:px-10 px-6 lg:mx-6 mx-0">
+                <form onSubmit={handleGenerateRider} className="border border-gray-200 py-5 rounded-md shadow-md lg:w-1/2 w-full lg:px-10 px-6 lg:mx-6 mx-0">
                     <h2 className="text-green-700 text-xl font-bold text-left lg:mb-5 mb-2">Pickup Run</h2>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider</p>
                         <select
-                            onChange={(e) => setSingleRider(e.target.value)}
+                            onChange={(e) => {
+                                setSingleRider(riders?.find(rider => rider.name === e.target.value))
+                            }}
                             defaultValue={'DEFAULT'}
                             name="Entries"
+                            required
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
                             <option value="DEFAULT">Select Rider</option>
-                            {riders.map((rider) => <option value={rider?.name}>{rider?.name}</option>)}
+                            {riders.map((rider) => <option key={rider?._id} value={rider?.name}>{rider?.name}</option>)}
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Date</p>
-                        <input type="date" name="date" />
+                        <input onChange={(e) => setDate(e.target.value)} type="date" name="date" required />
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider Name</p>
-                        <p>{singleRider}</p>
+                        <p>{singleRider?.name}</p>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider Contact Number</p>
-                        <p>rider.number</p>
+                        <p>{singleRider?.number}</p>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider Address</p>
-                        <p>Mirpur</p>
+                        <p>{singleRider?.address}</p>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Total Run Parcel</p>
-                        <p>0</p>
+                        <p>{checkData?.length}</p>
                     </div>
                     <textarea
+                        onChange={(e) => setNote(e.target.value)}
                         className="border w-full px-5 focus:outline-none resize-none" name="run note" cols="30" rows="4"
                         placeholder="Pickup rider Run Note">
                     </textarea>
@@ -130,7 +204,12 @@ const GeneratePickupRiderRun = () => {
                                 <thead className="bg-green-800 text-white text-center text-xs font-semibold uppercase">
                                     <tr>
                                         <th className="px-6 py-3 tracking-wider border">
-                                            <input type="checkbox" name="check" /> All
+                                            <input type="checkbox" name="allSelect"
+                                                value={runParcels?.map(parcel => parcel?._id)}
+                                                onChange={handleChange}
+                                                checked={
+                                                    !runParcels?.some((user) => user?.isChecked !== true)
+                                                } /> All
                                         </th>
                                         <th className="px-6 py-3 tracking-wider border">
                                             Order Date
@@ -162,10 +241,12 @@ const GeneratePickupRiderRun = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-x divide-gray-200 text-gray-900 text-center text-sm font-normal">
-                                    {runParcels.slice(pagesVisited, pagesVisited + dataPerPage).map((runParcel) => (
+                                    {runParcels?.slice(pagesVisited, pagesVisited + dataPerPage)?.map((runParcel) => (
                                         <tr key={runParcel._id} className="hover:bg-gray-100 duration-200">
                                             <td className="px-2 py-3 border">
-                                                <input type="checkbox" name="check" />
+                                                <input
+                                                    onChange={handleChange}
+                                                    type="checkbox" name="check" value={runParcel?._id} checked={runParcel ? runParcel?.isChecked : false} />
                                             </td>
                                             <td className="px-2 py-3 border">
                                                 {runParcel?.orderSummaray?.date}

@@ -10,6 +10,7 @@ import useAuth from '../../../Hooks/UseAuth';
 import ReactToPrint from 'react-to-print';
 import ReactPaginate from 'react-paginate';
 import { changePage } from '../../../Redux/Slices/paginationSlice';
+import Loading from '../../Loading/Loading';
 
 const PickUpParcelList = () => {
 
