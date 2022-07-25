@@ -116,12 +116,12 @@ const GeneratePickupRiderRun = () => {
             setCheckData(filteredData);
         }
         if (name === "allSelect") {
-            let tempUser = runParcels.map((user) => {
+            let tempUser = runParcels?.map((user) => {
                 return { ...user, isChecked: checked };
             });
             setRunParcels(tempUser);
         } else {
-            let tempUser = runParcels.map((user) =>
+            let tempUser = runParcels?.map((user) =>
                 user.name === name ? { ...user, isChecked: checked } : user
             );
             setRunParcels(tempUser);
@@ -149,7 +149,7 @@ const GeneratePickupRiderRun = () => {
                             required
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
                             <option value="DEFAULT">Select Rider</option>
-                            {riders.map((rider) => <option key={rider?._id} value={rider?.name}>{rider?.name}</option>)}
+                            {riders?.map((rider) => <option key={rider?._id} value={rider?.name}>{rider?.name}</option>)}
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
