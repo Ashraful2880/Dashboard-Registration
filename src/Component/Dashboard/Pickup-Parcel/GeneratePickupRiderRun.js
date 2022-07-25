@@ -12,7 +12,16 @@ const GeneratePickupRiderRun = () => {
     let ref = useRef();
     const { baseUrl } = BaseURL();
     const { user } = useAuth();
-
+    const [runParcels, setRunParcels] = useState([]);
+    const [riders, setRiders] = useState([]);
+    const [singleRider, setSingleRider] = useState("");
+    const [printData, setPrintData] = useState();
+    const [printLoading, setPrintLoading] = useState(false);
+    // Pagination Function Here
+    const [showData, setShowData] = useState(0);
+    const dataPerPage = 10;
+    const pagesVisited = showData * dataPerPage;
+    const pageCount = Math.ceil(runParcels.length / dataPerPage);
     let area = [
         {
             label: "Dhaka (Jatrabari)"
@@ -24,18 +33,10 @@ const GeneratePickupRiderRun = () => {
             label: "Dhaka (Fuji Trade Center)"
         }
     ]
-    const [runParcels, setRunParcels] = useState([]);
-    const [printData, setPrintData] = useState();
-    const [printLoading, setPrintLoading] = useState(false);
-    // Pagination Function Here
-    const [showData, setShowData] = useState(0);
-    const dataPerPage = 10;
-    const pagesVisited = showData * dataPerPage;
-    const pageCount = Math.ceil(runParcels.length / dataPerPage);
-
     const changePage = ({ selected }) => {
         setShowData(selected)
     };
+    // Get Table Data
     useEffect(() => {
         fetch(`${baseUrl}/huborders/status?email=${user.email}&&status=Accepted`, {
             method: 'POST',
@@ -49,11 +50,18 @@ const GeneratePickupRiderRun = () => {
             .catch(error => console.log(error))
     }, [user.email]);
 
+    // Loading Function For Print Data
     const dataToPrint = (runParcel) => {
         setPrintData(runParcel);
         setPrintLoading(true);
     }
-
+    // Get Rider Data
+    useEffect(() => {
+        fetch(`${baseUrl}/singleuser?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setRiders(data?.riders));
+    }, [baseUrl, user?.email]);
+    console.log(riders);
     return (
         <div className="px-4 mx-auto">
             <h3 className="text-2xl font-bold mb-6 text-left text-gray-500">Generate Pickup Rider Run</h3>
@@ -63,15 +71,12 @@ const GeneratePickupRiderRun = () => {
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider</p>
                         <select
+                            onChange={(e) => setSingleRider(e.target.value)}
                             defaultValue={'DEFAULT'}
                             name="Entries"
                             className="border border-gray-300 focus:outline-none rounded-md px-2 py-1 mx-2 w-1/2">
                             <option value="DEFAULT">Select Rider</option>
-                            <option value="Omar Faruk">Omar Faruk</option>
-                            <option value="Mr. Tahmidur Rahman">Mr. Tahmidur Rahman</option>
-                            <option value="Istiyaq Hossain Chowdhury">Istiyaq Hossain Chowdhury</option>
-                            <option value="Md.Ibrahim Khalil Ullah">Md.Ibrahim Khalil Ullah</option>
-                            <option value="Tafim Hossain">Tafim Hossain</option>
+                            {riders.map((rider) => <option value={rider?.name}>{rider?.name}</option>)}
                         </select>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
@@ -80,11 +85,11 @@ const GeneratePickupRiderRun = () => {
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider Name</p>
-                        <p>Md. Tahmidur Rahman</p>
+                        <p>{singleRider}</p>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider Contact Number</p>
-                        <p>01810007652</p>
+                        <p>rider.number</p>
                     </div>
                     <div className="flex items-center justify-between py-2 px-5 my-2 border rounded-md">
                         <p className="font-semibold">Rider Address</p>
@@ -204,8 +209,8 @@ const GeneratePickupRiderRun = () => {
                                                         }}
                                                     />
                                                     {printLoading &&
-                                                        <div class="flex justify-center items-center">
-                                                            <div class="spinner-border animate-spin inline-block w-6 h-6 border-4 rounded-full text-green-700" role="status">
+                                                        <div className="flex justify-center items-center">
+                                                            <div className="spinner-border animate-spin inline-block w-6 h-6 border-4 rounded-full text-green-700" role="status">
                                                             </div>
                                                         </div>}
                                                 </div>

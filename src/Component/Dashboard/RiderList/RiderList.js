@@ -24,6 +24,7 @@ const RiderList = () => {
             .then(res => res.json())
             .then(data => setRiders(data?.riders));
     }, [user?.email])
+
     return (
         <div className="container mx-auto pb-10">
             <h3 className="text-2xl font-bold mb-6 text-left pl-5">Rider List</h3>

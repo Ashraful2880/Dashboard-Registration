@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BaseURL from '../../../Hooks/BaseUrl';
 import useAuth from '../../../Hooks/UseAuth';
 import Loading from './../../Loading/Loading';
@@ -6,19 +6,29 @@ import Loading from './../../Loading/Loading';
 const RiderRequest = () => {
     const { baseUrl } = BaseURL();
     const { user } = useAuth();
+    const [hubInfo, setHubInfo] = useState();
     const [submit, setSubmit] = useState(false);
     const [alert, setAlert] = useState(false);
     const [riderInfo, setRiderInfo] = useState({
-        name: "", email: "", address: "", number: "", nid: "", license: "", dob: "", password: "", confirmPassword: "",
+        name: "", email: "", address: "", number: "", nid: "", license: "", dob: "", password: "", confirmPassword: "", status: "pending"
     });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        const newRiderInfo = { ...riderInfo };
+        const newRiderInfo = { ...riderInfo, hubName: hubInfo?.name, hubEmail: hubInfo?.email };
         newRiderInfo[name] = value;
         setRiderInfo(newRiderInfo)
     }
 
+    // find Hub Name & Email
+
+    useEffect(() => {
+        fetch(`${baseUrl}/singleuser?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setHubInfo(data))
+    }, [baseUrl, user?.email])
+
+    // Handle Submission
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmit(true);
@@ -46,6 +56,7 @@ const RiderRequest = () => {
     if (submit) {
         return <Loading />
     }
+
     return (
         <div className="px-4 mx-auto">
             <h1 className="text-2xl font-bold text-left">Request a Rider</h1>
