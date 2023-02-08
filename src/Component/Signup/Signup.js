@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUnlockKeyhole, faUser } from '@fortawesome/free-solid-svg-icons';
-import logo from "../../Assests/Image/Logo.png";
 import useAuth from './../../Hooks/UseAuth';
 
 const Signup = () => {
@@ -11,7 +10,7 @@ const Signup = () => {
         <div className="bg-gray-100 h-[85vh]">
             <div className="h-[85vh] flex justify-center items-center flex-col">
                 <div className="pb-10 w-96 border rounded-md bg-white">
-                    <img src={logo} alt="Main Logo" className="w-12 mx-auto mt-8 mb-5" />
+                    <h2 className="text-2xl font-bold text-green-600 pt-6 pb-4"> Dashboard Temp </h2>
                     <p className="mb-5 text-lg font-semibold">Create Your First Account</p>
                     <form onSubmit={handleRegister}>
                         <div className="mb-4 relative">

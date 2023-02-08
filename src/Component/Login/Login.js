@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from "../../Assests/Image/Logo.png";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +10,7 @@ const Login = () => {
         <div className="bg-gray-100 h-[85vh]">
             <div className="h-[70vh] flex justify-center items-center flex-col">
                 <div className="pb-10 w-96 border rounded-md bg-white">
-                    <img src={logo} alt="Main Logo" className="w-12 mx-auto my-8" />
+                    <h2 className="text-2xl font-bold text-green-600 pt-6 pb-4"> Dashboard Temp </h2>
                     <p className="mb-5">Sign in to start your session as Merchant</p>
                     <form onSubmit={handleSignIn}>
                         <div className="mb-4 relative">

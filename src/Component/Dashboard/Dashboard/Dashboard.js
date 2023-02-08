@@ -74,10 +74,10 @@ const Dashboard = () => {
 						{/* Sigle Menu */}
 						<div
 							className={
-								window?.location?.pathname === "/dashboard" && "activeButton"
+								window?.location?.pathname === "/" && "activeButton"
 							}>
 							<Link
-								to='/dashboard'
+								to='/'
 								className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
@@ -97,11 +97,11 @@ const Dashboard = () => {
 						</div>
 						<div
 							className={
-								window?.location?.pathname.includes("/dashboard/profile") &&
+								window?.location?.pathname.includes("/profile") &&
 								"activeButton"
 							}>
 							<Link
-								to='/dashboard/profile'
+								to='/profile'
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
@@ -121,11 +121,11 @@ const Dashboard = () => {
 						</div>
 						<div
 							className={
-								window?.location?.pathname.includes("/dashboard/riderRequest") &&
+								window?.location?.pathname.includes("/riderRequest") &&
 								"activeButton"
 							}>
 							<Link
-								to='/dashboard/riderRequest'
+								to='/riderRequest'
 								className=' text-gray-300 hover:text-green-500 duration-200 accordion accordion-item'
 								id='accordionExample'>
 								<div
@@ -143,65 +143,7 @@ const Dashboard = () => {
 								</div>
 							</Link>
 						</div>
-						<div
-							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
-							id='accordionExample'>
-							<div
-								className='flex items-center px-3 py-2 accordion-button collapsed relative  duration-300'
-								type='button'
-								data-bs-toggle='collapse'
-								data-bs-target='#wirehouseCollapse'
-								aria-expanded='false'
-								aria-controls='wirehouseCollapse'>
-								<div>
-									<FontAwesomeIcon
-										icon={faTruckPickup}
-										className='w-5 h-5 text-green-500'
-									/>
-								</div>
-								<div className='flex justify-between items-center w-full'>
-									<h5 className='ml-4'>Warehouse Trip</h5>
-								</div>
-							</div>
-							{/* Dashboard Sub Menu */}
-							<div
-								className='flex flex-col gap-y-1 text-left pl-2 text-gray-300 hover:text-[white] accordion-collapse collapse'
-								data-bs-parent='#accordionExample'
-								id='wirehouseCollapse'>
-								<div
-									className={
-										window?.location?.pathname.includes(
-											"/dashboard/wirehouseRiderRun",
-										) && "activeButton"
-									}>
-									<Link
-										to='wirehouseRiderRun'
-										className=" text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block">
-										<FontAwesomeIcon
-											icon={faList}
-											className='h-5 w-5 inline mr-2 text-green-500'
-										/>
-										Wirehouse Rider Run
-									</Link>
-								</div>
-								<div
-									className={
-										window?.location?.pathname.includes(
-											"/dashboard/wirehouseRunList",
-										) && "activeButton"
-									}>
-									<Link
-										className='text-gray-300 hover:text-green-500 duration-200 px-2 py-2 inline-block'
-										to='wirehouseRunList'>
-										<FontAwesomeIcon
-											icon={faPersonRunning}
-											className='h-5 w-5 inline mr-2 text-green-500'
-										/>
-										Warehouse Run List
-									</Link>
-								</div>
-							</div>
-						</div>
+
 						<div
 							className='text-gray-300 hover:text-green-500 duration-200 accordion accordion-item cursor-pointer'
 							id='accordionExample'>
@@ -943,12 +885,12 @@ const Dashboard = () => {
 									</svg>
 								</button>}
 							<Link
-								to='/dashboard'
+								to='/'
 								className='font-semibold hover:text-green-500 duration-200'>
 								Dashboard
 							</Link>
 							<Link
-								to='/dashboard/profile'
+								to='/profile'
 								className='lg:block hidden font-semibold hover:text-green-500 duration-200'>
 								Profiles
 							</Link>
